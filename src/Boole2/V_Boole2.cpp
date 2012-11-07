@@ -5897,7 +5897,8 @@ void TForm1Boole2::CrearCodigoVHDL()
 	for (int i=1; i<Sistema.NumCarEnt;i++)
 		entradas += "&" + NombreVHDL(DevuelveVar(i));
 
-	Form14->PDL->Lines->Add("entrada_aux<=" + entradas);
+	// :MOD: Semicolon was not being added here. ~lrg
+	Form14->PDL->Lines->Add("entrada_aux<=" + entradas + ";");
 
         Form14->PDL->Lines->Add("");
 
