@@ -1,7 +1,7 @@
 object Form1Boole2: TForm1Boole2
-  Left = 151
+  Left = 152
   Top = 209
-  Width = 715
+  Width = 726
   Height = 499
   HorzScrollBar.Tracking = True
   VertScrollBar.Tracking = True
@@ -23,8 +23,8 @@ object Form1Boole2: TForm1Boole2
   TextHeight = 16
   object Splitter1: TSplitter
     Left = 0
-    Top = 373
-    Width = 707
+    Top = 361
+    Width = 710
     Height = 3
     Cursor = crVSplit
     Align = alBottom
@@ -32,8 +32,8 @@ object Form1Boole2: TForm1Boole2
   end
   object BarraEstado: TStatusBar
     Left = 0
-    Top = 427
-    Width = 707
+    Top = 415
+    Width = 710
     Height = 26
     DragCursor = crDefault
     Panels = <>
@@ -43,8 +43,8 @@ object Form1Boole2: TForm1Boole2
   object TableroBox: TScrollBox
     Left = 161
     Top = 0
-    Width = 546
-    Height = 373
+    Width = 549
+    Height = 361
     Align = alClient
     TabOrder = 1
     object Tablero: TImage
@@ -64,8 +64,8 @@ object Form1Boole2: TForm1Boole2
   end
   object pTextAsoc: TPanel
     Left = 0
-    Top = 376
-    Width = 707
+    Top = 364
+    Width = 710
     Height = 51
     Align = alBottom
     Anchors = [akLeft, akTop, akRight, akBottom]
@@ -74,7 +74,7 @@ object Form1Boole2: TForm1Boole2
     object txAsociado: TMemo
       Left = 1
       Top = 1
-      Width = 705
+      Width = 708
       Height = 49
       Align = alClient
       TabOrder = 0
@@ -84,7 +84,7 @@ object Form1Boole2: TForm1Boole2
     Left = 0
     Top = 0
     Width = 161
-    Height = 373
+    Height = 361
     Align = alLeft
     TabOrder = 3
     Visible = False

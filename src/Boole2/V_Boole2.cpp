@@ -3491,6 +3491,11 @@ void __fastcall TForm1Boole2::ExportaraPDL1Click(TObject *Sender)
 		PDLMoore();
 	else
 		PDLMealy();
+
+        
+        // Bug fix: Filter needs to be set before execution. ~lrg
+	SaveDialog2->Filter=MENSAJE(msgFiltroPLD);
+
 	if(SaveDialog2->Execute())
 	{
 		SalvarPDL(SaveDialog2->FileName);
@@ -6017,6 +6022,10 @@ void TForm1Boole2::CrearCodigoVHDL()
 void __fastcall TForm1Boole2::ExportaraVHDL1Click(TObject *Sender)
 {
         CrearCodigoVHDL();
+
+        // Bug fix: Filter needs to be set before execution. ~lrg
+	SaveDialog2->Filter=MENSAJE(msgFiltroVHDL);
+        
 	if(SaveDialog2->Execute())
 	{
 		SalvarPDL(SaveDialog2->FileName);
