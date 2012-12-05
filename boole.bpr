@@ -26,7 +26,8 @@
       obj\rdSeleccionarIPs_QM_Hbestcover.obj 
       obj\rdSeleccionarIPs_QM_NHnosesg.obj obj\rdSeleccionarIPs_QM_NHsesg1.obj 
       obj\rdSeleccionarIPs_QM_NHsesg2.obj obj\rdSeleccionarIPsQM.obj 
-      obj\cubobool.obj obj\reinit.obj obj\Karnaugh.obj obj\VKLazo.obj"/>
+      obj\cubobool.obj obj\reinit.obj obj\Karnaugh.obj obj\VKLazo.obj 
+      obj\Weblab.obj"/>
     <RESFILES value="boole.res obj\mensajes.res"/>
     <IDLFILES value=""/>
     <IDLGENFILES value=""/>
@@ -43,7 +44,7 @@
       src\Boole2\Unit6.dfm src\Boole2\Unit8.dfm src\Boole2\Unit9.dfm 
       src\Boole2\uSimulacion.dfm src\Boole2\Unit16.dfm 
       src\Circuito\V_Imprimir.dfm src\Circuito\V_Circuito.dfm 
-      src\Comun\uTextoAsoc.dfm"/>
+      src\Comun\uTextoAsoc.dfm src\Boole1\Weblab.dfm"/>
     <LIBFILES value="lib\antlr.lib"/>
     <LIBRARIES value="bcb2kaxserver.lib indy.lib dbxcds.lib dclocx.lib soaprtl.lib bcbie.lib 
       nmfast.lib dbexpress.lib inetdbxpress.lib inetdbbde.lib dsnapcon.lib 
@@ -62,7 +63,7 @@
       inetdbbde.bpi inetdbxpress.bpi inetdb.bpi nmfast.bpi webdsnap.bpi 
       bcbie.bpi websnap.bpi soaprtl.bpi dclocx.bpi dbexpress.bpi dbxcds.bpi 
       indy.bpi bcb2kaxserver.bpi"/>
-    <PATHCPP value=".;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Comun;src\EvaluadorBool;src\EvaluadorBool;src\EvaluadorBool;src\EvaluadorBool;src\EvaluadorBool;src\EvaluadorBool;src\EvaluadorBool;src\jedec;src\jedec;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\TKarnaugh;src\TKarnaugh"/>
+    <PATHCPP value=".;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Comun;src\EvaluadorBool;src\EvaluadorBool;src\EvaluadorBool;src\EvaluadorBool;src\EvaluadorBool;src\EvaluadorBool;src\EvaluadorBool;src\jedec;src\jedec;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\TKarnaugh;src\TKarnaugh;src\Boole1"/>
     <PATHPAS value=".;src\Comun"/>
     <PATHRC value=".;src\res;src\res"/>
     <PATHASM value=".;"/>
@@ -178,6 +179,7 @@
       <FILE FILENAME="src\Comun\reinit.pas" FORMNAME="" UNITNAME="ReInit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="src\TKarnaugh\Karnaugh.cpp" FORMNAME="" UNITNAME="Karnaugh.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="src\TKarnaugh\VKLazo.cpp" FORMNAME="" UNITNAME="VKLazo.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="src\Boole1\Weblab.cpp" FORMNAME="WeblabForm" UNITNAME="Weblab" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>
@@ -282,7 +284,7 @@ Item5=src\Boole1\FormasN.dfm
 Item6=src\Boole1\FormSimp.dfm
 Item7=src\Boole1\Main.dfm
 Item8=src\Boole1\NandNor.dfm
-Item9=src\Boole1\NuevoSC.dfm
+Item9=src\Boole1\NuevoSC2.dfm
 Item10=src\Boole1\SCCompac.dfm
 Item11=src\Boole1\TVComple.dfm
 Item12=src\Boole1\TVManual.dfm

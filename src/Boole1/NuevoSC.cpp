@@ -2075,3 +2075,5 @@ void __fastcall TSistemaCombinacionalNuevo::BitBtn5Click(TObject *Sender)
 
 //---------------------------------------------------------------------------
 
+
+

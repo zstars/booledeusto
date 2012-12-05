@@ -39,6 +39,7 @@ USEFORM("src\Boole2\Unit16.cpp", Form16);
 USEFORM("src\Circuito\V_Imprimir.cpp", FormI);
 USEFORM("src\Circuito\V_Circuito.cpp", FormR);
 USEFORM("src\Comun\uTextoAsoc.cpp", fTextoAsoc);
+USEFORM("src\Boole1\Weblab.cpp", WeblabForm);
 //---------------------------------------------------------------------------
 #include "ReInit.hpp"
 
@@ -62,10 +63,16 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 		} catch(ios_base::failure& var)
                 { }*/
-              	resInstance=(void *)LoadNewResourceModule( ( (SUBLANG_ENGLISH_US << 10) | LANG_ENGLISH) );
-               	if(!resInstance)
-                	resInstance=(void *)LoadNewResourceModule( ( (SUBLANG_DEFAULT << 10) | LANG_BASQUE) );
-		Application->CreateForm(__classid(TPrincipal), &Principal);
+
+                // ~lrg
+                // COMMENTED OUT THE FOLLOWING THREE LINES BECAUSE I HAVE YET TO FIGURE
+                // OUT HOW TO ADD A FORM TO THE PROJECT WITHOUT BREAKING IT (IF THESE LINES
+                // ARE NOT COMMENTED WEIRD RESOURCE NOT FOUND MESSAGES MAKE THE PROGRAM
+                // CRASH ON STARTUP).
+              	//resInstance=(void *)LoadNewResourceModule( ( (SUBLANG_ENGLISH_US << 10) | LANG_ENGLISH) );
+               	//if(!resInstance)
+                //	resInstance=(void *)LoadNewResourceModule( ( (SUBLANG_DEFAULT << 10) | LANG_BASQUE) );
+		 Application->CreateForm(__classid(TPrincipal), &Principal);
                  Application->CreateForm(__classid(Tap), &ap);
                  Application->CreateForm(__classid(TCalculando), &Calculando);
                  Application->CreateForm(__classid(TfKarnaugh), &fKarnaugh);
@@ -99,6 +106,7 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
                  Application->CreateForm(__classid(TFormI), &FormI);
                  Application->CreateForm(__classid(TFormR), &FormR);
                  Application->CreateForm(__classid(TfTextoAsoc), &fTextoAsoc);
+                 Application->CreateForm(__classid(TWeblabForm), &WeblabForm);
                  Application->Run();
 	}
 	catch (Exception &exception)
