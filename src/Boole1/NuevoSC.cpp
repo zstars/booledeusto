@@ -38,6 +38,7 @@
 #include "uKarnaugh.h"
 
 
+#include "Weblab.h"
 
 #include "claseJedec.h"
 
@@ -2076,4 +2077,11 @@ void __fastcall TSistemaCombinacionalNuevo::BitBtn5Click(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
+
+
+void __fastcall TSistemaCombinacionalNuevo::btWeblabClick(TObject *Sender)
+{
+    WeblabForm->ShowModal();        
+}
+//---------------------------------------------------------------------------
 

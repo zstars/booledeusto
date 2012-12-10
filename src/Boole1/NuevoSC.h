@@ -107,6 +107,7 @@ __published:	// IDE-managed Components
 	void __fastcall DiagramaVKClick(TObject *Sender);
 	void __fastcall BitBtn4Click(TObject *Sender);
         void __fastcall BitBtn5Click(TObject *Sender);
+        void __fastcall btWeblabClick(TObject *Sender);
 
 /*
  -----------------------------------------------------------------------------------------------------------------------
