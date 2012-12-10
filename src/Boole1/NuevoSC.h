@@ -66,6 +66,7 @@ __published:	// IDE-managed Components
 	TBitBtn *BitBtn4;
         TBitBtn *BitBtn5;
         TButton *btWeblab;
+        TComboBox *comboBox;
 	void __fastcall NEntradasChange(TObject *Sender);
 
 	void __fastcall NSalidasChange(TObject *Sender);
@@ -108,12 +109,26 @@ __published:	// IDE-managed Components
 	void __fastcall BitBtn4Click(TObject *Sender);
         void __fastcall BitBtn5Click(TObject *Sender);
         void __fastcall btWeblabClick(TObject *Sender);
+        void __fastcall OnTablaEntradaSelectCell(TObject *Sender, int ACol,
+          int ARow, bool &CanSelect);
+        void __fastcall OnTablaSalidaSelectCell(TObject *Sender, int ACol,
+          int ARow, bool &CanSelect);
+        void __fastcall OnComboBoxExit(TObject *Sender);
+        void __fastcall OnComboBoxChange(TObject *Sender);
+        void __fastcall OnTablaEntradaSetEditText(TObject *Sender,
+          int ACol, int ARow, const AnsiString Value);
 
 /*
  -----------------------------------------------------------------------------------------------------------------------
  -----------------------------------------------------------------------------------------------------------------------
  */
 private:	// User declarations
+
+  TStringGrid * tablaActual; // TablaEntrada o TablaSalida, dependiendo de la que se esté modificando.
+
+  //! Por defecto la primera celda de las tablas de entradas y de salidas está
+  //! seleccionada, lo cual es poco conveniente. Quita cualquier selección.
+  void QuitarSeleccionTablas();
 
 /*
  -----------------------------------------------------------------------------------------------------------------------

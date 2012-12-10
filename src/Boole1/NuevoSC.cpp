@@ -286,6 +286,8 @@ void __fastcall TSistemaCombinacionalNuevo::FormShow(TObject *Sender)
     {
         TablaSalida->Cells[1][i] = Tabla.LeerSalida(i);
     }
+
+    //QuitarSeleccionTablas();
 }
 //---------------------------------------------------------------------------
 void __fastcall TSistemaCombinacionalNuevo::ExpBooleanaClick(TObject *Sender)
@@ -2084,4 +2086,88 @@ void __fastcall TSistemaCombinacionalNuevo::btWeblabClick(TObject *Sender)
     WeblabForm->ShowModal();        
 }
 //---------------------------------------------------------------------------
+
+
+
+void __fastcall TSistemaCombinacionalNuevo::OnTablaEntradaSelectCell(
+      TObject *Sender, int ACol, int ARow, bool &CanSelect)
+{
+        if(ACol == 1)
+        {
+                TRect R = TablaEntrada->CellRect(ACol, ARow);
+                R.Left += TablaEntrada->Left;
+                R.Right += TablaEntrada->Left;
+                R.Top += TablaEntrada->Top;
+                R.Bottom += TablaEntrada->Top;
+
+                comboBox->Left = R.Left + 10;
+                comboBox->Top = R.Top + 50;
+                comboBox->Width = (R.Right + 1) - R.Left;
+                comboBox->Height = (R.Bottom + 1) - R.Top;
+
+                tablaActual = TablaEntrada;
+
+                comboBox->Visible = true;
+                comboBox->SetFocus();
+        }
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TSistemaCombinacionalNuevo::OnTablaSalidaSelectCell(
+      TObject *Sender, int ACol, int ARow, bool &CanSelect)
+{
+        if(ACol == 1)
+        {
+                TRect R = TablaSalida->CellRect(ACol, ARow);
+                R.Left += TablaSalida->Left;
+                R.Right += TablaSalida->Left;
+                R.Top += TablaSalida->Top;
+                R.Bottom += TablaSalida->Top;
+
+                comboBox->Left = R.Left + 10;
+                comboBox->Top = R.Top + 50;
+                comboBox->Width = (R.Right + 1) - R.Left;
+                comboBox->Height = (R.Bottom + 1) - R.Top;
+
+                tablaActual = TablaSalida;
+
+                comboBox->Visible = true;
+                comboBox->SetFocus();
+        }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TSistemaCombinacionalNuevo::OnComboBoxExit(TObject *Sender)
+{
+        comboBox->Visible = false;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TSistemaCombinacionalNuevo::OnComboBoxChange(
+      TObject *Sender)
+{
+  // Change goes here
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TSistemaCombinacionalNuevo::OnTablaEntradaSetEditText(
+      TObject *Sender, int ACol, int ARow, const AnsiString Value)
+{
+ // set Edit
+}
+//---------------------------------------------------------------------------
+
+
+void TSistemaCombinacionalNuevo::QuitarSeleccionTablas()
+{
+        TGridRect r;
+        r.Left = -1;
+        r.Right = -1;
+        r.Bottom = -1;
+        r.Top = -1;
+        TablaEntrada->Selection = r;
+        TablaSalida->Selection = r;
+}
 
