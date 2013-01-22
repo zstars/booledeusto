@@ -1613,7 +1613,7 @@ void __fastcall TSistemaCombinacionalNuevo::Edit1Change(TObject *Sender)
 
 void __fastcall TSistemaCombinacionalNuevo::BitBtn2Click(TObject *Sender)
 {
-  fTextoAsoc->Show();  
+  fTextoAsoc->Show();
 }
 //---------------------------------------------------------------------------
 
@@ -2094,6 +2094,11 @@ void __fastcall TSistemaCombinacionalNuevo::OnTablaEntradaSelectCell(
 {
         if(ACol == 1)
         {
+                InicializarEntradasSalidasWeblab();
+                comboBox->Clear();
+                for(int i = 0; i < mEntradasWeblab.size(); ++i)
+                        comboBox->Items->Add(mEntradasWeblab[i].c_str());
+
                 TRect R = TablaEntrada->CellRect(ACol, ARow);
                 R.Left += TablaEntrada->Left;
                 R.Right += TablaEntrada->Left;
@@ -2120,6 +2125,11 @@ void __fastcall TSistemaCombinacionalNuevo::OnTablaSalidaSelectCell(
 {
         if(ACol == 1)
         {
+                InicializarEntradasSalidasWeblab();
+                comboBox->Clear();
+                for(int i = 0; i < mSalidasWeblab.size(); ++i)
+                        comboBox->Items->Add(mSalidasWeblab[i].c_str());
+
                 TRect R = TablaSalida->CellRect(ACol, ARow);
                 R.Left += TablaSalida->Left;
                 R.Right += TablaSalida->Left;
@@ -2142,6 +2152,9 @@ void __fastcall TSistemaCombinacionalNuevo::OnTablaSalidaSelectCell(
 void __fastcall TSistemaCombinacionalNuevo::OnComboBoxExit(TObject *Sender)
 {
         comboBox->Visible = false;
+        tablaActual->Cells[tablaActual->Col][tablaActual->Row] =
+                comboBox->Text;
+        tablaActual->SetFocus();
 }
 //---------------------------------------------------------------------------
 
@@ -2170,4 +2183,57 @@ void TSistemaCombinacionalNuevo::QuitarSeleccionTablas()
         TablaEntrada->Selection = r;
         TablaSalida->Selection = r;
 }
+
+
+
+void TSistemaCombinacionalNuevo::InicializarEntradasSalidasWeblab()
+{
+        mEntradasWeblab.clear();
+        mSalidasWeblab.clear();
+
+        mEntradasWeblab.push_back("Switches<0>");
+        mEntradasWeblab.push_back("Switches<1>");
+        mEntradasWeblab.push_back("Switches<2>");
+        mEntradasWeblab.push_back("Switches<3>");
+        mEntradasWeblab.push_back("Switches<4>");
+        mEntradasWeblab.push_back("Switches<5>");
+        mEntradasWeblab.push_back("Switches<6>");
+        mEntradasWeblab.push_back("Switches<7>");
+        mEntradasWeblab.push_back("Switches<8>");
+        mEntradasWeblab.push_back("Switches<9>");
+        mEntradasWeblab.push_back("Buttons<0>");
+        mEntradasWeblab.push_back("Buttons<1>");
+        mEntradasWeblab.push_back("Buttons<2>");
+        mEntradasWeblab.push_back("Buttons<3>");
+
+        mSalidasWeblab.push_back("Leds<0>");
+        mSalidasWeblab.push_back("Leds<1>");
+        mSalidasWeblab.push_back("Leds<2>");
+        mSalidasWeblab.push_back("Leds<3>");
+        mSalidasWeblab.push_back("Leds<4>");
+        mSalidasWeblab.push_back("Leds<5>");
+        mSalidasWeblab.push_back("Leds<6>");
+        mSalidasWeblab.push_back("Leds<7>");
+        mSalidasWeblab.push_back("SevenSeg<0>");
+        mSalidasWeblab.push_back("SevenSeg<1>");
+        mSalidasWeblab.push_back("SevenSeg<2>");
+        mSalidasWeblab.push_back("SevenSeg<3>");
+        mSalidasWeblab.push_back("SevenSeg<4>");
+        mSalidasWeblab.push_back("SevenSeg<5>");
+        mSalidasWeblab.push_back("SevenSeg<6>");
+        mSalidasWeblab.push_back("Dot");
+        mSalidasWeblab.push_back("EnableSegOut<0>");
+        mSalidasWeblab.push_back("EnableSegOut<1>");
+        mSalidasWeblab.push_back("EnableSegOut<2>");
+        mSalidasWeblab.push_back("EnableSegOut<3>");
+}
+
+
+// Por algún motivo, esta función se llama pero la inicialización de las
+// entradas no permanece.
+void __fastcall TSistemaCombinacionalNuevo::OnCreate(TObject *Sender)
+{
+        InicializarEntradasSalidasWeblab();
+}
+//---------------------------------------------------------------------------
 

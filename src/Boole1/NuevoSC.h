@@ -15,6 +15,16 @@
 #include <Dialogs.hpp>
 #include <Grids.hpp>
 #include <StdCtrls.hpp>
+
+#include <vector>
+#include <string>
+
+#include <Buttons.hpp>
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <Dialogs.hpp>
+#include <Grids.hpp>
+#include <StdCtrls.hpp>
 #include <vcl/Classes.hpp>
 #include <vcl/Controls.hpp>
 #include <vcl/StdCtrls.hpp>
@@ -117,6 +127,7 @@ __published:	// IDE-managed Components
         void __fastcall OnComboBoxChange(TObject *Sender);
         void __fastcall OnTablaEntradaSetEditText(TObject *Sender,
           int ACol, int ARow, const AnsiString Value);
+        void __fastcall OnCreate(TObject *Sender);
 
 /*
  -----------------------------------------------------------------------------------------------------------------------
@@ -124,11 +135,18 @@ __published:	// IDE-managed Components
  */
 private:	// User declarations
 
+  std::vector<std::string> mEntradasWeblab;
+  std::vector<std::string> mSalidasWeblab;
+
   TStringGrid * tablaActual; // TablaEntrada o TablaSalida, dependiendo de la que se esté modificando.
 
   //! Por defecto la primera celda de las tablas de entradas y de salidas está
   //! seleccionada, lo cual es poco conveniente. Quita cualquier selección.
   void QuitarSeleccionTablas();
+
+  //! Inicializa los vectores que contienen las entradas y salidas de weblab
+  //! FPGA.
+  void InicializarEntradasSalidasWeblab();
 
 /*
  -----------------------------------------------------------------------------------------------------------------------
