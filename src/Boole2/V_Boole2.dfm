@@ -1,8 +1,8 @@
 object Form1Boole2: TForm1Boole2
-  Left = 131
-  Top = 180
-  Width = 726
-  Height = 499
+  Left = 595
+  Top = 336
+  Width = 785
+  Height = 538
   HorzScrollBar.Tracking = True
   VertScrollBar.Tracking = True
   Caption = 'Sin Titulo (Moore).'
@@ -24,7 +24,7 @@ object Form1Boole2: TForm1Boole2
   object Splitter1: TSplitter
     Left = 0
     Top = 361
-    Width = 710
+    Width = 769
     Height = 3
     Cursor = crVSplit
     Align = alBottom
@@ -32,8 +32,8 @@ object Form1Boole2: TForm1Boole2
   end
   object BarraEstado: TStatusBar
     Left = 0
-    Top = 415
-    Width = 710
+    Top = 454
+    Width = 769
     Height = 26
     DragCursor = crDefault
     Panels = <>
@@ -43,7 +43,7 @@ object Form1Boole2: TForm1Boole2
   object TableroBox: TScrollBox
     Left = 161
     Top = 0
-    Width = 549
+    Width = 608
     Height = 361
     Align = alClient
     TabOrder = 1
@@ -65,8 +65,8 @@ object Form1Boole2: TForm1Boole2
   object pTextAsoc: TPanel
     Left = 0
     Top = 364
-    Width = 710
-    Height = 51
+    Width = 769
+    Height = 90
     Align = alBottom
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 2
@@ -74,8 +74,8 @@ object Form1Boole2: TForm1Boole2
     object txAsociado: TMemo
       Left = 1
       Top = 1
-      Width = 708
-      Height = 49
+      Width = 767
+      Height = 88
       Align = alClient
       TabOrder = 0
     end
@@ -320,6 +320,10 @@ object Form1Boole2: TForm1Boole2
       end
       object N4: TMenuItem
         Caption = '-'
+      end
+      object ExporttoWeblabVHDL1: TMenuItem
+        Caption = 'Export to &Weblab VHDL'
+        OnClick = ExporttoWeblabVHDL1Click
       end
       object ExportaraVHDL1: TMenuItem
         Caption = 'Exportar a &VHDL'

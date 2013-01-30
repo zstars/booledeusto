@@ -19,6 +19,9 @@
 #include <stdlib.h>
 #include <math.h>
 
+#include <string>
+#include <sstream>
+
 #include "Unit11.h"
 
 // Modificado Ricardo.
@@ -82,6 +85,8 @@ __fastcall TForm1Boole2::TForm1Boole2(TComponent *Owner) :
 	Vars[7] = ANSIMENSAJE(msgPrefijoSalida)+"2";
 	Vars[8] = ANSIMENSAJE(msgPrefijoSalida)+"3";
 	Vars[9] = ANSIMENSAJE(msgPrefijoSalida)+"4";
+
+        mWeblabMode = false;
 }
 
 /*
@@ -3546,6 +3551,7 @@ void __fastcall TForm1Boole2::Archivo1Click(TObject *Sender)
 	{
 		ExportaraPDL1->Enabled = false;
 		ExportaraVHDL1->Enabled = false;
+                ExporttoWeblabVHDL1->Enabled = false;
 		Imprimir1->Enabled = false;
                 ExportaraJEDEC1->Enabled = false;
 	}
@@ -3555,6 +3561,7 @@ void __fastcall TForm1Boole2::Archivo1Click(TObject *Sender)
 		ExportaraVHDL1->Enabled = true;
 		Imprimir1->Enabled = true;
                 ExportaraJEDEC1->Enabled=true;
+                ExporttoWeblabVHDL1->Enabled = true;
 	}
 }
 
@@ -5846,6 +5853,11 @@ void TForm1Boole2::CrearCodigoVHDL()
 	AnsiString Titulo = NombreVHDL(Sistema.Titulo==""?AnsiString("Sin_Titulo"):Sistema.Titulo);
         AnsiString estadoInicial = NombreVHDL(Sistema.circulo[0].Etiqueta1);
 
+        if(mWeblabMode == true)
+        {
+                Titulo = "base";
+        }
+
 	Form14->PDL->Lines->Clear();
 
         // Cabecera
@@ -5859,12 +5871,31 @@ void TForm1Boole2::CrearCodigoVHDL()
         // Nombre de la entidad
 	Form14->PDL->Lines->Add("entity " + Titulo + " is");
 	Form14->PDL->Lines->Add("\tPort (");
-	Form14->PDL->Lines->Add("\t\tinicio: in std_logic;");
-	Form14->PDL->Lines->Add("\t\tck: in std_logic;");
-	for (int i=0; i<Sistema.NumCarEnt;i++)
-		Form14->PDL->Lines->Add("\t\t" + NombreVHDL(DevuelveVar(i)) + ": in std_logic;");
-	for (int i=0; i<Sistema.NumCarSal;i++)
-		Form14->PDL->Lines->Add("\t\t" + NombreVHDL(DevuelveVar(5+i)) + ": out std_logic" + ((i==Sistema.NumCarSal-1)?"":";"));
+
+        if(mWeblabMode == false)
+        {
+	        Form14->PDL->Lines->Add("\t\tinicio: in std_logic;");
+        	Form14->PDL->Lines->Add("\t\tck: in std_logic;");
+        	for (int i=0; i<Sistema.NumCarEnt;i++)
+	        	Form14->PDL->Lines->Add("\t\t" + NombreVHDL(DevuelveVar(i)) + ": in std_logic;");
+	        for (int i=0; i<Sistema.NumCarSal;i++)
+	        	Form14->PDL->Lines->Add("\t\t" + NombreVHDL(DevuelveVar(5+i)) + ": out std_logic" + ((i==Sistema.NumCarSal-1)?"":";"));
+        }
+        else
+        {
+                Form14->PDL->Lines->Add("\t\tClk : in std_logic;");
+                Form14->PDL->Lines->Add("\t\t");
+                Form14->PDL->Lines->Add("\t\tLeds : inout std_logic_vector (7 downto 0);");
+                Form14->PDL->Lines->Add("\t\tEnableSegOut : inout std_logic_vector (3 downto 0);");
+                Form14->PDL->Lines->Add("\t\tSevenSeg : inout std_logic_vector (6 downto 0);");
+                Form14->PDL->Lines->Add("\t\tDot : inout std_logic;");
+                Form14->PDL->Lines->Add("\t\t");
+                Form14->PDL->Lines->Add("\t\tButtons : in std_logic_vector (3 downto 0);");
+                Form14->PDL->Lines->Add("\t\tSwitches : in std_logic_vector (9 downto 0);");
+                Form14->PDL->Lines->Add("\t\t");
+                Form14->PDL->Lines->Add("\t\tinicio : in std_logic");
+        }
+
 	Form14->PDL->Lines->Add("\t\t);");
 	Form14->PDL->Lines->Add("end " + Titulo + ";");
 
@@ -5898,21 +5929,56 @@ void TForm1Boole2::CrearCodigoVHDL()
         Form14->PDL->Lines->Add("");
 
         AnsiString entradas;
-        entradas = NombreVHDL(DevuelveVar(0));
-	for (int i=1; i<Sistema.NumCarEnt;i++)
-		entradas += "&" + NombreVHDL(DevuelveVar(i));
+
+        if(!mWeblabMode)
+        {
+                entradas = NombreVHDL(DevuelveVar(0));
+	        for (int i=1; i<Sistema.NumCarEnt;i++)
+		        entradas += "&" + NombreVHDL(DevuelveVar(i));
+        }
+        else
+        {
+                entradas = "Switches(0)";
+                for (int i=1; i<Sistema.NumCarEnt;i++)
+                {
+                        std::stringstream oss;
+                        std::string str;
+                        oss << "&" << "Switches(" << i << ")";
+                        str = oss.str();
+                        entradas += str.c_str();
+                }
+        }
 
 	// :MOD: Semicolon was not being added here. ~lrg
 	Form14->PDL->Lines->Add("entrada_aux<=" + entradas + ";");
 
         Form14->PDL->Lines->Add("");
 
-	Form14->PDL->Lines->Add("process(inicio, ck)");
+        if(mWeblabMode == false)
+	        Form14->PDL->Lines->Add("process(inicio, ck)");
+        else
+                Form14->PDL->Lines->Add("process(inicio, Clk)");
+
+
 	Form14->PDL->Lines->Add("begin");
-	Form14->PDL->Lines->Add("if inicio='1' then");
-	Form14->PDL->Lines->Add("\testado<="+estadoInicial+";");
-	Form14->PDL->Lines->Add("elsif ck='1' and ck'event then");
-	Form14->PDL->Lines->Add("\tcase estado is");
+
+        if(mWeblabMode == false)
+	        Form14->PDL->Lines->Add("if inicio='1' then");
+        else
+                Form14->PDL->Lines->Add("if Buttons(0)='1' then");
+
+        Form14->PDL->Lines->Add("\testado<="+estadoInicial+";");
+
+        if(mWeblabMode == false)
+        {
+                Form14->PDL->Lines->Add("elsif ck='1' and ck'event then");
+        }
+        else
+        {
+                Form14->PDL->Lines->Add("elsif Clk='1' and Clk'event then");
+        }
+
+        Form14->PDL->Lines->Add("\tcase estado is");
 
         AnsiString com = (Sistema.NumCarEnt==1?"'":"\"");
 	int maximoEntradas = ElevarBase2(Sistema.NumCarEnt);
@@ -5957,6 +6023,14 @@ void TForm1Boole2::CrearCodigoVHDL()
 			{
 	                	char salida = Sistema.circulo[i].Etiqueta2[j+1];
 	                        AnsiString nomSalida = NombreVHDL(DevuelveVar(j+5));
+
+                                if(mWeblabMode == true)
+                                {
+                                        std::ostringstream oss;
+                                        oss << "Leds(" << j << ")";
+                                        std::string str = oss.str();
+                                        nomSalida = str.c_str();
+                                }
 
 	                        if (salida=='X')
 					Form14->PDL->Lines->Add("\t\t--" +nomSalida+"<='X';");
@@ -6025,7 +6099,7 @@ void __fastcall TForm1Boole2::ExportaraVHDL1Click(TObject *Sender)
 
         // Bug fix: Filter needs to be set before execution. ~lrg
 	SaveDialog2->Filter=MENSAJE(msgFiltroVHDL);
-        
+
 	if(SaveDialog2->Execute())
 	{
 		SalvarPDL(SaveDialog2->FileName);
@@ -6307,6 +6381,22 @@ void __fastcall TForm1Boole2::ExportaraJEDEC1Click(TObject *Sender)
 
 
 		//SalvarPDL(SaveDialog2->FileName);
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1Boole2::ExporttoWeblabVHDL1Click(TObject *Sender)
+{
+        mWeblabMode = true;
+        CrearCodigoVHDL();
+        mWeblabMode = false;
+
+        // Bug fix: Filter needs to be set before execution. ~lrg
+	SaveDialog2->Filter=MENSAJE(msgFiltroVHDL);
+
+	if(SaveDialog2->Execute())
+	{
+		SalvarPDL(SaveDialog2->FileName);
 	}
 }
 //---------------------------------------------------------------------------

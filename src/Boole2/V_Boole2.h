@@ -104,6 +104,7 @@ __published:	// IDE-managed Components
 	TMenuItem *ExportaraVHDL1;
 	TMenuItem *CodigoVHDL1;
 	TMenuItem *ExportaraJEDEC1;
+        TMenuItem *ExporttoWeblabVHDL1;
 	void __fastcall				TableroMouseMove(TObject *Sender, TShiftState Shift, int X, int Y);
 	void __fastcall				FormCreate(TObject *Sender);
 
@@ -178,6 +179,7 @@ __published:	// IDE-managed Components
 	void __fastcall ExportaraVHDL1Click(TObject *Sender);
 	void __fastcall CodigoVHDL1Click(TObject *Sender);
 	void __fastcall ExportaraJEDEC1Click(TObject *Sender);
+        void __fastcall ExporttoWeblabVHDL1Click(TObject *Sender);
 
 /*
  -----------------------------------------------------------------------------------------------------------------------
@@ -241,6 +243,7 @@ public: // User declarations
 
         void TForm1Boole2::CrearCodigoVHDL();
 
+        bool mWeblabMode;
 
         int tipoSimulacion;
         };
