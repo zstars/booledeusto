@@ -16,7 +16,7 @@
 #include <vcl/Controls.hpp>
 #include <vcl/StdCtrls.hpp>
 #include <vcl/Forms.hpp>
-class TForm4 : public TForm
+class TNewDiagramForm : public TForm
 {
 __published:	// IDE-managed Components
 	TButton			*Button1;
@@ -61,7 +61,7 @@ private:	// User declarations
  -----------------------------------------------------------------------------------------------------------------------
  */
 public: // User declarations
-	__fastcall		TForm4(TComponent *Owner);
+	__fastcall		TNewDiagramForm(TComponent *Owner);
 };
-extern TForm4	*Form4;
+extern TNewDiagramForm	*NewDiagramForm;
 #endif

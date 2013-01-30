@@ -14,7 +14,7 @@
 #include "SistemaSecuencial.h"
 #include "mensajes.inc"
 #pragma resource "*.dfm"
-TForm4	*Form4;
+TNewDiagramForm	*NewDiagramForm;
 
 /*
  =======================================================================================================================
@@ -25,78 +25,78 @@ void PonVar(int Ent, int Sal, boolean st)
 {
 	if(Ent >= 1)
 	{
-		if(st) Form4->Entrada1->Text = Form1Boole2->DevuelveVar(0);
+		if(st) NewDiagramForm->Entrada1->Text = Form1Boole2->DevuelveVar(0);
 	}
 
 	if(Ent >= 2)
 	{
-		Form4->Entrada2->Enabled = true;
-		if(st) Form4->Entrada2->Text = Form1Boole2->DevuelveVar(1);
+		NewDiagramForm->Entrada2->Enabled = true;
+		if(st) NewDiagramForm->Entrada2->Text = Form1Boole2->DevuelveVar(1);
 	}
 	else
-		Form4->Entrada2->Enabled = false;
+		NewDiagramForm->Entrada2->Enabled = false;
 	if(Ent >= 3)
 	{
-		Form4->Entrada3->Enabled = true;
-		if(st) Form4->Entrada3->Text = Form1Boole2->DevuelveVar(2);
+		NewDiagramForm->Entrada3->Enabled = true;
+		if(st) NewDiagramForm->Entrada3->Text = Form1Boole2->DevuelveVar(2);
 	}
 	else
-		Form4->Entrada3->Enabled = false;
+		NewDiagramForm->Entrada3->Enabled = false;
 	if(Ent >= 4)
 	{
-		Form4->Entrada4->Enabled = true;
-		if(st) Form4->Entrada4->Text = Form1Boole2->DevuelveVar(3);
+		NewDiagramForm->Entrada4->Enabled = true;
+		if(st) NewDiagramForm->Entrada4->Text = Form1Boole2->DevuelveVar(3);
 	}
 	else
-		Form4->Entrada4->Enabled = false;
+		NewDiagramForm->Entrada4->Enabled = false;
 	if(Ent == 5)
 	{
-		Form4->Entrada5->Enabled = true;
-		if(st) Form4->Entrada5->Text = Form1Boole2->DevuelveVar(4);
+		NewDiagramForm->Entrada5->Enabled = true;
+		if(st) NewDiagramForm->Entrada5->Text = Form1Boole2->DevuelveVar(4);
 	}
 	else
-		Form4->Entrada5->Enabled = false;
+		NewDiagramForm->Entrada5->Enabled = false;
 
 	if(Sal >= 1)
 	{
-		if(st) Form4->Salida1->Text = Form1Boole2->DevuelveVar(5);
+		if(st) NewDiagramForm->Salida1->Text = Form1Boole2->DevuelveVar(5);
 	}
 
 	if(Sal >= 2)
 	{
-		Form4->Salida2->Enabled = true;
-		if(st) Form4->Salida2->Text = Form1Boole2->DevuelveVar(6);
+		NewDiagramForm->Salida2->Enabled = true;
+		if(st) NewDiagramForm->Salida2->Text = Form1Boole2->DevuelveVar(6);
 	}
 	else
-		Form4->Salida2->Enabled = false;
+		NewDiagramForm->Salida2->Enabled = false;
 	if(Sal >= 3)
 	{
-		Form4->Salida3->Enabled = true;
-		if(st) Form4->Salida3->Text = Form1Boole2->DevuelveVar(7);
+		NewDiagramForm->Salida3->Enabled = true;
+		if(st) NewDiagramForm->Salida3->Text = Form1Boole2->DevuelveVar(7);
 	}
 	else
-		Form4->Salida3->Enabled = false;
+		NewDiagramForm->Salida3->Enabled = false;
 	if(Sal >= 4)
 	{
-		Form4->Salida4->Enabled = true;
-		if(st) Form4->Salida4->Text = Form1Boole2->DevuelveVar(8);
+		NewDiagramForm->Salida4->Enabled = true;
+		if(st) NewDiagramForm->Salida4->Text = Form1Boole2->DevuelveVar(8);
 	}
 	else
-		Form4->Salida4->Enabled = false;
+		NewDiagramForm->Salida4->Enabled = false;
 	if(Sal == 5)
 	{
-		Form4->Salida5->Enabled = true;
-		if(st) Form4->Salida5->Text = Form1Boole2->DevuelveVar(9);
+		NewDiagramForm->Salida5->Enabled = true;
+		if(st) NewDiagramForm->Salida5->Text = Form1Boole2->DevuelveVar(9);
 	}
 	else
-		Form4->Salida5->Enabled = false;
+		NewDiagramForm->Salida5->Enabled = false;
 }
 
 /*
  =======================================================================================================================
  =======================================================================================================================
  */
-__fastcall TForm4::TForm4(TComponent *Owner) :
+__fastcall TNewDiagramForm::TNewDiagramForm(TComponent *Owner) :
 	TForm(Owner)
 {
 }
@@ -105,7 +105,7 @@ __fastcall TForm4::TForm4(TComponent *Owner) :
  =======================================================================================================================
  =======================================================================================================================
  */
-void __fastcall TForm4::Button1Click(TObject *Sender)
+void __fastcall TNewDiagramForm::Button1Click(TObject *Sender)
 {
 	/*~~~~~~~~~~~~~~~*/
 	// los de mealy tienen 2 etiquetas en las flechas
@@ -145,20 +145,20 @@ void __fastcall TForm4::Button1Click(TObject *Sender)
 	Form1Boole2->PonerNumCarSal(ComboBox3->Text.ToInt());
 
 	// Devolvemos los nombres de las varibles de entrada Salida
-	Form1Boole2->PonVar(0, Form4->Entrada1->Text);
-	Form1Boole2->PonVar(1, Form4->Entrada2->Text);
-	Form1Boole2->PonVar(2, Form4->Entrada3->Text);
-	Form1Boole2->PonVar(3, Form4->Entrada4->Text);
-	Form1Boole2->PonVar(4, Form4->Entrada5->Text);
-	Form1Boole2->PonVar(5, Form4->Salida1->Text);
-	Form1Boole2->PonVar(6, Form4->Salida2->Text);
-	Form1Boole2->PonVar(7, Form4->Salida3->Text);
-	Form1Boole2->PonVar(8, Form4->Salida4->Text);
-	Form1Boole2->PonVar(9, Form4->Salida5->Text);
+	Form1Boole2->PonVar(0, NewDiagramForm->Entrada1->Text);
+	Form1Boole2->PonVar(1, NewDiagramForm->Entrada2->Text);
+	Form1Boole2->PonVar(2, NewDiagramForm->Entrada3->Text);
+	Form1Boole2->PonVar(3, NewDiagramForm->Entrada4->Text);
+	Form1Boole2->PonVar(4, NewDiagramForm->Entrada5->Text);
+	Form1Boole2->PonVar(5, NewDiagramForm->Salida1->Text);
+	Form1Boole2->PonVar(6, NewDiagramForm->Salida2->Text);
+	Form1Boole2->PonVar(7, NewDiagramForm->Salida3->Text);
+	Form1Boole2->PonVar(8, NewDiagramForm->Salida4->Text);
+	Form1Boole2->PonVar(9, NewDiagramForm->Salida5->Text);
 	Form1Boole2->Enabled = true;
 
 	// Form1Boole2->SetFocus();
-	Form4->Hide();
+	NewDiagramForm->Hide();
 	Form1Boole2->Tablero->Visible = true;
 }
 
@@ -166,18 +166,18 @@ void __fastcall TForm4::Button1Click(TObject *Sender)
  =======================================================================================================================
  =======================================================================================================================
  */
-void __fastcall TForm4::Button2Click(TObject *Sender)
+void __fastcall TNewDiagramForm::Button2Click(TObject *Sender)
 {
 	Form1Boole2->Enabled = True;
 	Form1Boole2->SetFocus();
-	Form4->Hide();
+	NewDiagramForm->Hide();
 }
 
 /*
  =======================================================================================================================
  =======================================================================================================================
  */
-void __fastcall TForm4::FormShow(TObject *Sender)
+void __fastcall TNewDiagramForm::FormShow(TObject *Sender)
 {
 	ComboBox2->Text = 1;	// Form1Boole2->DameNumCarEnt();
 	ComboBox3->Text = 1;	// Form1Boole2->DameNumCarSal();
@@ -189,7 +189,7 @@ void __fastcall TForm4::FormShow(TObject *Sender)
  =======================================================================================================================
  =======================================================================================================================
  */
-void __fastcall TForm4::ComboBox1Change(TObject *Sender)
+void __fastcall TNewDiagramForm::ComboBox1Change(TObject *Sender)
 {
 	ComboBox1->Text = "Moore";
 }
@@ -198,7 +198,7 @@ void __fastcall TForm4::ComboBox1Change(TObject *Sender)
  =======================================================================================================================
  =======================================================================================================================
  */
-void __fastcall TForm4::ComboBox2Change(TObject *Sender)
+void __fastcall TNewDiagramForm::ComboBox2Change(TObject *Sender)
 {
 	if
 	(
@@ -219,7 +219,7 @@ void __fastcall TForm4::ComboBox2Change(TObject *Sender)
  =======================================================================================================================
  =======================================================================================================================
  */
-void __fastcall TForm4::ComboBox3Change(TObject *Sender)
+void __fastcall TNewDiagramForm::ComboBox3Change(TObject *Sender)
 {
 	if
 	(
@@ -240,7 +240,7 @@ void __fastcall TForm4::ComboBox3Change(TObject *Sender)
  =======================================================================================================================
  =======================================================================================================================
  */
-void __fastcall TForm4::FormActivate(TObject *Sender)
+void __fastcall TNewDiagramForm::FormActivate(TObject *Sender)
 {
 	if(Form1Boole2->DarTipo() == 1)
 	{
@@ -256,7 +256,7 @@ void __fastcall TForm4::FormActivate(TObject *Sender)
  =======================================================================================================================
  =======================================================================================================================
  */
-void __fastcall TForm4::FormHide(TObject *Sender)
+void __fastcall TNewDiagramForm::FormHide(TObject *Sender)
 {
 	Form1Boole2->Timer1->Enabled = true;
 }

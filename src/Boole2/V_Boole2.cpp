@@ -527,8 +527,8 @@ void __fastcall TForm1Boole2::Nuevo1Click(TObject *Sender)
 			{
 				Form1Boole2->Timer1->Enabled = false;
 				Form1Boole2->Enabled = false;
-				Form4->Show();
-				Form4->SetFocus();
+				NewDiagramForm->Show();
+				NewDiagramForm->SetFocus();
 				grabaste = 1;
         txAsociado->Lines->Clear();
 
@@ -543,8 +543,8 @@ void __fastcall TForm1Boole2::Nuevo1Click(TObject *Sender)
 	{
 		Form1Boole2->Timer1->Enabled = false;
 		Form1Boole2->Enabled = false;
-		Form4->Show();
-		Form4->SetFocus();
+		NewDiagramForm->Show();
+		NewDiagramForm->SetFocus();
 		grabaste = 1;
 	}
 }
@@ -1017,7 +1017,7 @@ void Cargar(void)
 
 								// Actualizo el sistema con los valores ya cargados
 								Form1Boole2->PonerTipo(tipo);
-								Form4->Edit1->Text = Titulo;
+								NewDiagramForm->Edit1->Text = Titulo;
                                                                 Sistema.Titulo = Titulo;
 								if(tipo == 1)
 								{
@@ -3614,7 +3614,7 @@ void __fastcall TForm1Boole2::Salir1Click(TObject *Sender)
 	Sistema.ActualizarTipo(0);
 	Sistema.ActualizarNumCarEnt(5);
 	Sistema.ActualizarNumCarSal(5);
-	Form4->Button1->Click();
+	NewDiagramForm->Button1->Click();
 }
 
 /*
@@ -4118,7 +4118,7 @@ void __fastcall TForm1Boole2::FormClose(TObject *Sender, TCloseAction &Action)
 	Sistema.ActualizarTipo(0);
 	Sistema.ActualizarNumCarEnt(5);
 	Sistema.ActualizarNumCarSal(5);
-	Form4->Button1->Click();
+	NewDiagramForm->Button1->Click();
 	Form2->Close();
 	Form8->Close();
 	Principal->Show();

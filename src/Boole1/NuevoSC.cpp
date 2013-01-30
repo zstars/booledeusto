@@ -1650,18 +1650,37 @@ void __fastcall TSistemaCombinacionalNuevo::BitBtn3Click(TObject *Sender)
 		        // Nombre de la entidad
 			Lista->Add("entity " + Titulo + " is");
 			Lista->Add("\tPort (");
-			for (int i=0; i<Tabla.NumEntradas();i++)
+
+                        // En modo estándar, declaramos todas las salidas de la forma normal. ~lrg
+                        if( !weblabCheckBox->Checked )
                         {
-                        	AnsiString nombre =  Tabla.LeerEntrada(i);
-                                nombre=(nombre==""?AnsiString(char('A'+i)):nombre);
-				Lista->Add("\t\t" + NombreVHDL(nombre) + ": in std_logic;");
+			        for (int i=0; i<Tabla.NumEntradas();i++)
+                                {
+                                	AnsiString nombre =  Tabla.LeerEntrada(i);
+                                        nombre=(nombre==""?AnsiString(char('A'+i)):nombre);
+				        Lista->Add("\t\t" + NombreVHDL(nombre) + ": in std_logic;");
+                                }
+			        for (int i=0; i<Tabla.NumColumnas();i++)
+                                {
+                        	        AnsiString nombre =  Tabla.LeerSalida(i);
+                                        nombre=(nombre==""?"S"+AnsiString(i):nombre);
+				        Lista->Add("\t\t" + NombreVHDL(nombre) + ": out std_logic" + ((i==Tabla.NumColumnas()-1)?"":";"));
+                                }
                         }
-			for (int i=0; i<Tabla.NumColumnas();i++)
+                        // En modo weblab, utilizamos un conjunto de declaraciones fijo.
+                        else
                         {
-                        	AnsiString nombre =  Tabla.LeerSalida(i);
-                                nombre=(nombre==""?"S"+AnsiString(i):nombre);
-				Lista->Add("\t\t" + NombreVHDL(nombre) + ": out std_logic" + ((i==Tabla.NumColumnas()-1)?"":";"));
+                                Lista->Add("\t\tClk : in std_logic;");
+                                Lista->Add("\t\t");
+                                Lista->Add("\t\tLeds : inout std_logic_vector (7 downto 0);");
+                                Lista->Add("\t\tEnableSegOut : inout std_logic_vector (3 downto 0);");
+                                Lista->Add("\t\tSevenSeg : inout std_logic_vector (6 downto 0);");
+                                Lista->Add("\t\tDot : inout std_logic;");
+                                Lista->Add("\t\t");
+                                Lista->Add("\t\tButtons : in std_logic_vector (3 downto 0);");
+                                Lista->Add("\t\tSwitches : in std_logic_vector (9 downto 0)");
                         }
+
 			Lista->Add("\t\t);");
 			Lista->Add("end " + Titulo + ";");
 
@@ -2083,7 +2102,10 @@ void __fastcall TSistemaCombinacionalNuevo::BitBtn5Click(TObject *Sender)
 
 void __fastcall TSistemaCombinacionalNuevo::btWeblabClick(TObject *Sender)
 {
-    WeblabForm->ShowModal();        
+    ShellExecute(NULL, "open", "https://www.weblab.deusto.es/weblab/client/#page=experiment&exp.category=FPGA%20experiments&exp.name=ud-fpga", NULL, NULL, SW_SHOW);
+    int n = 5;
+    if(n == 4)
+        WeblabForm->ShowModal();
 }
 //---------------------------------------------------------------------------
 
@@ -2092,7 +2114,7 @@ void __fastcall TSistemaCombinacionalNuevo::btWeblabClick(TObject *Sender)
 void __fastcall TSistemaCombinacionalNuevo::OnTablaEntradaSelectCell(
       TObject *Sender, int ACol, int ARow, bool &CanSelect)
 {
-        if(ACol == 1)
+        if(weblabCheckBox->Checked && ACol == 1)
         {
                 InicializarEntradasSalidasWeblab();
                 comboBox->Clear();
@@ -2123,7 +2145,7 @@ void __fastcall TSistemaCombinacionalNuevo::OnTablaEntradaSelectCell(
 void __fastcall TSistemaCombinacionalNuevo::OnTablaSalidaSelectCell(
       TObject *Sender, int ACol, int ARow, bool &CanSelect)
 {
-        if(ACol == 1)
+        if(weblabCheckBox->Checked && ACol == 1)
         {
                 InicializarEntradasSalidasWeblab();
                 comboBox->Clear();
@@ -2191,41 +2213,41 @@ void TSistemaCombinacionalNuevo::InicializarEntradasSalidasWeblab()
         mEntradasWeblab.clear();
         mSalidasWeblab.clear();
 
-        mEntradasWeblab.push_back("Switches<0>");
-        mEntradasWeblab.push_back("Switches<1>");
-        mEntradasWeblab.push_back("Switches<2>");
-        mEntradasWeblab.push_back("Switches<3>");
-        mEntradasWeblab.push_back("Switches<4>");
-        mEntradasWeblab.push_back("Switches<5>");
-        mEntradasWeblab.push_back("Switches<6>");
-        mEntradasWeblab.push_back("Switches<7>");
-        mEntradasWeblab.push_back("Switches<8>");
-        mEntradasWeblab.push_back("Switches<9>");
-        mEntradasWeblab.push_back("Buttons<0>");
-        mEntradasWeblab.push_back("Buttons<1>");
-        mEntradasWeblab.push_back("Buttons<2>");
-        mEntradasWeblab.push_back("Buttons<3>");
+        mEntradasWeblab.push_back("Switches(0)");
+        mEntradasWeblab.push_back("Switches(1)");
+        mEntradasWeblab.push_back("Switches(2)");
+        mEntradasWeblab.push_back("Switches(3)");
+        mEntradasWeblab.push_back("Switches(4)");
+        mEntradasWeblab.push_back("Switches(5)");
+        mEntradasWeblab.push_back("Switches(6)");
+        mEntradasWeblab.push_back("Switches(7)");
+        mEntradasWeblab.push_back("Switches(8)");
+        mEntradasWeblab.push_back("Switches(9)");
+        mEntradasWeblab.push_back("Buttons(0)");
+        mEntradasWeblab.push_back("Buttons(1)");
+        mEntradasWeblab.push_back("Buttons(2)");
+        mEntradasWeblab.push_back("Buttons(3)");
 
-        mSalidasWeblab.push_back("Leds<0>");
-        mSalidasWeblab.push_back("Leds<1>");
-        mSalidasWeblab.push_back("Leds<2>");
-        mSalidasWeblab.push_back("Leds<3>");
-        mSalidasWeblab.push_back("Leds<4>");
-        mSalidasWeblab.push_back("Leds<5>");
-        mSalidasWeblab.push_back("Leds<6>");
-        mSalidasWeblab.push_back("Leds<7>");
-        mSalidasWeblab.push_back("SevenSeg<0>");
-        mSalidasWeblab.push_back("SevenSeg<1>");
-        mSalidasWeblab.push_back("SevenSeg<2>");
-        mSalidasWeblab.push_back("SevenSeg<3>");
-        mSalidasWeblab.push_back("SevenSeg<4>");
-        mSalidasWeblab.push_back("SevenSeg<5>");
-        mSalidasWeblab.push_back("SevenSeg<6>");
+        mSalidasWeblab.push_back("Leds(0)");
+        mSalidasWeblab.push_back("Leds(1)");
+        mSalidasWeblab.push_back("Leds(2)");
+        mSalidasWeblab.push_back("Leds(3)");
+        mSalidasWeblab.push_back("Leds(4)");
+        mSalidasWeblab.push_back("Leds(5)");
+        mSalidasWeblab.push_back("Leds(6)");
+        mSalidasWeblab.push_back("Leds(7)");
+        mSalidasWeblab.push_back("SevenSeg(0)");
+        mSalidasWeblab.push_back("SevenSeg(1)");
+        mSalidasWeblab.push_back("SevenSeg(2)");
+        mSalidasWeblab.push_back("SevenSeg(3)");
+        mSalidasWeblab.push_back("SevenSeg(4)");
+        mSalidasWeblab.push_back("SevenSeg(5)");
+        mSalidasWeblab.push_back("SevenSeg(6)");
         mSalidasWeblab.push_back("Dot");
-        mSalidasWeblab.push_back("EnableSegOut<0>");
-        mSalidasWeblab.push_back("EnableSegOut<1>");
-        mSalidasWeblab.push_back("EnableSegOut<2>");
-        mSalidasWeblab.push_back("EnableSegOut<3>");
+        mSalidasWeblab.push_back("EnableSegOut(0)");
+        mSalidasWeblab.push_back("EnableSegOut(1)");
+        mSalidasWeblab.push_back("EnableSegOut(2)");
+        mSalidasWeblab.push_back("EnableSegOut(3)");
 }
 
 

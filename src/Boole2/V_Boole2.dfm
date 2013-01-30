@@ -1,6 +1,6 @@
 object Form1Boole2: TForm1Boole2
-  Left = 152
-  Top = 209
+  Left = 131
+  Top = 180
   Width = 726
   Height = 499
   HorzScrollBar.Tracking = True

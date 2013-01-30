@@ -77,6 +77,7 @@ __published:	// IDE-managed Components
         TBitBtn *BitBtn5;
         TButton *btWeblab;
         TComboBox *comboBox;
+        TCheckBox *weblabCheckBox;
 	void __fastcall NEntradasChange(TObject *Sender);
 
 	void __fastcall NSalidasChange(TObject *Sender);
