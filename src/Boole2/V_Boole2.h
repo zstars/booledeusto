@@ -105,6 +105,9 @@ __published:	// IDE-managed Components
 	TMenuItem *CodigoVHDL1;
 	TMenuItem *ExportaraJEDEC1;
         TMenuItem *ExporttoWeblabVHDL1;
+        TMainMenu *MainMenu2;
+        TMainMenu *MainMenu3;
+        TMenuItem *StartWeblabFPGA1;
 	void __fastcall				TableroMouseMove(TObject *Sender, TShiftState Shift, int X, int Y);
 	void __fastcall				FormCreate(TObject *Sender);
 
@@ -180,6 +183,7 @@ __published:	// IDE-managed Components
 	void __fastcall CodigoVHDL1Click(TObject *Sender);
 	void __fastcall ExportaraJEDEC1Click(TObject *Sender);
         void __fastcall ExporttoWeblabVHDL1Click(TObject *Sender);
+        void __fastcall StartWeblabFPGA1Click(TObject *Sender);
 
 /*
  -----------------------------------------------------------------------------------------------------------------------

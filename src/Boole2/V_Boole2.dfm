@@ -1,6 +1,6 @@
 object Form1Boole2: TForm1Boole2
-  Left = 595
-  Top = 336
+  Left = 663
+  Top = 452
   Width = 785
   Height = 538
   HorzScrollBar.Tracking = True
@@ -321,6 +321,10 @@ object Form1Boole2: TForm1Boole2
       object N4: TMenuItem
         Caption = '-'
       end
+      object StartWeblabFPGA1: TMenuItem
+        Caption = 'Start Weblab &FPGA'
+        OnClick = StartWeblabFPGA1Click
+      end
       object ExporttoWeblabVHDL1: TMenuItem
         Caption = 'Export to &Weblab VHDL'
         OnClick = ExporttoWeblabVHDL1Click
@@ -504,5 +508,13 @@ object Form1Boole2: TForm1Boole2
     OnTimer = TimerParpadeoEstadoTimer
     Left = 675
     Top = 130
+  end
+  object MainMenu2: TMainMenu
+    Left = 376
+    Top = 256
+  end
+  object MainMenu3: TMainMenu
+    Left = 376
+    Top = 256
   end
 end
