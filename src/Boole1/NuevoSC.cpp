@@ -6,6 +6,9 @@
 #include <math.h>
 #include <shellapi.h>
 
+#include <sstream>
+#include <string>
+
 #include <printers.hpp>
 
 #include "NuevoSC.h"
@@ -2122,6 +2125,11 @@ void __fastcall TSistemaCombinacionalNuevo::btWeblabClick(TObject *Sender)
 void __fastcall TSistemaCombinacionalNuevo::OnTablaEntradaSelectCell(
       TObject *Sender, int ACol, int ARow, bool &CanSelect)
 {
+
+        // ~lrg: Por alguna extraña razón, posiblemente relacionada con los
+        // "headers" de la tabla, o con la ausencia de éstos, Borland no emite
+        // un evento al seleccionar la primera celda.
+
         if(weblabCheckBox->Checked && ACol == 1)
         {
                 InicializarEntradasSalidasWeblab();
@@ -2195,12 +2203,6 @@ void __fastcall TSistemaCombinacionalNuevo::OnComboBoxChange(
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TSistemaCombinacionalNuevo::OnTablaEntradaSetEditText(
-      TObject *Sender, int ACol, int ARow, const AnsiString Value)
-{
- // set Edit
-}
-//---------------------------------------------------------------------------
 
 
 void TSistemaCombinacionalNuevo::QuitarSeleccionTablas()
@@ -2264,6 +2266,14 @@ void TSistemaCombinacionalNuevo::InicializarEntradasSalidasWeblab()
 void __fastcall TSistemaCombinacionalNuevo::OnCreate(TObject *Sender)
 {
         InicializarEntradasSalidasWeblab();
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TSistemaCombinacionalNuevo::OnTablaEntradaEnter(
+      TObject *Sender)
+{
+        //Application->MessageBox("Prueba", 0);
 }
 //---------------------------------------------------------------------------
 

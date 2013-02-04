@@ -126,9 +126,8 @@ __published:	// IDE-managed Components
           int ARow, bool &CanSelect);
         void __fastcall OnComboBoxExit(TObject *Sender);
         void __fastcall OnComboBoxChange(TObject *Sender);
-        void __fastcall OnTablaEntradaSetEditText(TObject *Sender,
-          int ACol, int ARow, const AnsiString Value);
         void __fastcall OnCreate(TObject *Sender);
+        void __fastcall OnTablaEntradaEnter(TObject *Sender);
 
 /*
  -----------------------------------------------------------------------------------------------------------------------
