@@ -5938,15 +5938,14 @@ void TForm1Boole2::CrearCodigoVHDL()
         }
         else
         {
-                entradas = "Switches(0)";
+                std::stringstream oss;
+                oss << "Switches(" << Sistema.NumCarEnt - 1 << ")";
                 for (int i=1; i<Sistema.NumCarEnt;i++)
                 {
-                        std::stringstream oss;
-                        std::string str;
-                        oss << "&" << "Switches(" << i << ")";
-                        str = oss.str();
-                        entradas += str.c_str();
+                        oss << "&" << "Switches(" << Sistema.NumCarEnt - i - 1 << ")";
                 }
+                std::string str = oss.str();
+                entradas = str.c_str();
         }
 
 	// :MOD: Semicolon was not being added here. ~lrg
@@ -6027,7 +6026,7 @@ void TForm1Boole2::CrearCodigoVHDL()
                                 if(mWeblabMode == true)
                                 {
                                         std::ostringstream oss;
-                                        oss << "Leds(" << j << ")";
+                                        oss << "Leds(" << Sistema.NumCarSal - j - 1<< ")";
                                         std::string str = oss.str();
                                         nomSalida = str.c_str();
                                 }

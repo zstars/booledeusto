@@ -1632,6 +1632,14 @@ void __fastcall TSistemaCombinacionalNuevo::BitBtn3Click(TObject *Sender)
 	AnsiString temp="";
 	TStringList *Lista = new TStringList;
         AnsiString Titulo = Tabla.LeerNombre();
+
+        // En modo weblab, forzamos el titulo a "base", de tal modo que sea
+        // siempre compatible con la plantilla que weblab utiliza.
+        if(weblabCheckBox->Checked)
+        {
+                Titulo = "base";
+        }
+
 	//Invocamos a una función para comprobar que se ha creado el objeto
 	if (ComprobarVariables())
 	        if (Tabla.LeerDinArray(0,0) != ' ')

@@ -29,7 +29,7 @@ USEFORM("src\Boole2\Unit10.cpp", Form10);
 USEFORM("src\Boole2\V_Boole2.cpp", Form1Boole2);
 USEFORM("src\Boole2\Unit2.cpp", Form2);
 USEFORM("src\Boole2\Unit3.cpp", Form3);
-USEFORM("src\Boole2\Unit4.cpp", Form4);
+USEFORM("src\Boole2\Unit4.cpp", NewDiagramForm);
 USEFORM("src\Boole2\Unit5.cpp", Form5);
 USEFORM("src\Boole2\Unit6.cpp", Form6);
 USEFORM("src\Boole2\Unit8.cpp", Form8);
@@ -96,7 +96,7 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
                  Application->CreateForm(__classid(TForm1Boole2), &Form1Boole2);
                  Application->CreateForm(__classid(TForm2), &Form2);
                  Application->CreateForm(__classid(TForm3), &Form3);
-                 Application->CreateForm(__classid(TForm4), &Form4);
+                 Application->CreateForm(__classid(TNewDiagramForm), &NewDiagramForm);
                  Application->CreateForm(__classid(TForm5), &Form5);
                  Application->CreateForm(__classid(TForm6), &Form6);
                  Application->CreateForm(__classid(TForm8), &Form8);
