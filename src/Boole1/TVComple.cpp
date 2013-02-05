@@ -11,6 +11,7 @@
 #pragma hdrstop
 #include "Main.h"
 #include <math.h>
+#include <string>
 #include "DinArray.h"
 #include "TVComple.h"
 #include "NuevoSC.h"
@@ -64,7 +65,12 @@ void __fastcall TTablaVerdadCompleta::FormShow(TObject *Sender)
                 nomVarEnt=Tabla.LeerEntrada(i-1);
                 if (nomVarEnt=="")
                 	nomVarEnt = char('A' + i - 1);
-		StringGridEntrada->Cells[i][0] = nomVarEnt;
+
+                std::string nom = nomVarEnt.c_str();
+                if(nom.length() > 8)
+                        nom = nom.substr(0, 2) + "..." + nom.substr(nom.length()-3, 3);
+
+		StringGridEntrada->Cells[i][0] = nom.c_str();
 	}
 
 	// colocamos el valor decimal de la representación binaria de las var. de entrada
@@ -94,7 +100,12 @@ void __fastcall TTablaVerdadCompleta::FormShow(TObject *Sender)
 		/*~~~~~~~~~~~~~~~~~~~~~*/
 		if (nomVarSal == "")
                 	nomVarSal = "F" + AnsiString(j + 1);
-		StringGridSalida->Cells[j][0] = nomVarSal;
+
+                std::string nom = nomVarSal.c_str();
+                if(nom.length() > 8)
+                        nom = nom.substr(0, 2) + "..." + nom.substr(nom.length()-3, 3);
+
+		StringGridSalida->Cells[j][0] = nom.c_str();
 	}
 
 	// rellenamos los valores de la tabla de salida
@@ -445,3 +456,4 @@ void __fastcall TTablaVerdadCompleta::BitBtn2Click(TObject *Sender)
 	SistemaCombinacionalNuevo->Show();
 	TablaVerdadCompleta->Hide();
 }
+

@@ -155,7 +155,13 @@ void __fastcall TTablaVerdadManual::FormShow(TObject *Sender)
                 nomVarEnt=Tabla.LeerEntrada(i);
                 if (nomVarEnt=="")
                 	nomVarEnt = char('A' + i);
-		StringGrid1->Cells[i][0] = nomVarEnt;
+
+
+                std::string nom = nomVarEnt.c_str();
+                if(nom.length() > 8)
+                        nom = nom.substr(0, 2) + "..." + nom.substr(nom.length()-3, 3);
+
+		StringGrid1->Cells[i][0] = nom.c_str();
 	}
 
 	// colocamos los nombres (simplificados) de las variables de salida
@@ -166,7 +172,12 @@ void __fastcall TTablaVerdadManual::FormShow(TObject *Sender)
 		/*~~~~~~~~~~~~~~~~~~~~~*/
 		if (nomVarSal == "")
                 	nomVarSal = "F" + AnsiString(j + 1);
-		StringGrid2->Cells[j][0] = nomVarSal;
+
+                std::string nom = nomVarSal.c_str();
+                if(nom.length() > 8)
+                        nom = nom.substr(0, 2) + "..." + nom.substr(nom.length()-3, 3);
+
+		StringGrid2->Cells[j][0] = nom.c_str();
 	}
 
 	// borramos la basura
