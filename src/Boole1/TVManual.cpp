@@ -173,6 +173,8 @@ void __fastcall TTablaVerdadManual::FormShow(TObject *Sender)
 		if (nomVarSal == "")
                 	nomVarSal = "F" + AnsiString(j + 1);
 
+                // Make the names short enough to fit the row header without making
+                // it wider.
                 std::string nom = nomVarSal.c_str();
                 if(nom.length() > 8)
                         nom = nom.substr(0, 2) + "..." + nom.substr(nom.length()-3, 3);

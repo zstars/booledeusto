@@ -15,6 +15,9 @@
 #include "DinArray.h"
 #include "libreria.h"
 
+#include <string>
+#include <algorithm>
+
 extern DinArray Tabla;
 
 /*
@@ -122,7 +125,10 @@ AnsiString CalcularCadena(AnsiString cifra)
 /*
  =======================================================================================================================
     devuelve la cadena sustituyendo las variables generales por los nombres que se les ha dado o por ellas mismas en
-    mayusculas
+    mayusculas.
+
+    Cuando los nombres tienen paréntesis, se sustityen por corchetes, para evitar errores que de otro modo suceden,
+    por ejemplo, en gráficos.
  =======================================================================================================================
  */
 AnsiString NombresCompletos(AnsiString cadena)
@@ -140,6 +146,12 @@ AnsiString NombresCompletos(AnsiString cadena)
 			/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 			AnsiString	nombre = Tabla.LeerEntrada(cadena[i] - 'A');
 			/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+			// Asegurarse de que el nombre no contiene paréntesis.
+			std::string nom = nombre.c_str();
+			std::replace(nom.begin(), nom.end(), '(', '[');
+			std::replace(nom.begin(), nom.end(), ')', ']');
+			nombre = nom.c_str();
 
 			if(nombre != "")
 			{
