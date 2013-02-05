@@ -2151,6 +2151,7 @@ void __fastcall TSistemaCombinacionalNuevo::OnTablaEntradaSelectCell(
                 tablaActual = TablaEntrada;
 
                 comboBox->Visible = true;
+                comboBox->Text = TablaEntrada->Cells[ACol][ARow];
                 comboBox->SetFocus();
         }
 }
@@ -2182,6 +2183,7 @@ void __fastcall TSistemaCombinacionalNuevo::OnTablaSalidaSelectCell(
                 tablaActual = TablaSalida;
 
                 comboBox->Visible = true;
+                comboBox->Text = TablaSalida->Cells[ACol][ARow];
                 comboBox->SetFocus();
         }
 }
