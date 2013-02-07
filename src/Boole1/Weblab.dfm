@@ -1,6 +1,6 @@
 object WeblabForm: TWeblabForm
-  Left = 472
-  Top = 237
+  Left = 615
+  Top = 284
   Width = 979
   Height = 563
   Caption = 'Weblab'

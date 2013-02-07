@@ -2194,7 +2194,7 @@ void __fastcall TSistemaCombinacionalNuevo::OnComboBoxExit(TObject *Sender)
         comboBox->Visible = false;
         tablaActual->Cells[tablaActual->Col][tablaActual->Row] =
                 comboBox->Text;
-        tablaActual->SetFocus();
+        //tablaActual->SetFocus();
 }
 //---------------------------------------------------------------------------
 

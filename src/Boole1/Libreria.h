@@ -15,7 +15,7 @@ int			FusionarCadenas(AnsiString, AnsiString);
 int			JuntarCadenas(AnsiString, AnsiString);
 AnsiString	CalcularBinario(int, int);
 AnsiString	CalcularCadena(AnsiString);
-AnsiString	NombresCompletos(AnsiString);
+AnsiString	NombresCompletos(AnsiString cadena, bool reemplazarParentesis = false);
 AnsiString	InvertirVariables(AnsiString);
 AnsiString	CambiarSignos(AnsiString, bool);
 AnsiString	InvertirExpresiones(AnsiString);

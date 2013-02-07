@@ -131,7 +131,7 @@ AnsiString CalcularCadena(AnsiString cifra)
     por ejemplo, en gráficos.
  =======================================================================================================================
  */
-AnsiString NombresCompletos(AnsiString cadena)
+AnsiString NombresCompletos(AnsiString cadena, bool reemplazarParentesis)
 {
 	/*~~~~~~*/
 	int i = 1;
@@ -148,10 +148,13 @@ AnsiString NombresCompletos(AnsiString cadena)
 			/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 			// Asegurarse de que el nombre no contiene paréntesis.
-			std::string nom = nombre.c_str();
-			std::replace(nom.begin(), nom.end(), '(', '[');
-			std::replace(nom.begin(), nom.end(), ')', ']');
-			nombre = nom.c_str();
+			if(reemplazarParentesis)
+			{
+				std::string nom = nombre.c_str();
+				std::replace(nom.begin(), nom.end(), '(', '[');
+				std::replace(nom.begin(), nom.end(), ')', ']');
+				nombre = nom.c_str();
+			}
 
 			if(nombre != "")
 			{

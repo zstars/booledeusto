@@ -177,7 +177,7 @@ void __fastcall TExpresionSimp::calcularSimplificada(TObject *Sender)
 	ScrollBar1->Position = 1;
 	while(Memo1->Text == " ")
 	{
-		Memo1->Text = NombresCompletos(StringGrid1->Cells[0][0]);
+		Memo1->Text = NombresCompletos(StringGrid1->Cells[0][0], true);
 	}
 
 	// SistemaCombinacionalNuevo->Hide();
