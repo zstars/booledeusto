@@ -11,8 +11,8 @@
     <DEFFILE value=""/>
     <RESDEPEN value="$(RESFILES)"/>
     <LIBFILES value=""/>
-    <LIBRARIES value=""/>
-    <SPARELIBS value=""/>
+    <LIBRARIES value="rtl.lib"/>
+    <SPARELIBS value="rtl.lib"/>
     <PACKAGES value=""/>
     <PATHCPP value=".;"/>
     <PATHPAS value=".;"/>

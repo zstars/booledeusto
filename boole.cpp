@@ -69,9 +69,10 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
                 // OUT HOW TO ADD A FORM TO THE PROJECT WITHOUT BREAKING IT (IF THESE LINES
                 // ARE NOT COMMENTED WEIRD RESOURCE NOT FOUND MESSAGES MAKE THE PROGRAM
                 // CRASH ON STARTUP).
-              	//resInstance=(void *)LoadNewResourceModule( ( (SUBLANG_ENGLISH_US << 10) | LANG_ENGLISH) );
-               	//if(!resInstance)
-                //	resInstance=(void *)LoadNewResourceModule( ( (SUBLANG_DEFAULT << 10) | LANG_BASQUE) );
+
+              	 //resInstance=(void *)LoadNewResourceModule( ( (SUBLANG_ENGLISH_US << 10) | LANG_ENGLISH) );
+               	 //if(!resInstance)
+                 //	resInstance=(void *)LoadNewResourceModule( ( (SUBLANG_DEFAULT << 10) | LANG_BASQUE) );
 		 Application->CreateForm(__classid(TPrincipal), &Principal);
                  Application->CreateForm(__classid(Tap), &ap);
                  Application->CreateForm(__classid(TCalculando), &Calculando);

@@ -78,6 +78,7 @@ __published:	// IDE-managed Components
         TButton *btWeblab;
         TComboBox *comboBox;
         TCheckBox *weblabCheckBox;
+        TButton *weblabHelpButton;
 	void __fastcall NEntradasChange(TObject *Sender);
 
 	void __fastcall NSalidasChange(TObject *Sender);
@@ -128,6 +129,7 @@ __published:	// IDE-managed Components
         void __fastcall OnComboBoxChange(TObject *Sender);
         void __fastcall OnCreate(TObject *Sender);
         void __fastcall OnTablaEntradaEnter(TObject *Sender);
+        void __fastcall weblabHelpButtonClick(TObject *Sender);
 
 /*
  -----------------------------------------------------------------------------------------------------------------------

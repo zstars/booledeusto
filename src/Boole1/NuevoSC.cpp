@@ -8,6 +8,7 @@
 
 #include <sstream>
 #include <string>
+#include <fstream>
 
 #include <printers.hpp>
 
@@ -1681,15 +1682,17 @@ void __fastcall TSistemaCombinacionalNuevo::BitBtn3Click(TObject *Sender)
                         // En modo weblab, utilizamos un conjunto de declaraciones fijo.
                         else
                         {
-                                Lista->Add("\t\tClk : in std_logic;");
-                                Lista->Add("\t\t");
-                                Lista->Add("\t\tLeds : inout std_logic_vector (7 downto 0);");
-                                Lista->Add("\t\tEnableSegOut : inout std_logic_vector (3 downto 0);");
-                                Lista->Add("\t\tSevenSeg : inout std_logic_vector (6 downto 0);");
-                                Lista->Add("\t\tDot : inout std_logic;");
-                                Lista->Add("\t\t");
-                                Lista->Add("\t\tButtons : in std_logic_vector (3 downto 0);");
-                                Lista->Add("\t\tSwitches : in std_logic_vector (9 downto 0)");
+                                AnsiString exeFile=Application->ExeName;
+                                AnsiString exePath=ExtractFilePath(exeFile);
+
+                                // Cargar la lista de entradas salidas del archivo.
+                                std::ifstream fin((exePath + "/weblab_inouts.dat" ).c_str());
+                                std::string line;
+                                while(std::getline(fin, line))
+                                {
+                                        Lista->Add(line.c_str());
+                                }
+                                fin.close();
                         }
 
 			Lista->Add("\t\t);");
@@ -2194,6 +2197,10 @@ void __fastcall TSistemaCombinacionalNuevo::OnComboBoxExit(TObject *Sender)
         comboBox->Visible = false;
         tablaActual->Cells[tablaActual->Col][tablaActual->Row] =
                 comboBox->Text;
+
+        // This used to cause a bug where two clicks would be required to hit
+        // external buttons with the combobox selected. Left here just in case
+        // commenting it out has side effects. ~lrg
         //tablaActual->SetFocus();
 }
 //---------------------------------------------------------------------------
@@ -2225,41 +2232,41 @@ void TSistemaCombinacionalNuevo::InicializarEntradasSalidasWeblab()
         mEntradasWeblab.clear();
         mSalidasWeblab.clear();
 
-        mEntradasWeblab.push_back("Switches(0)");
-        mEntradasWeblab.push_back("Switches(1)");
-        mEntradasWeblab.push_back("Switches(2)");
-        mEntradasWeblab.push_back("Switches(3)");
-        mEntradasWeblab.push_back("Switches(4)");
-        mEntradasWeblab.push_back("Switches(5)");
-        mEntradasWeblab.push_back("Switches(6)");
-        mEntradasWeblab.push_back("Switches(7)");
-        mEntradasWeblab.push_back("Switches(8)");
-        mEntradasWeblab.push_back("Switches(9)");
-        mEntradasWeblab.push_back("Buttons(0)");
-        mEntradasWeblab.push_back("Buttons(1)");
-        mEntradasWeblab.push_back("Buttons(2)");
-        mEntradasWeblab.push_back("Buttons(3)");
+        mEntradasWeblab.push_back("swi0");
+        mEntradasWeblab.push_back("swi1)");
+        mEntradasWeblab.push_back("swi2");
+        mEntradasWeblab.push_back("swi3");
+        mEntradasWeblab.push_back("swi4");
+        mEntradasWeblab.push_back("swi5");
+        mEntradasWeblab.push_back("swi6");
+        mEntradasWeblab.push_back("swi7");
+        mEntradasWeblab.push_back("swi8");
+        mEntradasWeblab.push_back("swi9");
+        mEntradasWeblab.push_back("but0");
+        mEntradasWeblab.push_back("but1");
+        mEntradasWeblab.push_back("but2");
+        mEntradasWeblab.push_back("but3");
 
-        mSalidasWeblab.push_back("Leds(0)");
-        mSalidasWeblab.push_back("Leds(1)");
-        mSalidasWeblab.push_back("Leds(2)");
-        mSalidasWeblab.push_back("Leds(3)");
-        mSalidasWeblab.push_back("Leds(4)");
-        mSalidasWeblab.push_back("Leds(5)");
-        mSalidasWeblab.push_back("Leds(6)");
-        mSalidasWeblab.push_back("Leds(7)");
-        mSalidasWeblab.push_back("SevenSeg(0)");
-        mSalidasWeblab.push_back("SevenSeg(1)");
-        mSalidasWeblab.push_back("SevenSeg(2)");
-        mSalidasWeblab.push_back("SevenSeg(3)");
-        mSalidasWeblab.push_back("SevenSeg(4)");
-        mSalidasWeblab.push_back("SevenSeg(5)");
-        mSalidasWeblab.push_back("SevenSeg(6)");
-        mSalidasWeblab.push_back("Dot");
-        mSalidasWeblab.push_back("EnableSegOut(0)");
-        mSalidasWeblab.push_back("EnableSegOut(1)");
-        mSalidasWeblab.push_back("EnableSegOut(2)");
-        mSalidasWeblab.push_back("EnableSegOut(3)");
+        mSalidasWeblab.push_back("led0");
+        mSalidasWeblab.push_back("led1");
+        mSalidasWeblab.push_back("led2");
+        mSalidasWeblab.push_back("led3");
+        mSalidasWeblab.push_back("led4");
+        mSalidasWeblab.push_back("led5");
+        mSalidasWeblab.push_back("led6");
+        mSalidasWeblab.push_back("led7");
+        mSalidasWeblab.push_back("seg0");
+        mSalidasWeblab.push_back("seg1");
+        mSalidasWeblab.push_back("seg2");
+        mSalidasWeblab.push_back("seg3");
+        mSalidasWeblab.push_back("seg4");
+        mSalidasWeblab.push_back("seg5");
+        mSalidasWeblab.push_back("seg6");
+        mSalidasWeblab.push_back("dot");
+        mSalidasWeblab.push_back("ena0)");
+        mSalidasWeblab.push_back("ena1");
+        mSalidasWeblab.push_back("ena2");
+        mSalidasWeblab.push_back("ena3");
 }
 
 
@@ -2276,6 +2283,13 @@ void __fastcall TSistemaCombinacionalNuevo::OnTablaEntradaEnter(
       TObject *Sender)
 {
         //Application->MessageBox("Prueba", 0);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TSistemaCombinacionalNuevo::weblabHelpButtonClick(
+      TObject *Sender)
+{
+        ShellExecute(NULL, "open", "https://weblabdeusto.readthedocs.org/en/latest/userguide_boole_weblab_es.html", NULL, NULL, SW_SHOW);
 }
 //---------------------------------------------------------------------------
 
