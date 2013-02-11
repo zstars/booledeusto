@@ -5883,15 +5883,17 @@ void TForm1Boole2::CrearCodigoVHDL()
         }
         else
         {
-                Form14->PDL->Lines->Add("\t\tClk : in std_logic;");
-                Form14->PDL->Lines->Add("\t\t");
-                Form14->PDL->Lines->Add("\t\tLeds : inout std_logic_vector (7 downto 0);");
-                Form14->PDL->Lines->Add("\t\tEnableSegOut : inout std_logic_vector (3 downto 0);");
-                Form14->PDL->Lines->Add("\t\tSevenSeg : inout std_logic_vector (6 downto 0);");
-                Form14->PDL->Lines->Add("\t\tDot : inout std_logic;");
-                Form14->PDL->Lines->Add("\t\t");
-                Form14->PDL->Lines->Add("\t\tButtons : in std_logic_vector (3 downto 0);");
-                Form14->PDL->Lines->Add("\t\tSwitches : in std_logic_vector (9 downto 0);");
+                AnsiString exeFile=Application->ExeName;
+                AnsiString exePath=ExtractFilePath(exeFile);
+
+                // Cargar la lista de entradas salidas del archivo.
+                std::ifstream fin((exePath + "/weblab_inouts.dat" ).c_str());
+                std::string line;
+                while(std::getline(fin, line))
+                {
+                        Form14->PDL->Lines->Add(line.c_str());
+                }
+                fin.close();
                 Form14->PDL->Lines->Add("\t\t");
                 Form14->PDL->Lines->Add("\t\tinicio : in std_logic");
         }
@@ -5939,10 +5941,10 @@ void TForm1Boole2::CrearCodigoVHDL()
         else
         {
                 std::stringstream oss;
-                oss << "Switches(" << Sistema.NumCarEnt - 1 << ")";
+                oss << "swi" << Sistema.NumCarEnt - 1 << "";
                 for (int i=1; i<Sistema.NumCarEnt;i++)
                 {
-                        oss << "&" << "Switches(" << Sistema.NumCarEnt - i - 1 << ")";
+                        oss << "&" << "swi" << Sistema.NumCarEnt - i - 1 << "";
                 }
                 std::string str = oss.str();
                 entradas = str.c_str();
@@ -5956,7 +5958,7 @@ void TForm1Boole2::CrearCodigoVHDL()
         if(mWeblabMode == false)
 	        Form14->PDL->Lines->Add("process(inicio, ck)");
         else
-                Form14->PDL->Lines->Add("process(inicio, Clk)");
+                Form14->PDL->Lines->Add("process(inicio, clk)");
 
 
 	Form14->PDL->Lines->Add("begin");
@@ -5964,7 +5966,7 @@ void TForm1Boole2::CrearCodigoVHDL()
         if(mWeblabMode == false)
 	        Form14->PDL->Lines->Add("if inicio='1' then");
         else
-                Form14->PDL->Lines->Add("if Buttons(0)='1' then");
+                Form14->PDL->Lines->Add("if but0='1' then");
 
         Form14->PDL->Lines->Add("\testado<="+estadoInicial+";");
 
@@ -5974,7 +5976,7 @@ void TForm1Boole2::CrearCodigoVHDL()
         }
         else
         {
-                Form14->PDL->Lines->Add("elsif Clk='1' and Clk'event then");
+                Form14->PDL->Lines->Add("elsif clk='1' and clk'event then");
         }
 
         Form14->PDL->Lines->Add("\tcase estado is");
@@ -6026,7 +6028,7 @@ void TForm1Boole2::CrearCodigoVHDL()
                                 if(mWeblabMode == true)
                                 {
                                         std::ostringstream oss;
-                                        oss << "Leds(" << Sistema.NumCarSal - j - 1<< ")";
+                                        oss << "leds" << Sistema.NumCarSal - j - 1<< "";
                                         std::string str = oss.str();
                                         nomSalida = str.c_str();
                                 }
