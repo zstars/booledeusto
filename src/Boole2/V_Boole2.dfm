@@ -1,6 +1,6 @@
 object Form1Boole2: TForm1Boole2
-  Left = 605
-  Top = 355
+  Left = 793
+  Top = 192
   Width = 785
   Height = 538
   HorzScrollBar.Tracking = True
@@ -48,8 +48,8 @@ object Form1Boole2: TForm1Boole2
     Align = alClient
     TabOrder = 1
     object Tablero: TImage
-      Left = 0
-      Top = 0
+      Left = -8
+      Top = -8
       Width = 1024
       Height = 768
       ParentShowHint = False
@@ -321,13 +321,31 @@ object Form1Boole2: TForm1Boole2
       object N4: TMenuItem
         Caption = '-'
       end
-      object StartWeblabFPGA1: TMenuItem
+      object StartWeblabFPGAI: TMenuItem
         Caption = 'Start Weblab &FPGA'
-        OnClick = StartWeblabFPGA1Click
+        OnClick = StartWeblabFPGAIClick
       end
-      object ExporttoWeblabVHDL1: TMenuItem
-        Caption = 'Export to &Weblab VHDL'
-        OnClick = ExporttoWeblabVHDL1Click
+      object N11: TMenuItem
+        Caption = '-'
+      end
+      object ExportToWeblabInternal: TMenuItem
+        Caption = 'Export to Weblab VHDL (&Internal Clock)'
+        OnClick = ExportToWeblabInternalClick
+      end
+      object ExportToWeblabWeblab: TMenuItem
+        Caption = 'Export to Weblab VHDL (&Weblab Clock)'
+        OnClick = ExportToWeblabWeblabClick
+      end
+      object ExportToWeblabSwitch: TMenuItem
+        Caption = 'Export to Weblab VHDL (&Switch Clock)'
+        OnClick = ExportToWeblabSwitchClick
+      end
+      object StartWeblabFPGAButtonClock1: TMenuItem
+        Caption = 'Export to Weblab VHDL (&Button Clock)'
+        OnClick = StartWeblabFPGAButtonClock1Click
+      end
+      object N12: TMenuItem
+        Caption = '-'
       end
       object ExportaraVHDL1: TMenuItem
         Caption = 'Exportar a &VHDL'

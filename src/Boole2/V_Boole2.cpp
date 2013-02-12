@@ -3551,7 +3551,12 @@ void __fastcall TForm1Boole2::Archivo1Click(TObject *Sender)
 	{
 		ExportaraPDL1->Enabled = false;
 		ExportaraVHDL1->Enabled = false;
-                ExporttoWeblabVHDL1->Enabled = false;
+
+                ExportToWeblabInternal->Enabled = false;
+                ExportToWeblabButton->Enabled = false;
+                ExportToWeblabSwitch->Enabled = false;
+                ExportToWeblabWeblab->Enabled = false;
+
 		Imprimir1->Enabled = false;
                 ExportaraJEDEC1->Enabled = false;
 	}
@@ -3561,7 +3566,11 @@ void __fastcall TForm1Boole2::Archivo1Click(TObject *Sender)
 		ExportaraVHDL1->Enabled = true;
 		Imprimir1->Enabled = true;
                 ExportaraJEDEC1->Enabled=true;
-                ExporttoWeblabVHDL1->Enabled = true;
+
+                ExportToWeblabInternal->Enabled = true;
+                ExportToWeblabButton->Enabled = true;
+                ExportToWeblabSwitch->Enabled = true;
+                ExportToWeblabWeblab->Enabled = true;
 	}
 }
 
@@ -6403,9 +6412,84 @@ void __fastcall TForm1Boole2::ExporttoWeblabVHDL1Click(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall TForm1Boole2::StartWeblabFPGA1Click(TObject *Sender)
+
+void __fastcall TForm1Boole2::StartWeblabFPGAIClick(
+      TObject *Sender)
 {
-    ShellExecute(NULL, "open", "https://www.weblab.deusto.es/weblab/client/#page=experiment&exp.category=FPGA%20experiments&exp.name=ud-fpga", NULL, NULL, SW_SHOW);
+        ShellExecute(NULL, "open", "https://www.weblab.deusto.es/weblab/client/#page=experiment&exp.category=FPGA%20experiments&exp.name=ud-fpga", NULL, NULL, SW_SHOW);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1Boole2::ExportToWeblabInternalClick(TObject *Sender)
+{
+        mWeblabMode = true;
+        mWeblabClockDirective = "@@@CLOCK:INTERNAL@@@";
+        CrearCodigoVHDL();
+        mWeblabClockDirective = "";
+        mWeblabMode = false;
+
+        // Bug fix: Filter needs to be set before execution. ~lrg
+	SaveDialog2->Filter=MENSAJE(msgFiltroVHDL);
+
+	if(SaveDialog2->Execute())
+	{
+		SalvarPDL(SaveDialog2->FileName);
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1Boole2::ExportToWeblabWeblabClick(TObject *Sender)
+{
+        mWeblabMode = true;
+        mWeblabClockDirective = "@@@CLOCK:WEBLAB@@@";
+        CrearCodigoVHDL();
+        mWeblabClockDirective = "";
+        mWeblabMode = false;
+
+        // Bug fix: Filter needs to be set before execution. ~lrg
+	SaveDialog2->Filter=MENSAJE(msgFiltroVHDL);
+
+	if(SaveDialog2->Execute())
+	{
+		SalvarPDL(SaveDialog2->FileName);
+	}        
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1Boole2::ExportToWeblabSwitchClick(TObject *Sender)
+{
+        mWeblabMode = true;
+        mWeblabClockDirective = "@@@CLOCK:SWITCH@@@";
+        CrearCodigoVHDL();
+        mWeblabClockDirective = "";
+        mWeblabMode = false;
+
+        // Bug fix: Filter needs to be set before execution. ~lrg
+	SaveDialog2->Filter=MENSAJE(msgFiltroVHDL);
+
+	if(SaveDialog2->Execute())
+	{
+		SalvarPDL(SaveDialog2->FileName);
+	}        
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1Boole2::StartWeblabFPGAButtonClock1Click(
+      TObject *Sender)
+{
+        mWeblabMode = true;
+        mWeblabClockDirective = "@@@CLOCK:BUTTON@@@";
+        CrearCodigoVHDL();
+        mWeblabClockDirective = "";
+        mWeblabMode = false;
+
+        // Bug fix: Filter needs to be set before execution. ~lrg
+	SaveDialog2->Filter=MENSAJE(msgFiltroVHDL);
+
+	if(SaveDialog2->Execute())
+	{
+		SalvarPDL(SaveDialog2->FileName);
+	}
 }
 //---------------------------------------------------------------------------
 

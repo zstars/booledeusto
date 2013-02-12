@@ -1,4 +1,7 @@
 
+
+#include <string>
+
 #include <Buttons.hpp>
 #include <Classes.hpp>
 #include <ComCtrls.hpp>
@@ -8,7 +11,67 @@
 #include <Forms.hpp>
 #include <Grids.hpp>
 #include <Menus.hpp>
-#include <StdCtrls.hpp>/*$T boole/Boole2/V_Boole2.h GC! 1.116 05/02/01 18:53:27 */
+
+#include <Buttons.hpp>
+#include <Classes.hpp>
+#include <ComCtrls.hpp>
+#include <Controls.hpp>
+#include <Dialogs.hpp>
+#include <ExtCtrls.hpp>
+#include <Forms.hpp>
+#include <Grids.hpp>
+#include <Menus.hpp>
+#include <StdCtrls.hpp>
+#include <Buttons.hpp>
+#include <Classes.hpp>
+#include <ComCtrls.hpp>
+#include <Controls.hpp>
+#include <Dialogs.hpp>
+#include <ExtCtrls.hpp>
+#include <Forms.hpp>
+#include <Grids.hpp>
+#include <Menus.hpp>
+#include <StdCtrls.hpp>
+#include <Buttons.hpp>
+#include <Classes.hpp>
+#include <ComCtrls.hpp>
+#include <Controls.hpp>
+#include <Dialogs.hpp>
+#include <ExtCtrls.hpp>
+#include <Forms.hpp>
+#include <Grids.hpp>
+#include <Menus.hpp>
+#include <StdCtrls.hpp>
+#include <Buttons.hpp>
+#include <Classes.hpp>
+#include <ComCtrls.hpp>
+#include <Controls.hpp>
+#include <Dialogs.hpp>
+#include <ExtCtrls.hpp>
+#include <Forms.hpp>
+#include <Grids.hpp>
+#include <Menus.hpp>
+#include <StdCtrls.hpp>
+#include <Buttons.hpp>
+#include <Classes.hpp>
+#include <ComCtrls.hpp>
+#include <Controls.hpp>
+#include <Dialogs.hpp>
+#include <ExtCtrls.hpp>
+#include <Forms.hpp>
+#include <Grids.hpp>
+#include <Menus.hpp>
+#include <StdCtrls.hpp>
+#include <Buttons.hpp>
+#include <Classes.hpp>
+#include <ComCtrls.hpp>
+#include <Controls.hpp>
+#include <Dialogs.hpp>
+#include <ExtCtrls.hpp>
+#include <Forms.hpp>
+#include <Grids.hpp>
+#include <Menus.hpp>
+#include <StdCtrls.hpp>#include <StdCtrls.hpp>/*$T boole/Boole2/V_Boole2.h GC! 1.116 05/02/01 18:53:27 */
 
 
 /*$6
@@ -52,7 +115,6 @@ __published:	// IDE-managed Components
 	TMenuItem					*Tablas1;
 	TMenuItem					*Resultados1;
 	TMenuItem					*ExportaraPDL1;
-	TMenuItem					*N4;
 	TMenuItem					*CodigoPDL1;
 	TMenuItem					*N5;
 	TSaveDialog					*SaveDialog2;
@@ -104,10 +166,16 @@ __published:	// IDE-managed Components
 	TMenuItem *ExportaraVHDL1;
 	TMenuItem *CodigoVHDL1;
 	TMenuItem *ExportaraJEDEC1;
-        TMenuItem *ExporttoWeblabVHDL1;
         TMainMenu *MainMenu2;
         TMainMenu *MainMenu3;
-        TMenuItem *StartWeblabFPGA1;
+        TMenuItem *ExportToWeblabInternal;
+        TMenuItem *N11;
+        TMenuItem *ExportToWeblabSwitch;
+        TMenuItem *ExportToWeblabWeblab;
+        TMenuItem *StartWeblabFPGAI;
+        TMenuItem *N4;
+        TMenuItem *N12;
+        TMenuItem *StartWeblabFPGAButtonClock1;
 	void __fastcall				TableroMouseMove(TObject *Sender, TShiftState Shift, int X, int Y);
 	void __fastcall				FormCreate(TObject *Sender);
 
@@ -183,7 +251,11 @@ __published:	// IDE-managed Components
 	void __fastcall CodigoVHDL1Click(TObject *Sender);
 	void __fastcall ExportaraJEDEC1Click(TObject *Sender);
         void __fastcall ExporttoWeblabVHDL1Click(TObject *Sender);
-        void __fastcall StartWeblabFPGA1Click(TObject *Sender);
+        void __fastcall StartWeblabFPGAIClick(TObject *Sender);
+        void __fastcall ExportToWeblabInternalClick(TObject *Sender);
+        void __fastcall ExportToWeblabWeblabClick(TObject *Sender);
+        void __fastcall ExportToWeblabSwitchClick(TObject *Sender);
+        void __fastcall StartWeblabFPGAButtonClock1Click(TObject *Sender);
 
 /*
  -----------------------------------------------------------------------------------------------------------------------
@@ -248,6 +320,7 @@ public: // User declarations
         void TForm1Boole2::CrearCodigoVHDL();
 
         bool mWeblabMode;
+        std::string mWeblabClockDirective;
 
         int tipoSimulacion;
         };
