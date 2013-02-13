@@ -130,6 +130,8 @@ __published:	// IDE-managed Components
         void __fastcall OnCreate(TObject *Sender);
         void __fastcall OnTablaEntradaEnter(TObject *Sender);
         void __fastcall weblabHelpButtonClick(TObject *Sender);
+        void __fastcall TablaEntradaClick(TObject *Sender);
+        void __fastcall TablaSalidaClick(TObject *Sender);
 
 /*
  -----------------------------------------------------------------------------------------------------------------------

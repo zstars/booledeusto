@@ -2293,3 +2293,50 @@ void __fastcall TSistemaCombinacionalNuevo::weblabHelpButtonClick(
 }
 //---------------------------------------------------------------------------
 
+// Cuando se hace click en una celda ya seleccionada (y siempre hay de hecho
+// una seleccionada por defecto) VCL no genera un evento SelectCell. Capturando
+// el click, calculamos a que celda corresponde el click, y si resulta que el
+// click ha sido realizado sobre la celda ya seleccionada, simulamos nosotros
+// mismos el evento. ~lrg
+//
+void __fastcall TSistemaCombinacionalNuevo::TablaEntradaClick(
+      TObject *Sender)
+{
+        TPoint mpt;
+        int cell;
+        bool b;
+
+        mpt = Mouse->CursorPos;
+
+        mpt = TablaEntrada->ScreenToClient(mpt);
+        cell = mpt.y / TablaEntrada->RowHeights[0];
+
+        if( TablaEntrada->Row == cell )
+                OnTablaEntradaSelectCell(Sender, 1, cell, b);
+
+}
+//---------------------------------------------------------------------------
+
+// Cuando se hace click en una celda ya seleccionada (y siempre hay de hecho
+// una seleccionada por defecto) VCL no genera un evento SelectCell. Capturando
+// el click, calculamos a que celda corresponde el click, y si resulta que el
+// click ha sido realizado sobre la celda ya seleccionada, simulamos nosotros
+// mismos el evento. ~lrg
+//
+void __fastcall TSistemaCombinacionalNuevo::TablaSalidaClick(
+      TObject *Sender)
+{
+        TPoint mpt;
+        int cell;
+        bool b;
+
+        mpt = Mouse->CursorPos;
+
+        mpt = TablaSalida->ScreenToClient(mpt);
+        cell = mpt.y / TablaSalida->RowHeights[0];
+
+        if( TablaEntrada->Row == cell )
+                OnTablaSalidaSelectCell(Sender, 1, cell, b);
+}
+//---------------------------------------------------------------------------
+
