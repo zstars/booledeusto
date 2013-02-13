@@ -2233,7 +2233,7 @@ void TSistemaCombinacionalNuevo::InicializarEntradasSalidasWeblab()
         mSalidasWeblab.clear();
 
         mEntradasWeblab.push_back("swi0");
-        mEntradasWeblab.push_back("swi1)");
+        mEntradasWeblab.push_back("swi1");
         mEntradasWeblab.push_back("swi2");
         mEntradasWeblab.push_back("swi3");
         mEntradasWeblab.push_back("swi4");

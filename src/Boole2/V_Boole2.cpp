@@ -5862,12 +5862,19 @@ void TForm1Boole2::CrearCodigoVHDL()
 	AnsiString Titulo = NombreVHDL(Sistema.Titulo==""?AnsiString("Sin_Titulo"):Sistema.Titulo);
         AnsiString estadoInicial = NombreVHDL(Sistema.circulo[0].Etiqueta1);
 
-        if(mWeblabMode == true)
+        if(mWeblabMode)
         {
                 Titulo = "base";
         }
 
 	Form14->PDL->Lines->Clear();
+
+        if(mWeblabMode)
+        {
+                std::string clockLine = "-- ";
+                clockLine += mWeblabClockDirective;
+                Form14->PDL->Lines->Add(clockLine.c_str());
+        }
 
         // Cabecera
         Form14->PDL->Lines->Add("library IEEE;");
@@ -5881,7 +5888,7 @@ void TForm1Boole2::CrearCodigoVHDL()
 	Form14->PDL->Lines->Add("entity " + Titulo + " is");
 	Form14->PDL->Lines->Add("\tPort (");
 
-        if(mWeblabMode == false)
+        if(!mWeblabMode)
         {
 	        Form14->PDL->Lines->Add("\t\tinicio: in std_logic;");
         	Form14->PDL->Lines->Add("\t\tck: in std_logic;");
@@ -6474,7 +6481,7 @@ void __fastcall TForm1Boole2::ExportToWeblabSwitchClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1Boole2::StartWeblabFPGAButtonClock1Click(
+void __fastcall TForm1Boole2::ExportToWeblabButtonClick(
       TObject *Sender)
 {
         mWeblabMode = true;

@@ -1,4 +1,14 @@
 
+#include <Buttons.hpp>
+#include <Classes.hpp>
+#include <ComCtrls.hpp>
+#include <Controls.hpp>
+#include <Dialogs.hpp>
+#include <ExtCtrls.hpp>
+#include <Forms.hpp>
+#include <Grids.hpp>
+#include <Menus.hpp>
+#include <StdCtrls.hpp>
 
 #include <string>
 
@@ -12,6 +22,66 @@
 #include <Grids.hpp>
 #include <Menus.hpp>
 
+#include <Buttons.hpp>
+#include <Classes.hpp>
+#include <ComCtrls.hpp>
+#include <Controls.hpp>
+#include <Dialogs.hpp>
+#include <ExtCtrls.hpp>
+#include <Forms.hpp>
+#include <Grids.hpp>
+#include <Menus.hpp>
+#include <StdCtrls.hpp>
+#include <Buttons.hpp>
+#include <Classes.hpp>
+#include <ComCtrls.hpp>
+#include <Controls.hpp>
+#include <Dialogs.hpp>
+#include <ExtCtrls.hpp>
+#include <Forms.hpp>
+#include <Grids.hpp>
+#include <Menus.hpp>
+#include <StdCtrls.hpp>
+#include <Buttons.hpp>
+#include <Classes.hpp>
+#include <ComCtrls.hpp>
+#include <Controls.hpp>
+#include <Dialogs.hpp>
+#include <ExtCtrls.hpp>
+#include <Forms.hpp>
+#include <Grids.hpp>
+#include <Menus.hpp>
+#include <StdCtrls.hpp>
+#include <Buttons.hpp>
+#include <Classes.hpp>
+#include <ComCtrls.hpp>
+#include <Controls.hpp>
+#include <Dialogs.hpp>
+#include <ExtCtrls.hpp>
+#include <Forms.hpp>
+#include <Grids.hpp>
+#include <Menus.hpp>
+#include <StdCtrls.hpp>
+#include <Buttons.hpp>
+#include <Classes.hpp>
+#include <ComCtrls.hpp>
+#include <Controls.hpp>
+#include <Dialogs.hpp>
+#include <ExtCtrls.hpp>
+#include <Forms.hpp>
+#include <Grids.hpp>
+#include <Menus.hpp>
+#include <StdCtrls.hpp>
+#include <Buttons.hpp>
+#include <Classes.hpp>
+#include <ComCtrls.hpp>
+#include <Controls.hpp>
+#include <Dialogs.hpp>
+#include <ExtCtrls.hpp>
+#include <Forms.hpp>
+#include <Grids.hpp>
+#include <Menus.hpp>
+#include <StdCtrls.hpp>
 #include <Buttons.hpp>
 #include <Classes.hpp>
 #include <ComCtrls.hpp>
@@ -175,7 +245,7 @@ __published:	// IDE-managed Components
         TMenuItem *StartWeblabFPGAI;
         TMenuItem *N4;
         TMenuItem *N12;
-        TMenuItem *StartWeblabFPGAButtonClock1;
+        TMenuItem *ExportToWeblabButton;
 	void __fastcall				TableroMouseMove(TObject *Sender, TShiftState Shift, int X, int Y);
 	void __fastcall				FormCreate(TObject *Sender);
 
@@ -255,7 +325,7 @@ __published:	// IDE-managed Components
         void __fastcall ExportToWeblabInternalClick(TObject *Sender);
         void __fastcall ExportToWeblabWeblabClick(TObject *Sender);
         void __fastcall ExportToWeblabSwitchClick(TObject *Sender);
-        void __fastcall StartWeblabFPGAButtonClock1Click(TObject *Sender);
+        void __fastcall ExportToWeblabButtonClick(TObject *Sender);
 
 /*
  -----------------------------------------------------------------------------------------------------------------------

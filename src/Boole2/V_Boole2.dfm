@@ -340,9 +340,9 @@ object Form1Boole2: TForm1Boole2
         Caption = 'Export to Weblab VHDL (&Switch Clock)'
         OnClick = ExportToWeblabSwitchClick
       end
-      object StartWeblabFPGAButtonClock1: TMenuItem
+      object ExportToWeblabButton: TMenuItem
         Caption = 'Export to Weblab VHDL (&Button Clock)'
-        OnClick = StartWeblabFPGAButtonClock1Click
+        OnClick = ExportToWeblabButtonClick
       end
       object N12: TMenuItem
         Caption = '-'
