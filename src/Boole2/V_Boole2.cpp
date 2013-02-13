@@ -6045,7 +6045,7 @@ void TForm1Boole2::CrearCodigoVHDL()
                                 if(mWeblabMode == true)
                                 {
                                         std::ostringstream oss;
-                                        oss << "leds" << Sistema.NumCarSal - j - 1<< "";
+                                        oss << "led" << Sistema.NumCarSal - j - 1<< "";
                                         std::string str = oss.str();
                                         nomSalida = str.c_str();
                                 }
