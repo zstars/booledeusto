@@ -5899,6 +5899,9 @@ void TForm1Boole2::CrearCodigoVHDL()
         }
         else
         {
+                Form14->PDL->Lines->Add("\t\t");
+                Form14->PDL->Lines->Add("\t\tinicio : in std_logic;");
+
                 AnsiString exeFile=Application->ExeName;
                 AnsiString exePath=ExtractFilePath(exeFile);
 
@@ -5910,8 +5913,6 @@ void TForm1Boole2::CrearCodigoVHDL()
                         Form14->PDL->Lines->Add(line.c_str());
                 }
                 fin.close();
-                Form14->PDL->Lines->Add("\t\t");
-                Form14->PDL->Lines->Add("\t\tinicio : in std_logic");
         }
 
 	Form14->PDL->Lines->Add("\t\t);");
