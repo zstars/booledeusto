@@ -2335,7 +2335,7 @@ void __fastcall TSistemaCombinacionalNuevo::TablaSalidaClick(
         mpt = TablaSalida->ScreenToClient(mpt);
         cell = mpt.y / TablaSalida->RowHeights[0];
 
-        if( TablaEntrada->Row == cell )
+        if( TablaSalida->Row == cell )
                 OnTablaSalidaSelectCell(Sender, 1, cell, b);
 }
 //---------------------------------------------------------------------------
