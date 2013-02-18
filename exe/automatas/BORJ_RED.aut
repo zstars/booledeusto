@@ -1,0 +1,90 @@
+[Caracteristicas]
+  Titulo: Sin Titulo
+  Tipo: Moore
+  Nº Estados: 5
+  Nº Trans: 13
+  Vars Entrada: 2
+      E0
+      E1
+  Vars Salida: 2
+      S0
+      S1
+[Estados]
+  [E0]
+    Nombre: NADA
+    Coord X: 70
+    Coord Y: 210
+    Salida: 10
+  [E1]
+    Nombre: ENTRA
+    Coord X: 207
+    Coord Y: 219
+    Salida: 10
+  [E2]
+    Nombre: VIA A
+    Coord X: 340
+    Coord Y: 143
+    Salida: 10
+  [E3]
+    Nombre: VIA B
+    Coord X: 305
+    Coord Y: 340
+    Salida: 01
+  [E4]
+    Nombre: SALEA
+    Coord X: 478
+    Coord Y: 151
+    Salida: 10
+[Transiciones]
+  [E0 - E0]
+    Coord X: 47
+    Coord Y: 133
+    Entrada: 0X
+  [E0 - E1]
+    Coord X: 146
+    Coord Y: 210
+    Entrada: 10
+  [E1 - E2]
+    Coord X: 255
+    Coord Y: 174
+    Entrada: 0X
+  [E2 - E2]
+    Coord X: 408
+    Coord Y: 101
+    Entrada: 0X
+  [E1 - E3]
+    Coord X: 248
+    Coord Y: 270
+    Entrada: 11
+  [E3 - E3]
+    Coord X: 234
+    Coord Y: 377
+    Entrada: 1X
+  [E3 - E3]
+    Coord X: 362
+    Coord Y: 284
+    Entrada: 01
+  [E3 - E0]
+    Coord X: 192
+    Coord Y: 272
+    Entrada: 00
+  [E1 - E1]
+    Coord X: 155
+    Coord Y: 157
+    Entrada: 10
+  [E2 - E4]
+    Coord X: 392
+    Coord Y: 141
+    Entrada: 1X
+  [E4 - E4]
+    Coord X: 537
+    Coord Y: 204
+    Entrada: 1X
+  [E4 - E0]
+    Coord X: 331
+    Coord Y: 37
+    Entrada: 0X
+  [E0 - E0]
+    Coord X: 69
+    Coord Y: 289
+    Entrada: 11

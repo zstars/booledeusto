@@ -1,0 +1,76 @@
+[Caracteristicas]
+  Titulo: Sin Titulo
+  Tipo: Moore
+  Nº Estados: 5
+  Nº Trans: 10
+  Vars Entrada: 1
+      Ent0
+  Vars Salida: 1
+      Sal0
+[Estados]
+  [E0]
+    Nombre: E0
+    Coord X: 66
+    Coord Y: 185
+    Salida: 0
+  [E1]
+    Nombre: E0B
+    Coord X: 498
+    Coord Y: 75
+    Salida: 1
+  [E2]
+    Nombre: E1
+    Coord X: 265
+    Coord Y: 285
+    Salida: 0
+  [E3]
+    Nombre: E2A
+    Coord X: 212
+    Coord Y: 63
+    Salida: 0
+  [E4]
+    Nombre: E2B
+    Coord X: 549
+    Coord Y: 263
+    Salida: 1
+[Transiciones]
+  [E0 - E3]
+    Coord X: 112
+    Coord Y: 111
+    Entrada: 0
+  [E0 - E3]
+    Coord X: 143
+    Coord Y: 158
+    Entrada: 1
+  [E1 - E3]
+    Coord X: 382
+    Coord Y: 83
+    Entrada: 0
+  [E1 - E3]
+    Coord X: 396
+    Coord Y: 128
+    Entrada: 1
+  [E2 - E0]
+    Coord X: 112
+    Coord Y: 267
+    Entrada: 0
+  [E2 - E3]
+    Coord X: 294
+    Coord Y: 175
+    Entrada: 1
+  [E3 - E1]
+    Coord X: 382
+    Coord Y: 33
+    Entrada: 0
+  [E3 - E2]
+    Coord X: 217
+    Coord Y: 194
+    Entrada: 1
+  [E4 - E1]
+    Coord X: 592
+    Coord Y: 158
+    Entrada: 0
+  [E4 - E2]
+    Coord X: 484
+    Coord Y: 313
+    Entrada: 1

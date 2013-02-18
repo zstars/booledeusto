@@ -1,0 +1,61 @@
+[Caracteristicas]
+  Titulo: Sin Titulo
+  Tipo: Moore
+  Nº Estados: 4
+  Nº Trans: 7
+  Vars Entrada: 2
+      E0
+      E1
+  Vars Salida: 2
+      S0
+      S1
+[Estados]
+  [E0]
+    Nombre: INICI
+    Coord X: 198
+    Coord Y: 216
+    Salida: 00
+  [E1]
+    Nombre:   GA
+    Coord X: 345
+    Coord Y: 96
+    Salida: 10
+  [E2]
+    Nombre:   GB
+    Coord X: 351
+    Coord Y: 218
+    Salida: 01
+  [E3]
+    Nombre:   GT
+    Coord X: 351
+    Coord Y: 328
+    Salida: 11
+[Transiciones]
+  [E0 - E0]
+    Coord X: 143
+    Coord Y: 274
+    Entrada: 00
+  [E0 - E1]
+    Coord X: 264
+    Coord Y: 167
+    Entrada: 10
+  [E0 - E2]
+    Coord X: 271
+    Coord Y: 219
+    Entrada: 01
+  [E0 - E3]
+    Coord X: 269
+    Coord Y: 274
+    Entrada: 11
+  [E1 - E1]
+    Coord X: 424
+    Coord Y: 97
+    Entrada: XX
+  [E2 - E2]
+    Coord X: 430
+    Coord Y: 224
+    Entrada: XX
+  [E3 - E3]
+    Coord X: 430
+    Coord Y: 333
+    Entrada: XX

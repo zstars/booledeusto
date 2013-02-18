@@ -1,0 +1,106 @@
+[Caracteristicas]
+  Titulo: Sin Titulo
+  Tipo: Mealy
+  Nº Estados: 6
+  Nº Trans: 14
+  Vars Entrada: 2
+      E0
+      E1
+  Vars Salida: 1
+      S0
+[Estados]
+  [E0]
+    Nombre: A
+    Coord X: 208
+    Coord Y: 118
+  [E1]
+    Nombre: B
+    Coord X: 379
+    Coord Y: 315
+  [E2]
+    Nombre: C
+    Coord X: 200
+    Coord Y: 303
+  [E3]
+    Nombre: D
+    Coord X: 394
+    Coord Y: 148
+  [E4]
+    Nombre: E
+    Coord X: 103
+    Coord Y: 40
+  [E5]
+    Nombre: F
+    Coord X: 582
+    Coord Y: 328
+[Transiciones]
+  [E0 - E0]
+    Coord X: 235
+    Coord Y: 42
+    Entrada: 00
+    Salida: 0
+  [E0 - E2]
+    Coord X: 197
+    Coord Y: 223
+    Entrada: 01
+    Salida: 0
+  [E0 - E4]
+    Coord X: 135
+    Coord Y: 96
+    Entrada: 10
+    Salida: X
+  [E1 - E1]
+    Coord X: 452
+    Coord Y: 347
+    Entrada: 00
+    Salida: 0
+  [E1 - E3]
+    Coord X: 434
+    Coord Y: 241
+    Entrada: 01
+    Salida: X
+  [E1 - E5]
+    Coord X: 492
+    Coord Y: 318
+    Entrada: 10
+    Salida: 0
+  [E2 - E1]
+    Coord X: 296
+    Coord Y: 306
+    Entrada: 00
+    Salida: 0
+  [E2 - E2]
+    Coord X: 161
+    Coord Y: 372
+    Entrada: 01
+    Salida: 0
+  [E3 - E1]
+    Coord X: 336
+    Coord Y: 246
+    Entrada: 00
+    Salida: X
+  [E3 - E3]
+    Coord X: 356
+    Coord Y: 218
+    Entrada: 01
+    Salida: 1
+  [E4 - E0]
+    Coord X: 179
+    Coord Y: 41
+    Entrada: 00
+    Salida: X
+  [E4 - E4]
+    Coord X: 174
+    Coord Y: 75
+    Entrada: 10
+    Salida: 1
+  [E5 - E5]
+    Coord X: 624
+    Coord Y: 260
+    Entrada: 10
+    Salida: 0
+  [E5 - E0]
+    Coord X: 510
+    Coord Y: 40
+    Entrada: 00
+    Salida: 0

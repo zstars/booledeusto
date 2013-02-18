@@ -1,0 +1,96 @@
+[Caracteristicas]
+  Titulo: Sin Titulo
+  Tipo: Moore
+  Nº Estados: 4
+  Nº Trans: 16
+  Vars Entrada: 2
+      E0
+      E1
+  Vars Salida: 1
+      S0
+[Estados]
+  [E0]
+    Nombre:  SOC0
+    Coord X: 199
+    Coord Y: 188
+    Salida: 0
+  [E1]
+    Nombre:  S1C0
+    Coord X: 465
+    Coord Y: 166
+    Salida: 1
+  [E2]
+    Nombre: S0C1
+    Coord X: 203
+    Coord Y: 364
+    Salida: 0
+  [E3]
+    Nombre:  S1C1
+    Coord X: 459
+    Coord Y: 373
+    Salida: 1
+[Transiciones]
+  [E0 - E0]
+    Coord X: 121
+    Coord Y: 168
+    Entrada: 00
+  [E1 - E1]
+    Coord X: 543
+    Coord Y: 149
+    Entrada: 01
+  [E3 - E3]
+    Coord X: 539
+    Coord Y: 373
+    Entrada: 11
+  [E0 - E1]
+    Coord X: 340
+    Coord Y: 136
+    Entrada: 01
+  [E0 - E1]
+    Coord X: 335
+    Coord Y: 163
+    Entrada: 10
+  [E3 - E1]
+    Coord X: 459
+    Coord Y: 269
+    Entrada: 00
+  [E3 - E2]
+    Coord X: 347
+    Coord Y: 414
+    Entrada: 10
+  [E3 - E2]
+    Coord X: 340
+    Coord Y: 386
+    Entrada: 01
+  [E2 - E3]
+    Coord X: 351
+    Coord Y: 353
+    Entrada: 11
+  [E1 - E0]
+    Coord X: 325
+    Coord Y: 191
+    Entrada: 00
+  [E0 - E2]
+    Coord X: 192
+    Coord Y: 276
+    Entrada: 11
+  [E1 - E2]
+    Coord X: 366
+    Coord Y: 277
+    Entrada: 11
+  [E2 - E1]
+    Coord X: 333
+    Coord Y: 245
+    Entrada: 00
+  [E1 - E1]
+    Coord X: 537
+    Coord Y: 199
+    Entrada: 10
+  [E2 - E2]
+    Coord X: 123
+    Coord Y: 351
+    Entrada: 10
+  [E2 - E2]
+    Coord X: 129
+    Coord Y: 395
+    Entrada: 01

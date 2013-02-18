@@ -1,0 +1,131 @@
+[Caracteristicas]
+  Titulo: Sin Titulo
+  Tipo: Moore
+  Nº Estados: 10
+  Nº Trans: 17
+  Vars Entrada: 1
+      E0
+  Vars Salida: 3
+      S0
+      S1
+      S2
+[Estados]
+  [E0]
+    Nombre: INICI
+    Coord X: 251
+    Coord Y: 78
+    Salida: 000
+  [E1]
+    Nombre: NOPRE
+    Coord X: 127
+    Coord Y: 168
+    Salida: 000
+  [E2]
+    Nombre: PRE10
+    Coord X: 326
+    Coord Y: 157
+    Salida: 000
+  [E3]
+    Nombre: PRE11
+    Coord X: 305
+    Coord Y: 292
+    Salida: 000
+  [E4]
+    Nombre: PRE20
+    Coord X: 469
+    Coord Y: 278
+    Salida: 000
+  [E5]
+    Nombre: NOPR1
+    Coord X: 130
+    Coord Y: 281
+    Salida: 000
+  [E6]
+    Nombre: NOPR2
+    Coord X: 123
+    Coord Y: 420
+    Salida: 000
+  [E7]
+    Nombre: PRE1
+    Coord X: 310
+    Coord Y: 413
+    Salida: 001
+  [E8]
+    Nombre: PRE2
+    Coord X: 461
+    Coord Y: 416
+    Salida: 010
+  [E9]
+    Nombre: PREGO
+    Coord X: 590
+    Coord Y: 417
+    Salida: 100
+[Transiciones]
+  [E0 - E1]
+    Coord X: 193
+    Coord Y: 117
+    Entrada: 0
+  [E1 - E5]
+    Coord X: 132
+    Coord Y: 219
+    Entrada: X
+  [E5 - E6]
+    Coord X: 128
+    Coord Y: 343
+    Entrada: X
+  [E0 - E2]
+    Coord X: 288
+    Coord Y: 110
+    Entrada: 1
+  [E2 - E3]
+    Coord X: 315
+    Coord Y: 219
+    Entrada: 0
+  [E3 - E7]
+    Coord X: 305
+    Coord Y: 349
+    Entrada: X
+  [E2 - E4]
+    Coord X: 392
+    Coord Y: 210
+    Entrada: 1
+  [E4 - E8]
+    Coord X: 463
+    Coord Y: 337
+    Entrada: 0
+  [E4 - E9]
+    Coord X: 522
+    Coord Y: 338
+    Entrada: 1
+  [E6 - E1]
+    Coord X: 50
+    Coord Y: 196
+    Entrada: 0
+  [E7 - E1]
+    Coord X: 183
+    Coord Y: 235
+    Entrada: 0
+  [E8 - E1]
+    Coord X: 226
+    Coord Y: 227
+    Entrada: 0
+  [E9 - E1]
+    Coord X: 362
+    Coord Y: 262
+    Entrada: 0
+  [E6 - E2]
+    Coord X: 214
+    Coord Y: 295
+    Entrada: 1
+  [E7 - E2]
+    Coord X: 361
+    Coord Y: 307
+    Entrada: 1
+  [E8 - E2]
+    Coord X: 413
+    Coord Y: 257
+    Entrada: 1
+  [E9 - E2]
+    Coord X: 498
+    Coord Y: 184
+    Entrada: 1

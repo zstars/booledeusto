@@ -1,0 +1,109 @@
+[Caracteristicas]
+  Titulo: Sin Titulo
+  Tipo: Moore
+  Nº Estados: 8
+  Nº Trans: 14
+  Vars Entrada: 3
+      E0
+      E1
+      E2
+  Vars Salida: 1
+      S0
+[Estados]
+  [E0]
+    Nombre: INICI
+    Coord X: 330
+    Coord Y: 176
+    Salida: 1
+  [E1]
+    Nombre: EMPIE
+    Coord X: 330
+    Coord Y: 415
+    Salida: 0
+  [E2]
+    Nombre: UNO0
+    Coord X: 229
+    Coord Y: 488
+    Salida: 0
+  [E3]
+    Nombre: DOS0
+    Coord X: 224
+    Coord Y: 603
+    Salida: 0
+  [E4]
+    Nombre: UNO1
+    Coord X: 475
+    Coord Y: 489
+    Salida: 1
+  [E5]
+    Nombre: DOS1
+    Coord X: 451
+    Coord Y: 616
+    Salida: 1
+  [E6]
+    Nombre: FINAL
+    Coord X: 328
+    Coord Y: 707
+    Salida: 0
+  [E7]
+    Nombre: TRANS
+    Coord X: 327
+    Coord Y: 297
+    Salida: 1
+[Transiciones]
+  [E0 - E0]
+    Coord X: 405
+    Coord Y: 203
+    Entrada: 0XX
+  [E0 - E7]
+    Coord X: 330
+    Coord Y: 246
+    Entrada: 1XX
+  [E7 - E7]
+    Coord X: 400
+    Coord Y: 328
+    Entrada: 1XX
+  [E7 - E1]
+    Coord X: 328
+    Coord Y: 348
+    Entrada: 0XX
+  [E1 - E2]
+    Coord X: 281
+    Coord Y: 448
+    Entrada: X0X
+  [E1 - E4]
+    Coord X: 413
+    Coord Y: 450
+    Entrada: X1X
+  [E2 - E5]
+    Coord X: 358
+    Coord Y: 568
+    Entrada: XX1
+  [E2 - E3]
+    Coord X: 230
+    Coord Y: 542
+    Entrada: XX0
+  [E4 - E3]
+    Coord X: 354
+    Coord Y: 538
+    Entrada: XX0
+  [E4 - E5]
+    Coord X: 461
+    Coord Y: 558
+    Entrada: XX1
+  [E3 - E6]
+    Coord X: 272
+    Coord Y: 651
+    Entrada: XXX
+  [E5 - E6]
+    Coord X: 395
+    Coord Y: 658
+    Entrada: XXX
+  [E6 - E0]
+    Coord X: 634
+    Coord Y: 519
+    Entrada: 0XX
+  [E6 - E7]
+    Coord X: 100
+    Coord Y: 538
+    Entrada: 1XX

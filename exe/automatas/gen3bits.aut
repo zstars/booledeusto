@@ -1,0 +1,102 @@
+[Caracteristicas]
+  Titulo: Sin Titulo
+  Tipo: Moore
+  Nº Estados: 7
+  Nº Trans: 14
+  Vars Entrada: 1
+      E0
+  Vars Salida: 1
+      S0
+[Estados]
+  [E0]
+    Nombre: Q0
+    Coord X: 351
+    Coord Y: 61
+    Salida: 0
+  [E1]
+    Nombre: Q1
+    Coord X: 218
+    Coord Y: 128
+    Salida: 0
+  [E2]
+    Nombre: Q2
+    Coord X: 440
+    Coord Y: 137
+    Salida: 0
+  [E3]
+    Nombre: Q3
+    Coord X: 205
+    Coord Y: 257
+    Salida: 0
+  [E4]
+    Nombre: Q4
+    Coord X: 447
+    Coord Y: 268
+    Salida: 0
+  [E5]
+    Nombre: Q5
+    Coord X: 226
+    Coord Y: 381
+    Salida: 0
+  [E6]
+    Nombre: Q6
+    Coord X: 488
+    Coord Y: 374
+    Salida: 1
+[Transiciones]
+  [E0 - E1]
+    Coord X: 290
+    Coord Y: 85
+    Entrada: 0
+  [E0 - E2]
+    Coord X: 389
+    Coord Y: 98
+    Entrada: 1
+  [E1 - E3]
+    Coord X: 212
+    Coord Y: 184
+    Entrada: 0
+  [E2 - E3]
+    Coord X: 330
+    Coord Y: 191
+    Entrada: 1
+  [E1 - E4]
+    Coord X: 361
+    Coord Y: 221
+    Entrada: 1
+  [E2 - E4]
+    Coord X: 445
+    Coord Y: 194
+    Entrada: 0
+  [E3 - E5]
+    Coord X: 229
+    Coord Y: 307
+    Entrada: 0
+  [E3 - E6]
+    Coord X: 316
+    Coord Y: 297
+    Entrada: 1
+  [E4 - E6]
+    Coord X: 475
+    Coord Y: 323
+    Entrada: 0
+  [E4 - E5]
+    Coord X: 364
+    Coord Y: 313
+    Entrada: 1
+  [E5 - E1]
+    Coord X: 72
+    Coord Y: 297
+    Entrada: 0
+  [E5 - E2]
+    Coord X: 520
+    Coord Y: 399
+    Entrada: 1
+  [E6 - E2]
+    Coord X: 585
+    Coord Y: 249
+    Entrada: 1
+  [E6 - E1]
+    Coord X: 154
+    Coord Y: 400
+    Entrada: 0

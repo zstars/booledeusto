@@ -1,0 +1,16 @@
+[Caracteristicas]
+  Titulo: Automata
+  Tipo: Moore
+  Nº Estados: 1
+  Nº Trans: 0
+  Vars Entrada: 1
+      I0
+  Vars Salida: 1
+      O0
+[Estados]
+  [E0]
+    Nombre: Q0
+    Coord X: 308
+    Coord Y: 158
+    Salida: 
+[Transiciones]

@@ -1,0 +1,76 @@
+[Caracteristicas]
+  Titulo: Sin Titulo
+  Tipo: Moore
+  Nº Estados: 4
+  Nº Trans: 11
+  Vars Entrada: 2
+      E0
+      E1
+  Vars Salida: 1
+      S0
+[Estados]
+  [E0]
+    Nombre: INICI
+    Coord X: 110
+    Coord Y: 122
+    Salida: 0
+  [E1]
+    Nombre: ACTIV
+    Coord X: 341
+    Coord Y: 113
+    Salida: 0
+  [E2]
+    Nombre:   CK1
+    Coord X: 117
+    Coord Y: 293
+    Salida: 1
+  [E3]
+    Nombre:   CK0
+    Coord X: 345
+    Coord Y: 299
+    Salida: 0
+[Transiciones]
+  [E0 - E0]
+    Coord X: 98
+    Coord Y: 42
+    Entrada: 0X
+  [E0 - E1]
+    Coord X: 225
+    Coord Y: 124
+    Entrada: 1X
+  [E1 - E1]
+    Coord X: 416
+    Coord Y: 140
+    Entrada: 1X
+  [E1 - E1]
+    Coord X: 298
+    Coord Y: 45
+    Entrada: 01
+  [E1 - E3]
+    Coord X: 371
+    Coord Y: 211
+    Entrada: 00
+  [E3 - E2]
+    Coord X: 238
+    Coord Y: 331
+    Entrada: 01
+  [E2 - E3]
+    Coord X: 247
+    Coord Y: 270
+    Entrada: 00
+  [E3 - E3]
+    Coord X: 421
+    Coord Y: 323
+    Entrada: 00
+  [E2 - E2]
+    Coord X: 130
+    Coord Y: 371
+    Entrada: 01
+  [E2 - E1]
+    Coord X: 233
+    Coord Y: 204
+    Entrada: 1X
+  [E3 - E1]
+    Coord X: 303
+    Coord Y: 209
+    Entrada: 1X

@@ -1,0 +1,77 @@
+[Caracteristicas]
+  Titulo: Sin Titulo
+  Tipo: Moore
+  Nº Estados: 3
+  Nº Trans: 12
+  Vars Entrada: 2
+      E0
+      E1
+  Vars Salida: 3
+      S0
+      S1
+      S2
+[Estados]
+  [E0]
+    Nombre: IGUAL
+    Coord X: 306
+    Coord Y: 119
+    Salida: 010
+  [E1]
+    Nombre: MAYOR
+    Coord X: 125
+    Coord Y: 274
+    Salida: 100
+  [E2]
+    Nombre: MENOR
+    Coord X: 410
+    Coord Y: 276
+    Salida: 001
+[Transiciones]
+  [E0 - E0]
+    Coord X: 234
+    Coord Y: 83
+    Entrada: 00
+  [E0 - E0]
+    Coord X: 381
+    Coord Y: 91
+    Entrada: 11
+  [E0 - E1]
+    Coord X: 224
+    Coord Y: 191
+    Entrada: 10
+  [E0 - E2]
+    Coord X: 352
+    Coord Y: 193
+    Entrada: 01
+  [E2 - E1]
+    Coord X: 261
+    Coord Y: 306
+    Entrada: 10
+  [E1 - E2]
+    Coord X: 259
+    Coord Y: 248
+    Entrada: 01
+  [E2 - E2]
+    Coord X: 477
+    Coord Y: 319
+    Entrada: 11
+  [E2 - E2]
+    Coord X: 465
+    Coord Y: 218
+    Entrada: 01
+  [E2 - E2]
+    Coord X: 348
+    Coord Y: 327
+    Entrada: 00
+  [E1 - E1]
+    Coord X: 188
+    Coord Y: 323
+    Entrada: 00
+  [E1 - E1]
+    Coord X: 89
+    Coord Y: 202
+    Entrada: 10
+  [E1 - E1]
+    Coord X: 63
+    Coord Y: 325
+    Entrada: 11

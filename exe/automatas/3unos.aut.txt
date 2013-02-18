@@ -1,0 +1,1 @@
+Este automata detecta tres 1s seguidos.

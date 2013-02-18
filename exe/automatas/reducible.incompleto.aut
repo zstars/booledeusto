@@ -1,0 +1,35 @@
+[Caracteristicas]
+  Titulo: Sin Titulo
+  Tipo: Mealy
+  Nº Estados: 2
+  Nº Trans: 3
+  Vars Entrada: 2
+      E0
+      E1
+  Vars Salida: 1
+      S0
+[Estados]
+  [E0]
+    Nombre: Q0
+    Coord X: 210
+    Coord Y: 159
+  [E1]
+    Nombre: Q1
+    Coord X: 403
+    Coord Y: 159
+[Transiciones]
+  [E0 - E1]
+    Coord X: 290
+    Coord Y: 85
+    Entrada: 1X
+    Salida: 1
+  [E0 - E1]
+    Coord X: 302
+    Coord Y: 118
+    Entrada: 00
+    Salida: 1
+  [E1 - E0]
+    Coord X: 313
+    Coord Y: 205
+    Entrada: XX
+    Salida: 1

@@ -1,0 +1,139 @@
+[Caracteristicas]
+  Titulo: Sin Titulo
+  Tipo: Moore
+  Nº Estados: 10
+  Nº Trans: 19
+  Vars Entrada: 1
+      E0
+  Vars Salida: 3
+      S0
+      S1
+      S2
+[Estados]
+  [E0]
+    Nombre: INICI
+    Coord X: 336
+    Coord Y: 145
+    Salida: XX0
+  [E1]
+    Nombre: EMPIE
+    Coord X: 293
+    Coord Y: 249
+    Salida: XX0
+  [E2]
+    Nombre: UNO0
+    Coord X: 205
+    Coord Y: 311
+    Salida: 0X0
+  [E3]
+    Nombre: UNO1
+    Coord X: 442
+    Coord Y: 310
+    Salida: 1X0
+  [E4]
+    Nombre: DOS0
+    Coord X: 83
+    Coord Y: 407
+    Salida: 000
+  [E5]
+    Nombre: DOS1
+    Coord X: 253
+    Coord Y: 413
+    Salida: 110
+  [E6]
+    Nombre: TRES0
+    Coord X: 348
+    Coord Y: 420
+    Salida: 100
+  [E7]
+    Nombre: TRES1
+    Coord X: 517
+    Coord Y: 415
+    Salida: 110
+  [E8]
+    Nombre: ERROR
+    Coord X: 410
+    Coord Y: 554
+    Salida: XX1
+  [E9]
+    Nombre: BIEN
+    Coord X: 156
+    Coord Y: 547
+    Salida: XX0
+[Transiciones]
+  [E0 - E0]
+    Coord X: 407
+    Coord Y: 180
+    Entrada: 1
+  [E0 - E1]
+    Coord X: 308
+    Coord Y: 203
+    Entrada: 0
+  [E1 - E2]
+    Coord X: 261
+    Coord Y: 286
+    Entrada: 0
+  [E1 - E3]
+    Coord X: 353
+    Coord Y: 286
+    Entrada: 1
+  [E2 - E4]
+    Coord X: 148
+    Coord Y: 353
+    Entrada: 0
+  [E2 - E5]
+    Coord X: 228
+    Coord Y: 360
+    Entrada: 1
+  [E3 - E6]
+    Coord X: 399
+    Coord Y: 356
+    Entrada: 0
+  [E3 - E7]
+    Coord X: 487
+    Coord Y: 367
+    Entrada: 1
+  [E4 - E8]
+    Coord X: 236
+    Coord Y: 463
+    Entrada: 1
+  [E5 - E8]
+    Coord X: 323
+    Coord Y: 465
+    Entrada: 1
+  [E6 - E8]
+    Coord X: 375
+    Coord Y: 464
+    Entrada: 1
+  [E7 - E8]
+    Coord X: 443
+    Coord Y: 488
+    Entrada: 1
+  [E8 - E8]
+    Coord X: 408
+    Coord Y: 633
+    Entrada: X
+  [E4 - E9]
+    Coord X: 114
+    Coord Y: 493
+    Entrada: 0
+  [E5 - E9]
+    Coord X: 171
+    Coord Y: 492
+    Entrada: 0
+  [E6 - E9]
+    Coord X: 236
+    Coord Y: 496
+    Entrada: 0
+  [E7 - E9]
+    Coord X: 308
+    Coord Y: 511
+    Entrada: 0
+  [E9 - E0]
+    Coord X: 13
+    Coord Y: 344
+    Entrada: 1
+  [E9 - E1]
+    Coord X: 35
+    Coord Y: 364
+    Entrada: 0

@@ -1,0 +1,61 @@
+[Caracteristicas]
+  Titulo: Prueba Simul
+  Tipo: Mealy
+  Nº Estados: 2
+  Nº Trans: 8
+  Vars Entrada: 2
+      E0
+      E1
+  Vars Salida: 2
+      S0
+      S1
+[Estados]
+  [E0]
+    Nombre: Q0
+    Coord X: 137
+    Coord Y: 181
+  [E1]
+    Nombre: Q1
+    Coord X: 414
+    Coord Y: 191
+[Transiciones]
+  [E0 - E0]
+    Coord X: 95
+    Coord Y: 112
+    Entrada: 00
+    Salida: 01
+  [E0 - E0]
+    Coord X: 65
+    Coord Y: 217
+    Entrada: 01
+    Salida: 01
+  [E1 - E1]
+    Coord X: 482
+    Coord Y: 232
+    Entrada: 10
+    Salida: 10
+  [E1 - E1]
+    Coord X: 456
+    Coord Y: 123
+    Entrada: 00
+    Salida: 10
+  [E0 - E1]
+    Coord X: 272
+    Coord Y: 112
+    Entrada: 10
+    Salida: 10
+  [E0 - E1]
+    Coord X: 274
+    Coord Y: 143
+    Entrada: 11
+    Salida: 10
+  [E1 - E0]
+    Coord X: 290
+    Coord Y: 206
+    Entrada: 01
+    Salida: 01
+  [E1 - E0]
+    Coord X: 280
+    Coord Y: 244
+    Entrada: 11
+    Salida: 01

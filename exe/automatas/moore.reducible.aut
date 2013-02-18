@@ -1,0 +1,115 @@
+[Caracteristicas]
+  Titulo: Sin Titulo
+  Tipo: Moore
+  Nº Estados: 8
+  Nº Trans: 16
+  Vars Entrada: 1
+      E0
+  Vars Salida: 1
+      S0
+[Estados]
+  [E0]
+    Nombre: A
+    Coord X: 97
+    Coord Y: 114
+    Salida: 0
+  [E1]
+    Nombre: B
+    Coord X: 260
+    Coord Y: 100
+    Salida: 0
+  [E2]
+    Nombre: C
+    Coord X: 448
+    Coord Y: 90
+    Salida: 1
+  [E3]
+    Nombre: D
+    Coord X: 604
+    Coord Y: 102
+    Salida: 0
+  [E4]
+    Nombre: E
+    Coord X: 81
+    Coord Y: 325
+    Salida: 0
+  [E5]
+    Nombre: F
+    Coord X: 254
+    Coord Y: 328
+    Salida: 0
+  [E6]
+    Nombre: G
+    Coord X: 450
+    Coord Y: 315
+    Salida: 0
+  [E7]
+    Nombre: H
+    Coord X: 645
+    Coord Y: 316
+    Salida: 0
+[Transiciones]
+  [E0 - E1]
+    Coord X: 181
+    Coord Y: 100
+    Entrada: 0
+  [E1 - E2]
+    Coord X: 350
+    Coord Y: 88
+    Entrada: 1
+  [E2 - E2]
+    Coord X: 453
+    Coord Y: 10
+    Entrada: 1
+  [E0 - E5]
+    Coord X: 177
+    Coord Y: 223
+    Entrada: 1
+  [E1 - E6]
+    Coord X: 361
+    Coord Y: 221
+    Entrada: 0
+  [E2 - E0]
+    Coord X: 274
+    Coord Y: 27
+    Entrada: 0
+  [E3 - E2]
+    Coord X: 525
+    Coord Y: 98
+    Entrada: 0
+  [E3 - E6]
+    Coord X: 521
+    Coord Y: 241
+    Entrada: 1
+  [E4 - E5]
+    Coord X: 178
+    Coord Y: 321
+    Entrada: 1
+  [E4 - E7]
+    Coord X: 343
+    Coord Y: 434
+    Entrada: 0
+  [E5 - E2]
+    Coord X: 354
+    Coord Y: 190
+    Entrada: 0
+  [E5 - E6]
+    Coord X: 353
+    Coord Y: 321
+    Entrada: 1
+  [E6 - E4]
+    Coord X: 342
+    Coord Y: 385
+    Entrada: 1
+  [E6 - E6]
+    Coord X: 438
+    Coord Y: 394
+    Entrada: 0
+  [E7 - E6]
+    Coord X: 544
+    Coord Y: 321
+    Entrada: 0
+  [E7 - E2]
+    Coord X: 533
+    Coord Y: 153
+    Entrada: 1

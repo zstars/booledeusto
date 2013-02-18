@@ -1,0 +1,173 @@
+[Caracteristicas]
+  Titulo: Sin Titulo
+  Tipo: Moore
+  Nº Estados: 9
+  Nº Trans: 28
+  Vars Entrada: 4
+      E0
+      E1
+      E2
+      E3
+  Vars Salida: 3
+      S0
+      S1
+      S2
+[Estados]
+  [E0]
+    Nombre: REPOS
+    Coord X: 104
+    Coord Y: 191
+    Salida: 000
+  [E1]
+    Nombre: INICI
+    Coord X: 264
+    Coord Y: 190
+    Salida: 000
+  [E2]
+    Nombre: JUGAN
+    Coord X: 523
+    Coord Y: 186
+    Salida: 100
+  [E3]
+    Nombre: PIERA
+    Coord X: 23
+    Coord Y: 333
+    Salida: 010
+  [E4]
+    Nombre: PIERB
+    Coord X: 162
+    Coord Y: 348
+    Salida: 001
+  [E5]
+    Nombre: PIERT
+    Coord X: 289
+    Coord Y: 344
+    Salida: 011
+  [E6]
+    Nombre: GANAA
+    Coord X: 411
+    Coord Y: 349
+    Salida: 110
+  [E7]
+    Nombre: GANAB
+    Coord X: 534
+    Coord Y: 341
+    Salida: 101
+  [E8]
+    Nombre: GANAT
+    Coord X: 654
+    Coord Y: 343
+    Salida: 111
+[Transiciones]
+  [E0 - E1]
+    Coord X: 181
+    Coord Y: 189
+    Entrada: 1XXX
+  [E0 - E0]
+    Coord X: 24
+    Coord Y: 196
+    Entrada: 0XXX
+  [E1 - E1]
+    Coord X: 232
+    Coord Y: 116
+    Entrada: 1XXX
+  [E1 - E1]
+    Coord X: 304
+    Coord Y: 120
+    Entrada: 0000
+  [E1 - E3]
+    Coord X: 156
+    Coord Y: 256
+    Entrada: 0010
+  [E1 - E4]
+    Coord X: 235
+    Coord Y: 261
+    Entrada: 0001
+  [E1 - E5]
+    Coord X: 282
+    Coord Y: 250
+    Entrada: 0011
+  [E1 - E2]
+    Coord X: 399
+    Coord Y: 186
+    Entrada: 0100
+  [E2 - E2]
+    Coord X: 496
+    Coord Y: 110
+    Entrada: 0X00
+  [E2 - E6]
+    Coord X: 480
+    Coord Y: 254
+    Entrada: 0X10
+  [E2 - E7]
+    Coord X: 532
+    Coord Y: 271
+    Entrada: 0X01
+  [E2 - E8]
+    Coord X: 577
+    Coord Y: 246
+    Entrada: 0X11
+  [E1 - E6]
+    Coord X: 328
+    Coord Y: 264
+    Entrada: 0110
+  [E1 - E7]
+    Coord X: 395
+    Coord Y: 254
+    Entrada: 0101
+  [E1 - E8]
+    Coord X: 446
+    Coord Y: 244
+    Entrada: 0111
+  [E2 - E0]
+    Coord X: 261
+    Coord Y: 61
+    Entrada: 1XXX
+  [E3 - E3]
+    Coord X: 103
+    Coord Y: 333
+    Entrada: 0XXX
+  [E4 - E4]
+    Coord X: 241
+    Coord Y: 352
+    Entrada: 0XXX
+  [E5 - E5]
+    Coord X: 368
+    Coord Y: 349
+    Entrada: 0XXX
+  [E6 - E6]
+    Coord X: 489
+    Coord Y: 364
+    Entrada: 0XXX
+  [E7 - E7]
+    Coord X: 614
+    Coord Y: 341
+    Entrada: 0XXX
+  [E8 - E8]
+    Coord X: 729
+    Coord Y: 370
+    Entrada: 0XXX
+  [E3 - E0]
+    Coord X: 62
+    Coord Y: 266
+    Entrada: 1XXX
+  [E4 - E0]
+    Coord X: 133
+    Coord Y: 282
+    Entrada: 1XXX
+  [E5 - E0]
+    Coord X: 183
+    Coord Y: 279
+    Entrada: 1XXX
+  [E6 - E0]
+    Coord X: 137
+    Coord Y: 406
+    Entrada: 1XXX
+  [E7 - E0]
+    Coord X: 148
+    Coord Y: 426
+    Entrada: 1XXX
+  [E8 - E0]
+    Coord X: 135
+    Coord Y: 466
+    Entrada: 1XXX
