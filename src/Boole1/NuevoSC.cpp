@@ -119,6 +119,8 @@ __fastcall TSistemaCombinacionalNuevo::TSistemaCombinacionalNuevo(TComponent* Ow
     // ajustamos el tamaño de las celdas para los nombre de las variables
 	TablaEntrada->ColWidths[1] = TablaEntrada->Width - TablaEntrada->ColWidths[0];
     TablaSalida->ColWidths[1] = TablaSalida->Width - TablaSalida->ColWidths[0];
+
+    mSistemaModificado = true;
 }
 
 //---------------------------------------------------------------------------
@@ -127,6 +129,8 @@ void __fastcall TSistemaCombinacionalNuevo::NEntradasChange(TObject *Sender)
     AnsiString cadena;
     cadena = NEntradas->Text;
     long numero = atol(cadena.c_str());
+
+    mSistemaModificado = true;
 
     /* si el número de var. de entrada es aceptable activamos la tabla de
     	variables y le damos el tamño adecuado*/
@@ -157,6 +161,8 @@ void __fastcall TSistemaCombinacionalNuevo::NSalidasChange(TObject *Sender)
     cadena = NSalidas->Text;
     long numero = atol(cadena.c_str());
 
+    mSistemaModificado = true;
+
 /* si el número de var. de salida es aceptable activamos la tabla de
     	variables y le damos el tamño adecuado*/
     if (numero>0)
@@ -185,6 +191,7 @@ void __fastcall TSistemaCombinacionalNuevo::TVManualClick(TObject *Sender)
     if (ComprobarVariables())
     {
 		TablaVerdadCompleta->Show();
+                mSistemaModificado = true;
 	    //SistemaCombinacionalNuevo->Hide();
     }
     else
@@ -265,6 +272,7 @@ void __fastcall TSistemaCombinacionalNuevo::TVCompactaClick(TObject *Sender)
         if (Tabla.LeerDinArray(0,0) == ' ')
     	{
 			TablaVerdadManual->Show();
+                        mSistemaModificado = true;
 		    //SistemaCombinacionalNuevo->Hide();
         }
         else
@@ -439,6 +447,8 @@ TStringList *Lista = new TStringList;
 AnsiString Prueba;
 //int numerofilas;
 int numerocolumnas;
+
+mSistemaModificado = true;
 
  	if (Cargador->Execute())
     {	//Capturamos interrupcion en caso de que exista un error
@@ -1631,7 +1641,8 @@ AnsiString NombreVHDL(AnsiString st)
 }
 
 
-void __fastcall TSistemaCombinacionalNuevo::BitBtn3Click(TObject *Sender)
+
+void __fastcall TSistemaCombinacionalNuevo::OnClickVHDLCode(TObject *Sender)
 {
 	AnsiString temp="";
 	TStringList *Lista = new TStringList;
@@ -1771,6 +1782,7 @@ void __fastcall TSistemaCombinacionalNuevo::BitBtn3Click(TObject *Sender)
 
 		        Lista->Add("end behavioral;");
                         Lista->SaveToFile(GuardaPLD->FileName);
+                        mSistemaModificado = false;
                     }
                 }
   else
@@ -2116,6 +2128,19 @@ void __fastcall TSistemaCombinacionalNuevo::BitBtn5Click(TObject *Sender)
 
 void __fastcall TSistemaCombinacionalNuevo::btWeblabClick(TObject *Sender)
 {
+    if(mSistemaModificado)
+    {
+        int result = Application->MessageBox("Would you like to generate the VHDL code first? You will need it for the next steps (if you have not generated it already)",
+                "VHDL code generation", MB_YESNOCANCEL | MB_ICONQUESTION);
+        if(result == IDCANCEL)
+                return;
+        else if(result == IDYES)
+        {
+                // Invoke code generation
+                this->OnClickVHDLCode(Sender);
+        }
+    }
+
     ShellExecute(NULL, "open", "https://www.weblab.deusto.es/weblab/client/#page=experiment&exp.category=FPGA%20experiments&exp.name=ud-fpga", NULL, NULL, SW_SHOW);
     int n = 5;
     if(n == 4)
@@ -2197,20 +2222,13 @@ void __fastcall TSistemaCombinacionalNuevo::OnComboBoxExit(TObject *Sender)
         comboBox->Visible = false;
         tablaActual->Cells[tablaActual->Col][tablaActual->Row] =
                 comboBox->Text;
+        mSistemaModificado = true;
 
         // This used to cause a bug where two clicks would be required to hit
         // external buttons with the combobox selected. Left here just in case
         // commenting it out has side effects. ~lrg
         //tablaActual->SetFocus();
 }
-//---------------------------------------------------------------------------
-
-void __fastcall TSistemaCombinacionalNuevo::OnComboBoxChange(
-      TObject *Sender)
-{
-  // Change goes here
-}
-//---------------------------------------------------------------------------
 
 
 

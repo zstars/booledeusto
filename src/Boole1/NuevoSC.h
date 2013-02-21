@@ -116,7 +116,7 @@ __published:	// IDE-managed Components
   void __fastcall BitBtn1Click(TObject *Sender);
   void __fastcall Edit1Change(TObject *Sender);
   void __fastcall BitBtn2Click(TObject *Sender);
-	void __fastcall BitBtn3Click(TObject *Sender);
+	void __fastcall OnClickVHDLCode(TObject *Sender);
 	void __fastcall DiagramaVKClick(TObject *Sender);
 	void __fastcall BitBtn4Click(TObject *Sender);
         void __fastcall BitBtn5Click(TObject *Sender);
@@ -126,7 +126,6 @@ __published:	// IDE-managed Components
         void __fastcall OnTablaSalidaSelectCell(TObject *Sender, int ACol,
           int ARow, bool &CanSelect);
         void __fastcall OnComboBoxExit(TObject *Sender);
-        void __fastcall OnComboBoxChange(TObject *Sender);
         void __fastcall OnCreate(TObject *Sender);
         void __fastcall OnTablaEntradaEnter(TObject *Sender);
         void __fastcall weblabHelpButtonClick(TObject *Sender);
@@ -141,6 +140,9 @@ private:	// User declarations
 
   std::vector<std::string> mEntradasWeblab;
   std::vector<std::string> mSalidasWeblab;
+
+  //! Indica si el sistema ha sido modificado tras haber generado código.
+  bool mSistemaModificado;
 
   TStringGrid * tablaActual; // TablaEntrada o TablaSalida, dependiendo de la que se esté modificando.
 
