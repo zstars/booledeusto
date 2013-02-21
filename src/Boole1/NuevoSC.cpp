@@ -2281,7 +2281,7 @@ void TSistemaCombinacionalNuevo::InicializarEntradasSalidasWeblab()
         mSalidasWeblab.push_back("seg5");
         mSalidasWeblab.push_back("seg6");
         mSalidasWeblab.push_back("dot");
-        mSalidasWeblab.push_back("ena0)");
+        mSalidasWeblab.push_back("ena0");
         mSalidasWeblab.push_back("ena1");
         mSalidasWeblab.push_back("ena2");
         mSalidasWeblab.push_back("ena3");
