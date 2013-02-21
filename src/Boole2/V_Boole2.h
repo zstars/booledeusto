@@ -246,6 +246,8 @@ __published:	// IDE-managed Components
         TMenuItem *N4;
         TMenuItem *N12;
         TMenuItem *ExportToWeblabButton;
+        TMenuItem *GeneralHelp1;
+        TMenuItem *WeblabHelp1;
 	void __fastcall				TableroMouseMove(TObject *Sender, TShiftState Shift, int X, int Y);
 	void __fastcall				FormCreate(TObject *Sender);
 
@@ -326,6 +328,8 @@ __published:	// IDE-managed Components
         void __fastcall ExportToWeblabWeblabClick(TObject *Sender);
         void __fastcall ExportToWeblabSwitchClick(TObject *Sender);
         void __fastcall ExportToWeblabButtonClick(TObject *Sender);
+        void __fastcall GeneralHelp1Click(TObject *Sender);
+        void __fastcall WeblabHelp1Click(TObject *Sender);
 
 /*
  -----------------------------------------------------------------------------------------------------------------------

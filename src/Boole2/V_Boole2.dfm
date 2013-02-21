@@ -495,6 +495,14 @@ object Form1Boole2: TForm1Boole2
     object Ayuda1: TMenuItem
       Caption = 'A&yuda'
       OnClick = Ayuda1Click
+      object GeneralHelp1: TMenuItem
+        Caption = 'General Help'
+        OnClick = GeneralHelp1Click
+      end
+      object WeblabHelp1: TMenuItem
+        Caption = 'Weblab Help'
+        OnClick = WeblabHelp1Click
+      end
     end
   end
   object SaveDialog1: TSaveDialog

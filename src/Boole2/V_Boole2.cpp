@@ -4487,9 +4487,9 @@ void __fastcall TForm1Boole2::Circuito1Click(TObject *Sender)
  */
 void __fastcall TForm1Boole2::Ayuda1Click(TObject *Sender)
 {
-	Form1Boole2->Enabled = false;
-	fAyuda->Show();
-	fAyuda->SetFocus();
+	//Form1Boole2->Enabled = false;
+	//fAyuda->Show();
+	//fAyuda->SetFocus();
 }
 
 /*
@@ -6498,6 +6498,20 @@ void __fastcall TForm1Boole2::ExportToWeblabButtonClick(
 	{
 		SalvarPDL(SaveDialog2->FileName);
 	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1Boole2::GeneralHelp1Click(TObject *Sender)
+{
+	Form1Boole2->Enabled = false;
+	fAyuda->Show();
+	fAyuda->SetFocus();        
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1Boole2::WeblabHelp1Click(TObject *Sender)
+{
+        ShellExecute(NULL, "open", "https://weblabdeusto.readthedocs.org/en/latest/userguide_boole_weblab_es.html", NULL, NULL, SW_SHOW);        
 }
 //---------------------------------------------------------------------------
 

@@ -2307,7 +2307,9 @@ void __fastcall TSistemaCombinacionalNuevo::OnTablaEntradaEnter(
 void __fastcall TSistemaCombinacionalNuevo::weblabHelpButtonClick(
       TObject *Sender)
 {
-        ShellExecute(NULL, "open", "https://weblabdeusto.readthedocs.org/en/latest/userguide_boole_weblab_es.html", NULL, NULL, SW_SHOW);
+        // The following code seems to actually hang quite often. Probably, there's some
+        // memory corruption somewhere. The code itself is quite short and seems fine.
+        ShellExecute(NULL, "open", PChar("http://weblabdeusto.readthedocs.org/en/latest/userguide_boole_weblab_es.html#circuitos-combinacionales"), NULL, NULL, SW_SHOW);
 }
 //---------------------------------------------------------------------------
 
