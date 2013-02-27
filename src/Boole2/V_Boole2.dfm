@@ -1,6 +1,6 @@
 object Form1Boole2: TForm1Boole2
-  Left = 793
-  Top = 192
+  Left = 404
+  Top = 240
   Width = 785
   Height = 538
   HorzScrollBar.Tracking = True
@@ -23,8 +23,8 @@ object Form1Boole2: TForm1Boole2
   TextHeight = 16
   object Splitter1: TSplitter
     Left = 0
-    Top = 361
-    Width = 769
+    Top = 365
+    Width = 777
     Height = 3
     Cursor = crVSplit
     Align = alBottom
@@ -32,8 +32,8 @@ object Form1Boole2: TForm1Boole2
   end
   object BarraEstado: TStatusBar
     Left = 0
-    Top = 454
-    Width = 769
+    Top = 458
+    Width = 777
     Height = 26
     DragCursor = crDefault
     Panels = <>
@@ -43,8 +43,8 @@ object Form1Boole2: TForm1Boole2
   object TableroBox: TScrollBox
     Left = 161
     Top = 0
-    Width = 608
-    Height = 361
+    Width = 616
+    Height = 365
     Align = alClient
     TabOrder = 1
     object Tablero: TImage
@@ -64,8 +64,8 @@ object Form1Boole2: TForm1Boole2
   end
   object pTextAsoc: TPanel
     Left = 0
-    Top = 364
-    Width = 769
+    Top = 368
+    Width = 777
     Height = 90
     Align = alBottom
     Anchors = [akLeft, akTop, akRight, akBottom]
@@ -74,7 +74,7 @@ object Form1Boole2: TForm1Boole2
     object txAsociado: TMemo
       Left = 1
       Top = 1
-      Width = 767
+      Width = 775
       Height = 88
       Align = alClient
       TabOrder = 0
@@ -84,7 +84,7 @@ object Form1Boole2: TForm1Boole2
     Left = 0
     Top = 0
     Width = 161
-    Height = 361
+    Height = 365
     Align = alLeft
     TabOrder = 3
     Visible = False
@@ -322,26 +322,26 @@ object Form1Boole2: TForm1Boole2
         Caption = '-'
       end
       object StartWeblabFPGAI: TMenuItem
-        Caption = 'Start Weblab &FPGA'
+        Caption = 'Abrir Weblab &FPGA'
         OnClick = StartWeblabFPGAIClick
       end
       object N11: TMenuItem
         Caption = '-'
       end
       object ExportToWeblabInternal: TMenuItem
-        Caption = 'Export to Weblab VHDL (&Internal Clock)'
+        Caption = 'Exportar a Weblab VHDL (&Reloj Interno)'
         OnClick = ExportToWeblabInternalClick
       end
       object ExportToWeblabWeblab: TMenuItem
-        Caption = 'Export to Weblab VHDL (&Weblab Clock)'
+        Caption = 'Exportar a Weblab VHDL (&Reloj Weblab)'
         OnClick = ExportToWeblabWeblabClick
       end
       object ExportToWeblabSwitch: TMenuItem
-        Caption = 'Export to Weblab VHDL (&Switch Clock)'
+        Caption = 'Exportar a Weblab VHDL (&Reloj Interruptor)'
         OnClick = ExportToWeblabSwitchClick
       end
       object ExportToWeblabButton: TMenuItem
-        Caption = 'Export to Weblab VHDL (&Button Clock)'
+        Caption = 'Exportar a Weblab VHDL (&Reloj Bot'#243'n)'
         OnClick = ExportToWeblabButtonClick
       end
       object N12: TMenuItem
@@ -496,11 +496,11 @@ object Form1Boole2: TForm1Boole2
       Caption = 'A&yuda'
       OnClick = Ayuda1Click
       object GeneralHelp1: TMenuItem
-        Caption = 'General Help'
+        Caption = 'Ayuda General'
         OnClick = GeneralHelp1Click
       end
       object WeblabHelp1: TMenuItem
-        Caption = 'Weblab Help'
+        Caption = 'Ayuda de Weblab'
         OnClick = WeblabHelp1Click
       end
     end

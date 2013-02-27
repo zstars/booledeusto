@@ -159,4 +159,6 @@ BEGIN
   msgFaltaTransicion1 "El estado '"
   msgFaltaTransicion2 "' no tiene ninguna transicion que acepte la entrada '"
   msgFaltaTransicion3 "'."
+  msgURLAyudaCombinacionales "http://weblabdeusto.readthedocs.org/en/latest/userguide_boole_weblab_es.html#circuitos-combinacionales"
+  msgURLAyudaAutomatas "http://weblabdeusto.readthedocs.org/en/latest/userguide_boole_weblab_es.html#automatas"
 END
