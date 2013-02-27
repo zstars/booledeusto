@@ -20,6 +20,7 @@ int _turboFloat;
 /*ITE*/ /*DFMFileType*/ /*src\Boole1\TVComple.dfm*/
 /*ITE*/ /*DFMFileType*/ /*src\Boole1\TVManual.dfm*/
 /*ITE*/ /*DFMFileType*/ /*src\Boole1\uKarnaugh.dfm*/
+/*ITE*/ /*DFMFileType*/ /*src\Boole1\Weblab.dfm*/
 /*ITE*/ /*DFMFileType*/ /*src\Boole2\ayuda.dfm*/
 /*ITE*/ /*DFMFileType*/ /*src\Boole2\FCalculando.dfm*/
 /*ITE*/ /*DFMFileType*/ /*src\Boole2\uLog.dfm*/
@@ -69,6 +70,8 @@ USEFORMRES("src\Boole1\TVManual.dfm", TablaVerdadManual, Form); /* TForm: Design
 #pragma resource "src\Boole1\TVManual.dfm"
 USEFORMRES("src\Boole1\uKarnaugh.dfm", fKarnaugh, Form); /* TForm: DesignClass */
 #pragma resource "src\Boole1\uKarnaugh.dfm"
+USEFORMRES("src\Boole1\Weblab.dfm", WeblabForm, Form); /* TForm: DesignClass */
+#pragma resource "src\Boole1\Weblab.dfm"
 USEFORMRES("src\Boole2\ayuda.dfm", fAyuda, Form); /* TForm: DesignClass */
 #pragma resource "src\Boole2\ayuda.dfm"
 USEFORMRES("src\Boole2\FCalculando.dfm", FormCalculando, Form); /* TForm: DesignClass */
@@ -93,7 +96,7 @@ USEFORMRES("src\Boole2\Unit2.dfm", Form2, Form); /* TForm: DesignClass */
 #pragma resource "src\Boole2\Unit2.dfm"
 USEFORMRES("src\Boole2\Unit3.dfm", Form3, Form); /* TForm: DesignClass */
 #pragma resource "src\Boole2\Unit3.dfm"
-USEFORMRES("src\Boole2\Unit4.dfm", Form4, Form); /* TForm: DesignClass */
+USEFORMRES("src\Boole2\Unit4.dfm", NewDiagramForm, Form); /* TForm: DesignClass */
 #pragma resource "src\Boole2\Unit4.dfm"
 USEFORMRES("src\Boole2\Unit5.dfm", Form5, Form); /* TForm: DesignClass */
 #pragma resource "src\Boole2\Unit5.dfm"

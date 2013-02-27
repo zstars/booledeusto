@@ -269,13 +269,13 @@ AddClientUnit=1
 PrecompiledHeaders=1
 
 [Resource DLL Projects]
-Item0=Catalán*0x00000403*CAT*CAT
-Item1=Inglés (Estados Unidos)*0x00000409*ENU*ENU
-Item2=Portugués (Portugal)*0x00000816*PTG*PTG
-Item3=Vasco*0x0000042D*EUS*EUS
+Item0=Basque*0x0000042D*EUS*EUS
+Item1=Catalan*0x00000403*CAT*CAT
+Item2=English (United States)*0x00000409*ENU*ENU
+Item3=Portuguese (Portugal)*0x00000816*PTG*PTG
 
 [RDP Source Files]
-Item0=exe\boole.drc
+Item0=src\Boole1\NuevoSC.dfm
 Item1=src\Boole1\app.dfm
 Item2=src\Boole1\calc.dfm
 Item3=src\Boole1\uKarnaugh.dfm
@@ -284,7 +284,7 @@ Item5=src\Boole1\FormasN.dfm
 Item6=src\Boole1\FormSimp.dfm
 Item7=src\Boole1\Main.dfm
 Item8=src\Boole1\NandNor.dfm
-Item9=src\Boole1\NuevoSC2.dfm
+Item9=src\Boole1\NuevoSC.dfm
 Item10=src\Boole1\SCCompac.dfm
 Item11=src\Boole1\TVComple.dfm
 Item12=src\Boole1\TVManual.dfm
@@ -311,6 +311,8 @@ Item32=src\Circuito\V_Imprimir.dfm
 Item33=src\Circuito\V_Circuito.dfm
 Item34=src\Comun\uTextoAsoc.dfm
 Item35=src\res\mensajes.rc
+Item36=src\Boole1\Weblab.dfm
+Item37=exe\boole.drc
 
 [Language]
 ActiveLang=

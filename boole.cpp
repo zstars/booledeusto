@@ -52,7 +52,7 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	{
 		Application->Initialize();
 		Application->Title = "BOOLE-DEUSTO";
-                /*try{
+                try{
                 	ifstream in("boole.lang");
                         string lang;
                         in >> lang;
@@ -62,7 +62,7 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
                         	resInstance=(void *)LoadNewResourceModule( ( (SUBLANG_DEFAULT << 10) | LANG_BASQUE) );
 
 		} catch(ios_base::failure& var)
-                { }*/
+                { }
 
                 // ~lrg
                 // COMMENTED OUT THE FOLLOWING THREE LINES BECAUSE I HAVE YET TO FIGURE
