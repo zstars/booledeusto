@@ -2130,8 +2130,8 @@ void __fastcall TSistemaCombinacionalNuevo::btWeblabClick(TObject *Sender)
 {
     if(mSistemaModificado)
     {
-        int result = Application->MessageBox("Would you like to generate the VHDL code first? You will need it for the next steps (if you have not generated it already)",
-                "VHDL code generation", MB_YESNOCANCEL | MB_ICONQUESTION);
+        int result = Application->MessageBox(MENSAJE(msgGeneracionCodigoTexto),
+                MENSAJE(msgGeneracionCodigoTitulo), MB_YESNOCANCEL | MB_ICONQUESTION);
         if(result == IDCANCEL)
                 return;
         else if(result == IDYES)
@@ -2143,8 +2143,6 @@ void __fastcall TSistemaCombinacionalNuevo::btWeblabClick(TObject *Sender)
 
     ShellExecute(NULL, "open", "https://www.weblab.deusto.es/weblab/client/#page=experiment&exp.category=FPGA%20experiments&exp.name=ud-fpga", NULL, NULL, SW_SHOW);
     int n = 5;
-    if(n == 4)
-        WeblabForm->ShowModal();
 }
 //---------------------------------------------------------------------------
 

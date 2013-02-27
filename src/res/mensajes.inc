@@ -155,6 +155,10 @@
 #define  msgFaltaTransicion1 154
 #define  msgFaltaTransicion2 155
 #define  msgFaltaTransicion3 156
+#define  msgURLAyudaCombinacionales 157
+#define  msgURLAyudaAutomatas 158
+#define  msgGeneracionCodigoTexto 159
+#define  msgGeneracionCodigoTitulo 160
 
 
 #ifdef __BCPLUSPLUS__

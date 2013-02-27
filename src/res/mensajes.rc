@@ -161,4 +161,6 @@ BEGIN
   msgFaltaTransicion3 "'."
   msgURLAyudaCombinacionales "http://weblabdeusto.readthedocs.org/en/latest/userguide_boole_weblab_es.html#circuitos-combinacionales"
   msgURLAyudaAutomatas "http://weblabdeusto.readthedocs.org/en/latest/userguide_boole_weblab_es.html#automatas"
+  msgGeneracionCodigoTexto "Le gustaría generar primero el código VHDL? Dicho código será necesario para los siguientes pasos (a no ser que se haya generado anteriormente)"
+  msgGeneracionCodigoTitulo "Generación de código VHDL"
 END
