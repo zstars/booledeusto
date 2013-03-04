@@ -1,0 +1,110 @@
+
+El propósito de este documento es, dada la ausencia de documentación, contener información relevante 
+con respecto al desarrollo. 
+
+A fecha actual, 04 marzo 2013, no está disponible ninguna documentación, ni versiones del código anteriores
+al inicio del repositorio GIT de código en el que este documento se encuentra. Yo (Luis Rodríguez) no he tenido
+por tanto acceso a documentación o desarrolladores anteriores, y por lo tanto, la información contenida aquí 
+está formada principalmente por asunciones, y puede esperarse que contenga ciertas imprecisiones y muchas
+omisiones.
+
+
+*** ENTORNO DE PROGRAMACIÓN ***
+
+El programa está desarrollado en Borland C++ Builder. En concreto, parece que la versión en la que principalmente
+está desarrollado es Borland C++ Builder 6. Depende absolutamente de la VCL de Borland, y por lo tanto no puede
+ser fácilmente portado a entornos diferentes más modernos.
+
+Existen versiones más modernas de C++ Builder. Portarlo a éstas, sin embargo, tampoco es factible en tiempo razonable.
+Los motivos principales por los que lo he descartado (podrían existir más):
+
+- Las versiones modernas tienen muchos cambios con respecto a UNICODE, que ha pasado en ciertos ámbitos a ser
+la opción por defecto. Debido al código en general, y al sistema de lenguajes, esto implicaría cambios notables.
+- Las versiones modernas no parecen soportar el sistema de lenguajes que el proyecto utiliza. 
+- No parece factible convertir el proyecto de forma automatizada (si bien teóricamente debería convertirse, parece
+ser que para proyectos no triviales está prácticamente garantizado el tener que crear uno nuevo).
+- Existe una dependencia externa de una versión concreta de la librería ANTLR. Posiblemente actualizar a una 
+versión más moderna implicaría actualizar también la dependencia externa, y realizar los cambios necesarios.
+
+
+Han existido problemas notables a la hora de elegir un entorno adecuado. La versión más adecuada, Borland C++ Builder 6,
+no es totalmente compatible con las versiones modernas de sistemas operativos. En concreto, hay numerosos problemas con
+Windows 7, y, asumo, con Windows Vista y Windows 8. La falta de compatibilidad no es completa (hay errores sueltos,
+se cuelga, y el sistema de lenguajes en concreto no funciona bien, pero las características principales, al menos
+ejecutando como administrador, sí que funcionan, de modo que quizás sea usable, con suficiente cuidado y evitando
+los bugs). Personalmente, he instalado Borland en una máquina virtual con Windows XP. Esto soluciona directamente
+diversos errores, principalmente, relativos al Translation Manager y sistema de lenguajes en general, y alguno más.
+Es por tanto el enfoque recomendado.
+
+
+*** SISTEMA DE LENGUAJES ***
+
+El sistema de localización que utiliza el proyecto es un sistema bastante extraño, que aparentemente ya no
+se soporta en versiones modernas, identificable como "Resource DLLs". 
+
+El entorno de Borland genera de manera semi-automática un proyecto diferente para cada lenguaje extra.
+Este proyecto, que contiene básicamente archivos relativos a los formularios y otra información de traducción,
+al compilar genera un DLL con extensión dependiente del lenguaje. Por ejemplo, para inglés genera un "boole.ENU".
+El programa, en su carga, puede cargar el DLL con la función LoadResourceDLL y el Locale correspondiente.
+
+Ha sido notablemente complicado conseguir que el sistema de lenguajes funcionase, y, de hecho, se nesita tener
+en cuenta ciertas consideraciones específicas, que se expondrán a continuación, sin seguir un orden concreto.
+
+- El archivo de proyecto "correcto", de los muchos que en el momento de escribir ésto hay, es boole_grp.bpg. 
+Este archivo de proyecto (realmente, archivo de grupos de proyecto), hace referencia al proyecto principal (boole.bpr)
+y a los proyectos de Resource DLL de cada lenguaje. Por regla general, para el desarrollo, deberá siempre
+partirse de éste grupo.
+
+- Al hacer build del proyecto boole.exe, se compila únicamente el .exe, no los archivos de lenguaje. Para que 
+funcione cada lenguaje, se ha de compilar cada proyecto, que produce un DLL con diferente extensión (.ENU etc).
+
+- Puede accederse al gestor de traducciones (Translation Manager) a través de "View->Translation manager".
+Bajo ciertas circunstancias, puede ocurrir y ha ocurrido que en Borland no aparezca tal opción. Puede tratar de 
+solucionarse reinstalando Borland, reinstalándolo en un Sistema Operativo más antiguo, ejecutando el Borland como
+Administrador, etc.
+
+- El Translation Manager se utiliza para realizar las traducciones de cada lenguaje. Al salir no se genera nada 
+por sí sólo. Para que se apliquen las traducciones, debe recompilarse cada DLL y ser colocado en el lugar 
+correcto (generalmente junto al .exe de Boole-Deusto).
+
+- Si se han producido cambios a los formularios, o posiblemente alguna clase adicional de cambios, no basta
+con utilizar el Translation Manager para que los DLLs de lenguajes se actualicen correctamente. En 
+tales casos, hay que utilizar el "Update Resource DLLs". Esta opción está (o debiera estar) disponible
+en: "Project->Languages->Update Resource DLLs". De nuevo, puede ocurrir, por fallo, que tal opción no 
+esté visible.
+
+- Cuando se actualizan los lenguajes tras un "Update Resource DLLs" hacen falta pasos adicionales para conseguir
+que los lenguajes vuelvan a funcionar como se espera, debido principalmente a ciertos errores con la generación
+que hay que solucionar manualmente. Estos errores se indican a continuación. Si por ser un cambio menor (que no
+afecta a los formularios) no ha sido necesario hacer el Update, posiblemente los pasos a continuación sean
+prescindibles.
+
+- El directorio de salida de los proyectos de lenguajes es incorrecto. A través del Project Manager, debería
+es recomendable especificar ../exe como directorio de salida. En cualquier caso, aunque se seleccione otro, 
+es necesario que exista previamente.
+
+- Todos los proyectos de lenguaje tienen un archivo boole.cpp autogenerado, que hace referencia a los diversos 
+formularios. En un inicio, aparecen errores de linker al tratar de hacer referencia a .OBJs, porque los
+paths que se encuentran en este archivo son incorrectos. El error es sencillamente que utilizan una sóla barra ("\")
+en vez de dos ("\\"). Para arreglarlo, basta con acceder a cada archivo boole.cpp autogenerado, y hacer un
+search-replace de "\" con "\\". Tras ésto, el proyecto debería compilar con éxito.
+
+- Existe un mensajes.rc, que contiene una tabla de cadenas presente en un mensajes.inc. En cada lenguaje existe
+una copia diferente de estos dos archivos. Aunque el mensajes.rc parece que puede actualizarse para cada lenguaje a través
+del Translation Manager, se necesitará añadir a mano cada entrada al mensajes.inc. Puesto que el mensajes.inc generalmente
+será realmente el mismo para todos los lenguajes, posiblemente copiar y pegar el mensajes.inc principal en cada lenguaje
+también sería suficiente (si bien no se ha probado).
+
+- En ocasión la terminación asignada por Borland a los DLLs no se corresponde con la de los "locales" de Winnt.h.
+Por ejemplo, para Euskera Borland genera un archivo boole.EUS. Por algún motivo no determinado, sin embargo,
+Borland al cargar el LANG_BASQUE intenta encontrar el boole.EUQ. La "solución" que de momento se ha aplicado es,
+sencillamente, renombrar manualmente el boole.EUS generado por boole.EUQ.
+
+- El boole.cpp del proyecto principal (boole.exe) es el que decide qué lenguaje se carga. Si bien parece haber código
+mezclado de diferentes métodos, en la actualidad el que se encuentra activo lo que hace es leer un archivo "boole.lang",
+y dependiendo de su contenido cargar el DLL correspondiente a un locale u otro. En el momento de escribir ésto, los lenguajes
+bien soportados son el por defecto (Castellano), inglés (en), euskera (eu). Están parcialmente soportados (pueden cargarse,
+pero no hay apenas traducciones) el catalán (ca) y el portugúes (pt). El boole.lang puede por tanto contener una de las
+siguientes cadenas: ( es|en|eu|ca|pt ). Esto debería tenerse en cuenta en el caso de querer añadir un nuevo lenguaje.
+
+
