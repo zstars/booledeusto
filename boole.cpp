@@ -57,12 +57,19 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
                         string lang;
                         in >> lang;
                         if (lang == "en")
-                        	resInstance=(void *)LoadNewResourceModule( ( (SUBLANG_ENGLISH_US << 10) | LANG_ENGLISH) );
+                        	resInstance=(void*)LoadNewResourceModule( ( (SUBLANG_ENGLISH_US << 10) | LANG_ENGLISH) );
                         else if (lang == "eu")
-                        	resInstance=(void *)LoadNewResourceModule( ( (SUBLANG_DEFAULT << 10) | LANG_BASQUE) );
+                        	resInstance=(void*)LoadNewResourceModule( LANG_BASQUE );
+                        else if (lang == "ca")
+                                resInstance=(void*)LoadNewResourceModule( LANG_CATALAN );
+                        else if (lang == "pt")
+                                resInstance=(void*)LoadNewResourceModule( LANG_PORTUGUESE );
 
 		} catch(ios_base::failure& var)
                 { }
+
+                if(resInstance == 0)
+                        Application->MessageBox("Couldn't load the specified language. Loading default.", "Error");
 
                 // ~lrg
                 // COMMENTED OUT THE FOLLOWING THREE LINES BECAUSE I HAVE YET TO FIGURE

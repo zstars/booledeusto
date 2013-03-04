@@ -3,9 +3,9 @@
 <PROJECT>
   <MACROS>
     <VERSION value="BCB.06.00"/>
-    <PROJECT value="..\..\boole\boole.CAT"/>
+    <PROJECT value="..\exe\boole.CAT"/>
     <OBJFILES value="boole.obj"/>
-    <RESFILES value=""/>
+    <RESFILES value="..\PTG\src\res\mensajes.res"/>
     <IDLFILES value=""/>
     <IDLGENFILES value=""/>
     <DEFFILE value=""/>
@@ -13,10 +13,16 @@
     <LIBFILES value=""/>
     <LIBRARIES value="rtl.lib"/>
     <SPARELIBS value="rtl.lib"/>
-    <PACKAGES value=""/>
+    <PACKAGES value="vcl.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi bdertl.bpi 
+      vcldbx.bpi ibxpress.bpi dsnap.bpi cds.bpi bdecds.bpi qrpt.bpi teeui.bpi 
+      teedb.bpi tee.bpi dss.bpi teeqr.bpi visualclx.bpi visualdbclx.bpi 
+      dsnapcrba.bpi dsnapcon.bpi bcbsmp.bpi vclie.bpi xmlrtl.bpi inet.bpi 
+      inetdbbde.bpi inetdbxpress.bpi inetdb.bpi nmfast.bpi webdsnap.bpi 
+      bcbie.bpi websnap.bpi soaprtl.bpi dclocx.bpi dbexpress.bpi dbxcds.bpi 
+      indy.bpi bcb2kaxserver.bpi"/>
     <PATHCPP value=".;"/>
     <PATHPAS value=".;"/>
-    <PATHRC value=".;"/>
+    <PATHRC value=".;..\PTG\src\res;..\PTG\src\res"/>
     <PATHASM value=".;"/>
     <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
     <RELEASELIBPATH value="$(BCB)\lib\release"/>
@@ -24,13 +30,13 @@
     <USERDEFINES value=""/>
     <SYSDEFINES value="NO_STRICT"/>
     <MAINSOURCE value="boole.cpp"/>
-    <INCLUDEPATH value="$(BCB)\include"/>
-    <LIBPATH value="$(BCB)\lib"/>
+    <INCLUDEPATH value="..\PTG\src\res;$(BCB)\include"/>
+    <LIBPATH value="..\PTG\src\res;$(BCB)\lib"/>
     <WARNINGS value=""/>
     <OTHERFILES value=""/>
   </MACROS>
   <OPTIONS>
-    <IDLCFLAGS value="-src_suffix cpp -I$(BCB)\include -boa"/>
+    <IDLCFLAGS value="-src_suffix cpp -I..\PTG\src\res -I$(BCB)\include -boa"/>
     <CFLAG1 value="-WD -O2 -H=$(BCB)\lib\vcl60.csm -Hc -w -Vx -Ve -x- -RT- -X -a8 -b- -k- -vi 
       -c -w-par -w-8026 -w-8027 -tW -tWM"/>
     <PFLAGS value="-$Y- -$L- -$I- -$D- -$C- -$A8 -v -JPHNE -M"/>
@@ -48,6 +54,7 @@
   <FILELIST>
       <FILE FILENAME="boole.cpp" FORMNAME="" UNITNAME="boole" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="src\Boole1\app.dfm" FORMNAME="ap" UNITNAME="Form" CONTAINERID="" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\PTG\src\res\mensajes.rc" FORMNAME="" UNITNAME="mensajes.rc" CONTAINERID="RCCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>
@@ -79,6 +86,22 @@ OriginalFilename=
 ProductName=
 ProductVersion=1.0.0.0
 Comments=
+
+[HistoryLists\hlIncludePath]
+Count=2
+Item0=..\PTG\src\res;$(BCB)\include
+Item1=$(BCB)\include
+
+[HistoryLists\hlLibraryPath]
+Count=2
+Item0=..\PTG\src\res;$(BCB)\lib
+Item1=$(BCB)\lib
+
+[HistoryLists\hlFinalOutputDir]
+Count=3
+Item0=..\exe\
+Item1=..\exe
+Item2=..\..\boole\
 
 [Debugging]
 DebugSourceDirs=
