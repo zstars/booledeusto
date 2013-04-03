@@ -95,9 +95,10 @@ Count=1
 Item0=src\res;$(BCB)\lib
 
 [HistoryLists\hlFinalOutputDir]
-Count=2
-Item0=..\exe
-Item1=..\..\boole\
+Count=3
+Item0=..\exe\
+Item1=..\exe
+Item2=..\..\boole\
 
 [Debugging]
 DebugSourceDirs=
