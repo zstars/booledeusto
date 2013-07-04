@@ -1,191 +1,136 @@
-<?xml version='1.0' encoding='utf-8' ?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- C++Builder XML Project -->
 <PROJECT>
-  <MACROS>
-    <VERSION value="BCB.06.00"/>
-    <PROJECT value="exe\boole.exe"/>
-    <OBJFILES value="obj\boole.obj obj\app.obj obj\calc.obj obj\uKarnaugh.obj obj\ExpBool.obj 
-      obj\FormasN.obj obj\FormSimp.obj obj\Libreria.obj obj\Main.obj 
-      obj\NandNor.obj obj\NuevoSC.obj obj\SCCompac.obj obj\TVComple.obj 
-      obj\TVManual.obj obj\DinArray.obj obj\FCalculando.obj obj\ayuda.obj 
-      obj\uLog.obj obj\SistemaSecuencial.obj obj\Unit15.obj obj\Unit11.obj 
-      obj\Unit12.obj obj\Unit13.obj obj\Unit14.obj obj\Unit10.obj 
-      obj\V_Boole2.obj obj\Unit2.obj obj\Unit3.obj obj\Unit4.obj obj\Unit5.obj 
-      obj\Unit6.obj obj\Unit8.obj obj\Unit9.obj obj\uSimulacion.obj 
-      obj\Unit16.obj obj\V_Imprimir.obj obj\CircuitoCombinacional.obj 
-      obj\CircuitoSecuencial.obj obj\Entrada.obj obj\FlipFlop.obj 
-      obj\FlipFlopD.obj obj\FlipFlopJK.obj obj\funciones.obj obj\limpiador.obj 
-      obj\Puerta.obj obj\PuertaAnd.obj obj\PuertaNand.obj obj\PuertaNor.obj 
-      obj\PuertaOr.obj obj\V_Circuito.obj obj\Circuito.obj obj\uTextoAsoc.obj 
-      obj\TablaSimbolos.obj obj\EvaluadorBool.obj obj\LexerBooleano.obj 
-      obj\ParserBooleano.obj obj\ParserBooleanoExt.obj obj\ParserEvaluador.obj 
-      obj\evaluador_bool.obj obj\claseJedec.obj obj\ClaseDevice.obj 
-      obj\rdsimplificador.obj obj\ecubomalformado.obj obj\rdCoberturaMinima.obj 
-      obj\rdObtenerIPs.obj obj\rdObtenerIPsQM.obj obj\rdSeleccionarIPs.obj 
-      obj\rdSeleccionarIPs_FuerzaBruta.obj obj\rdSeleccionarIPs_QM_Haleat.obj 
-      obj\rdSeleccionarIPs_QM_Hbestcover.obj 
-      obj\rdSeleccionarIPs_QM_NHnosesg.obj obj\rdSeleccionarIPs_QM_NHsesg1.obj 
-      obj\rdSeleccionarIPs_QM_NHsesg2.obj obj\rdSeleccionarIPsQM.obj 
-      obj\cubobool.obj obj\reinit.obj obj\Karnaugh.obj obj\VKLazo.obj 
-      obj\Weblab.obj"/>
-    <RESFILES value="boole.res obj\mensajes.res"/>
-    <IDLFILES value=""/>
-    <IDLGENFILES value=""/>
-    <DEFFILE value=""/>
-    <RESDEPEN value="$(RESFILES) src\Boole1\app.dfm src\Boole1\calc.dfm 
-      src\Boole1\uKarnaugh.dfm src\Boole1\ExpBool.dfm src\Boole1\FormasN.dfm 
-      src\Boole1\FormSimp.dfm src\Boole1\Main.dfm src\Boole1\NandNor.dfm 
-      src\Boole1\NuevoSC.dfm src\Boole1\SCCompac.dfm src\Boole1\TVComple.dfm 
-      src\Boole1\TVManual.dfm src\Boole2\FCalculando.dfm src\Boole2\ayuda.dfm 
-      src\Boole2\uLog.dfm src\Boole2\Unit15.dfm src\Boole2\Unit11.dfm 
-      src\Boole2\Unit12.dfm src\Boole2\Unit13.dfm src\Boole2\Unit14.dfm 
-      src\Boole2\Unit10.dfm src\Boole2\V_Boole2.dfm src\Boole2\Unit2.dfm 
-      src\Boole2\Unit3.dfm src\Boole2\Unit4.dfm src\Boole2\Unit5.dfm 
-      src\Boole2\Unit6.dfm src\Boole2\Unit8.dfm src\Boole2\Unit9.dfm 
-      src\Boole2\uSimulacion.dfm src\Boole2\Unit16.dfm 
-      src\Circuito\V_Imprimir.dfm src\Circuito\V_Circuito.dfm 
-      src\Comun\uTextoAsoc.dfm src\Boole1\Weblab.dfm"/>
-    <LIBFILES value="lib\antlr.lib"/>
-    <LIBRARIES value="bcb2kaxserver.lib indy.lib dbxcds.lib dclocx.lib soaprtl.lib bcbie.lib 
-      nmfast.lib dbexpress.lib inetdbxpress.lib inetdbbde.lib dsnapcon.lib 
-      dsnapcrba.lib visualdbclx.lib teeqr.lib dss.lib tee.lib teedb.lib 
-      teeui.lib qrpt.lib bdecds.lib cds.lib ibxpress.lib vcldbx.lib bdertl.lib 
-      adortl.lib vcldb.lib bcbsmp.lib vclx.lib vcl.lib rtl.lib"/>
-    <SPARELIBS value="rtl.lib vcl.lib vclx.lib bcbsmp.lib vcldb.lib adortl.lib bdertl.lib 
-      vcldbx.lib ibxpress.lib cds.lib bdecds.lib qrpt.lib teeui.lib teedb.lib 
-      tee.lib dss.lib teeqr.lib visualdbclx.lib dsnapcrba.lib dsnapcon.lib 
-      inetdbbde.lib inetdbxpress.lib dbexpress.lib nmfast.lib bcbie.lib 
-      soaprtl.lib dclocx.lib dbxcds.lib indy.lib bcb2kaxserver.lib"/>
-    <PACKAGES value="vcl.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi bdertl.bpi 
-      vcldbx.bpi ibxpress.bpi dsnap.bpi cds.bpi bdecds.bpi qrpt.bpi teeui.bpi 
-      teedb.bpi tee.bpi dss.bpi teeqr.bpi visualclx.bpi visualdbclx.bpi 
-      dsnapcrba.bpi dsnapcon.bpi bcbsmp.bpi vclie.bpi xmlrtl.bpi inet.bpi 
-      inetdbbde.bpi inetdbxpress.bpi inetdb.bpi nmfast.bpi webdsnap.bpi 
-      bcbie.bpi websnap.bpi soaprtl.bpi dclocx.bpi dbexpress.bpi dbxcds.bpi 
-      indy.bpi bcb2kaxserver.bpi"/>
-    <PATHCPP value=".;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Comun;src\EvaluadorBool;src\EvaluadorBool;src\EvaluadorBool;src\EvaluadorBool;src\EvaluadorBool;src\EvaluadorBool;src\EvaluadorBool;src\jedec;src\jedec;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\TKarnaugh;src\TKarnaugh;src\Boole1"/>
-    <PATHPAS value=".;src\Comun"/>
-    <PATHRC value=".;src\res;src\res"/>
-    <PATHASM value=".;"/>
-    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
-    <RELEASELIBPATH value="$(BCB)\lib\release"/>
-    <LINKER value="ilink32"/>
-    <USERDEFINES value="_DEBUG"/>
-    <SYSDEFINES value="NO_STRICT"/>
-    <MAINSOURCE value="boole.cpp"/>
-    <INCLUDEPATH value="src\res;src\reductio;src\jedec;src\EvaluadorBool;src\Comun;src\Circuito;src\Boole2;src\Boole1;include;&quot;C:\Program Files\Borland\CBuilder6\Projects&quot;;$(BCB)\include;$(BCB)\include\vcl;src\TKarnaugh;src"/>
-    <LIBPATH value="src\TKarnaugh;src\res;src\reductio;src\jedec;src\EvaluadorBool;src\Comun;src\Circuito;$(BCB)\Projects\Lib;src\Boole2;src\Boole1;&quot;C:\Program Files\Borland\CBuilder6\Projects&quot;;$(BCB)\lib\obj;$(BCB)\lib"/>
-    <WARNINGS value="-w-par"/>
-    <OTHERFILES value=""/>
-  </MACROS>
-  <OPTIONS>
-    <IDLCFLAGS value="-src_suffix cpp -D_DEBUG -Isrc\res -Isrc\reductio -Isrc\jedec 
-      -Isrc\EvaluadorBool -Isrc\Comun -Isrc\Circuito -Isrc\Boole2 -Isrc\Boole1 
-      -Iinclude -I&quot;C:\Program Files\Borland\CBuilder6\Projects&quot; -I$(BCB)\include 
-      -I$(BCB)\include\vcl -Isrc\TKarnaugh -Isrc -boa"/>
-    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k -y -v -vi- -c 
-      -tW -tWM"/>
-    <PFLAGS value="-N2obj -N0obj -$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
-    <RFLAGS value=""/>
-    <AFLAGS value="/mx /w2 /zi"/>
-    <LFLAGS value="-Iobj -D&quot;&quot; -aa -Tpe -GD -x -Gn -v"/>
-    <OTHERFILES value=""/>
-  </OPTIONS>
-  <LINKER>
-    <ALLOBJ value="c0w32.obj sysinit.obj $(OBJFILES)"/>
-    <ALLRES value="$(RESFILES)"/>
-    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
-    <OTHERFILES value=""/>
-  </LINKER>
-  <FILELIST>
-      <FILE FILENAME="boole.res" FORMNAME="" UNITNAME="boole.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="boole.cpp" FORMNAME="" UNITNAME="boole" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole1\app.cpp" FORMNAME="ap" UNITNAME="app" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole1\calc.cpp" FORMNAME="Calculando" UNITNAME="calc" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole1\uKarnaugh.cpp" FORMNAME="fKarnaugh" UNITNAME="uKarnaugh" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole1\ExpBool.cpp" FORMNAME="ExprBooleana" UNITNAME="ExpBool" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole1\FormasN.cpp" FORMNAME="FormasNormales" UNITNAME="FormasN" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole1\FormSimp.cpp" FORMNAME="ExpresionSimp" UNITNAME="FormSimp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole1\Libreria.cpp" FORMNAME="" UNITNAME="Libreria.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole1\Main.cpp" FORMNAME="Principal" UNITNAME="Main" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole1\NandNor.cpp" FORMNAME="NANDyNOR" UNITNAME="NandNor" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole1\NuevoSC.cpp" FORMNAME="SistemaCombinacionalNuevo" UNITNAME="NuevoSC" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole1\SCCompac.cpp" FORMNAME="SCFormasCompactas" UNITNAME="SCCompac" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole1\TVComple.cpp" FORMNAME="TablaVerdadCompleta" UNITNAME="TVComple" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole1\TVManual.cpp" FORMNAME="TablaVerdadManual" UNITNAME="TVManual" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole1\DinArray.cpp" FORMNAME="" UNITNAME="DinArray.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole2\FCalculando.cpp" FORMNAME="FormCalculando" UNITNAME="FCalculando" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole2\ayuda.cpp" FORMNAME="fAyuda" UNITNAME="ayuda" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole2\uLog.cpp" FORMNAME="fLog" UNITNAME="uLog" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole2\SistemaSecuencial.cpp" FORMNAME="" UNITNAME="SistemaSecuencial.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole2\Unit15.cpp" FORMNAME="Form15" UNITNAME="Unit15" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole2\Unit11.cpp" FORMNAME="Form11" UNITNAME="Unit11" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole2\Unit12.cpp" FORMNAME="Form12" UNITNAME="Unit12" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole2\Unit13.cpp" FORMNAME="Form13" UNITNAME="Unit13" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole2\Unit14.cpp" FORMNAME="Form14" UNITNAME="Unit14" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole2\Unit10.cpp" FORMNAME="Form10" UNITNAME="Unit10" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole2\V_Boole2.cpp" FORMNAME="Form1Boole2" UNITNAME="V_Boole2" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole2\Unit2.cpp" FORMNAME="Form2" UNITNAME="Unit2" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole2\Unit3.cpp" FORMNAME="Form3" UNITNAME="Unit3" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole2\Unit4.cpp" FORMNAME="NewDiagramForm" UNITNAME="Unit4" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole2\Unit5.cpp" FORMNAME="Form5" UNITNAME="Unit5" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole2\Unit6.cpp" FORMNAME="Form6" UNITNAME="Unit6" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole2\Unit8.cpp" FORMNAME="Form8" UNITNAME="Unit8" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole2\Unit9.cpp" FORMNAME="Form9" UNITNAME="Unit9" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole2\uSimulacion.cpp" FORMNAME="fSimulacion" UNITNAME="uSimulacion" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole2\Unit16.cpp" FORMNAME="Form16" UNITNAME="Unit16" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Circuito\V_Imprimir.cpp" FORMNAME="FormI" UNITNAME="V_Imprimir" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Circuito\CircuitoCombinacional.cpp" FORMNAME="" UNITNAME="CircuitoCombinacional.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Circuito\CircuitoSecuencial.cpp" FORMNAME="" UNITNAME="CircuitoSecuencial.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Circuito\Entrada.cpp" FORMNAME="" UNITNAME="Entrada.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Circuito\FlipFlop.cpp" FORMNAME="" UNITNAME="FlipFlop.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Circuito\FlipFlopD.cpp" FORMNAME="" UNITNAME="FlipFlopD.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Circuito\FlipFlopJK.cpp" FORMNAME="" UNITNAME="FlipFlopJK.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Circuito\funciones.cpp" FORMNAME="" UNITNAME="funciones.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Circuito\limpiador.cpp" FORMNAME="" UNITNAME="limpiador.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Circuito\Puerta.cpp" FORMNAME="" UNITNAME="Puerta.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Circuito\PuertaAnd.cpp" FORMNAME="" UNITNAME="PuertaAnd.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Circuito\PuertaNand.cpp" FORMNAME="" UNITNAME="PuertaNand.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Circuito\PuertaNor.cpp" FORMNAME="" UNITNAME="PuertaNor.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Circuito\PuertaOr.cpp" FORMNAME="" UNITNAME="PuertaOr.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Circuito\V_Circuito.cpp" FORMNAME="FormR" UNITNAME="V_Circuito" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Circuito\Circuito.cpp" FORMNAME="" UNITNAME="Circuito.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Comun\uTextoAsoc.cpp" FORMNAME="fTextoAsoc" UNITNAME="uTextoAsoc" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\EvaluadorBool\TablaSimbolos.cpp" FORMNAME="" UNITNAME="TablaSimbolos.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\EvaluadorBool\EvaluadorBool.cpp" FORMNAME="" UNITNAME="EvaluadorBool.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\EvaluadorBool\LexerBooleano.cpp" FORMNAME="" UNITNAME="LexerBooleano.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\EvaluadorBool\ParserBooleano.cpp" FORMNAME="" UNITNAME="ParserBooleano.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\EvaluadorBool\ParserBooleanoExt.cpp" FORMNAME="" UNITNAME="ParserBooleanoExt.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\EvaluadorBool\ParserEvaluador.cpp" FORMNAME="" UNITNAME="ParserEvaluador.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\EvaluadorBool\evaluador_bool.cpp" FORMNAME="" UNITNAME="evaluador_bool.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\jedec\claseJedec.cpp" FORMNAME="" UNITNAME="claseJedec.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\jedec\ClaseDevice.cpp" FORMNAME="" UNITNAME="ClaseDevice.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\reductio\rdsimplificador.cpp" FORMNAME="" UNITNAME="rdsimplificador.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\reductio\ecubomalformado.cpp" FORMNAME="" UNITNAME="ecubomalformado.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\reductio\rdCoberturaMinima.cpp" FORMNAME="" UNITNAME="rdCoberturaMinima.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\reductio\rdObtenerIPs.cpp" FORMNAME="" UNITNAME="rdObtenerIPs.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\reductio\rdObtenerIPsQM.cpp" FORMNAME="" UNITNAME="rdObtenerIPsQM.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\reductio\rdSeleccionarIPs.cpp" FORMNAME="" UNITNAME="rdSeleccionarIPs.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\reductio\rdSeleccionarIPs_FuerzaBruta.cpp" FORMNAME="" UNITNAME="rdSeleccionarIPs_FuerzaBruta.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\reductio\rdSeleccionarIPs_QM_Haleat.cpp" FORMNAME="" UNITNAME="rdSeleccionarIPs_QM_Haleat.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\reductio\rdSeleccionarIPs_QM_Hbestcover.cpp" FORMNAME="" UNITNAME="rdSeleccionarIPs_QM_Hbestcover.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\reductio\rdSeleccionarIPs_QM_NHnosesg.cpp" FORMNAME="" UNITNAME="rdSeleccionarIPs_QM_NHnosesg.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\reductio\rdSeleccionarIPs_QM_NHsesg1.cpp" FORMNAME="" UNITNAME="rdSeleccionarIPs_QM_NHsesg1.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\reductio\rdSeleccionarIPs_QM_NHsesg2.cpp" FORMNAME="" UNITNAME="rdSeleccionarIPs_QM_NHsesg2.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\reductio\rdSeleccionarIPsQM.cpp" FORMNAME="" UNITNAME="rdSeleccionarIPsQM.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\reductio\cubobool.cpp" FORMNAME="" UNITNAME="cubobool.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\res\mensajes.rc" FORMNAME="" UNITNAME="mensajes.rc" CONTAINERID="RCCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="lib\antlr.lib" FORMNAME="" UNITNAME="antlr.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Comun\reinit.pas" FORMNAME="" UNITNAME="ReInit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\TKarnaugh\Karnaugh.cpp" FORMNAME="" UNITNAME="Karnaugh.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\TKarnaugh\VKLazo.cpp" FORMNAME="" UNITNAME="VKLazo.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\Boole1\Weblab.cpp" FORMNAME="WeblabForm" UNITNAME="Weblab" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-  </FILELIST>
-  <BUILDTOOLS>
-  </BUILDTOOLS>
-
-  <IDEOPTIONS>
-[Version Info]
+	<MACROS>
+		<VERSION value="BCB.06.00"/>
+		<PROJECT value="exe\boole.exe"/>
+		<OBJFILES value="obj\boole.obj obj\app.obj obj\calc.obj obj\uKarnaugh.obj obj\ExpBool.obj &#xA;      obj\FormasN.obj obj\FormSimp.obj obj\Libreria.obj obj\Main.obj &#xA;      obj\NandNor.obj obj\NuevoSC.obj obj\SCCompac.obj obj\TVComple.obj &#xA;      obj\TVManual.obj obj\DinArray.obj obj\FCalculando.obj obj\ayuda.obj &#xA;      obj\uLog.obj obj\SistemaSecuencial.obj obj\Unit15.obj obj\Unit11.obj &#xA;      obj\Unit12.obj obj\Unit13.obj obj\Unit14.obj obj\Unit10.obj &#xA;      obj\V_Boole2.obj obj\Unit2.obj obj\Unit3.obj obj\Unit4.obj obj\Unit5.obj &#xA;      obj\Unit6.obj obj\Unit8.obj obj\Unit9.obj obj\uSimulacion.obj &#xA;      obj\Unit16.obj obj\V_Imprimir.obj obj\CircuitoCombinacional.obj &#xA;      obj\CircuitoSecuencial.obj obj\Entrada.obj obj\FlipFlop.obj &#xA;      obj\FlipFlopD.obj obj\FlipFlopJK.obj obj\funciones.obj obj\limpiador.obj &#xA;      obj\Puerta.obj obj\PuertaAnd.obj obj\PuertaNand.obj obj\PuertaNor.obj &#xA;      obj\PuertaOr.obj obj\V_Circuito.obj obj\Circuito.obj obj\uTextoAsoc.obj &#xA;      obj\TablaSimbolos.obj obj\EvaluadorBool.obj obj\LexerBooleano.obj &#xA;      obj\ParserBooleano.obj obj\ParserBooleanoExt.obj obj\ParserEvaluador.obj &#xA;      obj\evaluador_bool.obj obj\claseJedec.obj obj\ClaseDevice.obj &#xA;      obj\rdsimplificador.obj obj\ecubomalformado.obj obj\rdCoberturaMinima.obj &#xA;      obj\rdObtenerIPs.obj obj\rdObtenerIPsQM.obj obj\rdSeleccionarIPs.obj &#xA;      obj\rdSeleccionarIPs_FuerzaBruta.obj obj\rdSeleccionarIPs_QM_Haleat.obj &#xA;      obj\rdSeleccionarIPs_QM_Hbestcover.obj &#xA;      obj\rdSeleccionarIPs_QM_NHnosesg.obj obj\rdSeleccionarIPs_QM_NHsesg1.obj &#xA;      obj\rdSeleccionarIPs_QM_NHsesg2.obj obj\rdSeleccionarIPsQM.obj &#xA;      obj\cubobool.obj obj\reinit.obj obj\Karnaugh.obj obj\VKLazo.obj &#xA;      obj\Weblab.obj"/>
+		<RESFILES value="boole.res obj\mensajes.res"/>
+		<IDLFILES value=""/>
+		<IDLGENFILES value=""/>
+		<DEFFILE value=""/>
+		<RESDEPEN value="$(RESFILES) src\Boole1\app.dfm src\Boole1\calc.dfm &#xA;      src\Boole1\uKarnaugh.dfm src\Boole1\ExpBool.dfm src\Boole1\FormasN.dfm &#xA;      src\Boole1\FormSimp.dfm src\Boole1\Main.dfm src\Boole1\NandNor.dfm &#xA;      src\Boole1\NuevoSC.dfm src\Boole1\SCCompac.dfm src\Boole1\TVComple.dfm &#xA;      src\Boole1\TVManual.dfm src\Boole2\FCalculando.dfm src\Boole2\ayuda.dfm &#xA;      src\Boole2\uLog.dfm src\Boole2\Unit15.dfm src\Boole2\Unit11.dfm &#xA;      src\Boole2\Unit12.dfm src\Boole2\Unit13.dfm src\Boole2\Unit14.dfm &#xA;      src\Boole2\Unit10.dfm src\Boole2\V_Boole2.dfm src\Boole2\Unit2.dfm &#xA;      src\Boole2\Unit3.dfm src\Boole2\Unit4.dfm src\Boole2\Unit5.dfm &#xA;      src\Boole2\Unit6.dfm src\Boole2\Unit8.dfm src\Boole2\Unit9.dfm &#xA;      src\Boole2\uSimulacion.dfm src\Boole2\Unit16.dfm &#xA;      src\Circuito\V_Imprimir.dfm src\Circuito\V_Circuito.dfm &#xA;      src\Comun\uTextoAsoc.dfm src\Boole1\Weblab.dfm"/>
+		<LIBFILES value="lib\antlr.lib"/>
+		<LIBRARIES value="bcb2kaxserver.lib indy.lib dbxcds.lib dclocx.lib soaprtl.lib bcbie.lib &#xA;      nmfast.lib dbexpress.lib inetdbxpress.lib inetdbbde.lib dsnapcon.lib &#xA;      dsnapcrba.lib visualdbclx.lib teeqr.lib dss.lib tee.lib teedb.lib &#xA;      teeui.lib qrpt.lib bdecds.lib cds.lib ibxpress.lib vcldbx.lib bdertl.lib &#xA;      adortl.lib vcldb.lib bcbsmp.lib vclx.lib vcl.lib rtl.lib"/>
+		<SPARELIBS value="rtl.lib vcl.lib vclx.lib bcbsmp.lib vcldb.lib adortl.lib bdertl.lib &#xA;      vcldbx.lib ibxpress.lib cds.lib bdecds.lib qrpt.lib teeui.lib teedb.lib &#xA;      tee.lib dss.lib teeqr.lib visualdbclx.lib dsnapcrba.lib dsnapcon.lib &#xA;      inetdbbde.lib inetdbxpress.lib dbexpress.lib nmfast.lib bcbie.lib &#xA;      soaprtl.lib dclocx.lib dbxcds.lib indy.lib bcb2kaxserver.lib"/>
+		<PACKAGES value="vcl.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi bdertl.bpi &#xA;      vcldbx.bpi ibxpress.bpi dsnap.bpi cds.bpi bdecds.bpi qrpt.bpi teeui.bpi &#xA;      teedb.bpi tee.bpi dss.bpi teeqr.bpi visualclx.bpi visualdbclx.bpi &#xA;      dsnapcrba.bpi dsnapcon.bpi bcbsmp.bpi vclie.bpi xmlrtl.bpi inet.bpi &#xA;      inetdbbde.bpi inetdbxpress.bpi inetdb.bpi nmfast.bpi webdsnap.bpi &#xA;      bcbie.bpi websnap.bpi soaprtl.bpi dclocx.bpi dbexpress.bpi dbxcds.bpi &#xA;      indy.bpi bcb2kaxserver.bpi"/>
+		<PATHCPP value=".;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole1;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Boole2;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Circuito;src\Comun;src\EvaluadorBool;src\EvaluadorBool;src\EvaluadorBool;src\EvaluadorBool;src\EvaluadorBool;src\EvaluadorBool;src\EvaluadorBool;src\jedec;src\jedec;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\reductio;src\TKarnaugh;src\TKarnaugh;src\Boole1"/>
+		<PATHPAS value=".;src\Comun"/>
+		<PATHRC value=".;src\res;src\res"/>
+		<PATHASM value=".;"/>
+		<DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+		<RELEASELIBPATH value="$(BCB)\lib\release"/>
+		<LINKER value="ilink32"/>
+		<USERDEFINES value="_DEBUG"/>
+		<SYSDEFINES value="NO_STRICT"/>
+		<MAINSOURCE value="boole.cpp"/>
+		<INCLUDEPATH value="src\res;src\reductio;src\jedec;src\EvaluadorBool;src\Comun;src\Circuito;src\Boole2;src\Boole1;include;&quot;C:\Program Files\Borland\CBuilder6\Projects&quot;;$(BCB)\include;$(BCB)\include\vcl;src\TKarnaugh;src"/>
+		<LIBPATH value="src\TKarnaugh;src\res;src\reductio;src\jedec;src\EvaluadorBool;src\Comun;src\Circuito;$(BCB)\Projects\Lib;src\Boole2;src\Boole1;&quot;C:\Program Files\Borland\CBuilder6\Projects&quot;;$(BCB)\lib\obj;$(BCB)\lib"/>
+		<WARNINGS value="-w-par"/>
+		<OTHERFILES value=""/>
+	</MACROS>
+	<OPTIONS>
+		<IDLCFLAGS value="-src_suffix cpp -D_DEBUG -Isrc\res -Isrc\reductio -Isrc\jedec &#xA;      -Isrc\EvaluadorBool -Isrc\Comun -Isrc\Circuito -Isrc\Boole2 -Isrc\Boole1 &#xA;      -Iinclude -I&quot;C:\Program Files\Borland\CBuilder6\Projects&quot; -I$(BCB)\include &#xA;      -I$(BCB)\include\vcl -Isrc\TKarnaugh -Isrc -boa"/>
+		<CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k -y -v -vi- -c &#xA;      -tW -tWM"/>
+		<PFLAGS value="-N2obj -N0obj -$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
+		<RFLAGS value=""/>
+		<AFLAGS value="/mx /w2 /zi"/>
+		<LFLAGS value="-Iobj -D&quot;&quot; -aa -Tpe -GD -x -Gn -v"/>
+		<OTHERFILES value=""/>
+	</OPTIONS>
+	<LINKER>
+		<ALLOBJ value="c0w32.obj sysinit.obj $(OBJFILES)"/>
+		<ALLRES value="$(RESFILES)"/>
+		<ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
+		<OTHERFILES value=""/>
+	</LINKER>
+	<FILELIST>
+		<FILE FILENAME="boole.res" FORMNAME="" UNITNAME="boole.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="boole.cpp" FORMNAME="" UNITNAME="boole" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole1\app.cpp" FORMNAME="ap" UNITNAME="app" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole1\calc.cpp" FORMNAME="Calculando" UNITNAME="calc" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole1\uKarnaugh.cpp" FORMNAME="fKarnaugh" UNITNAME="uKarnaugh" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole1\ExpBool.cpp" FORMNAME="ExprBooleana" UNITNAME="ExpBool" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole1\FormasN.cpp" FORMNAME="FormasNormales" UNITNAME="FormasN" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole1\FormSimp.cpp" FORMNAME="ExpresionSimp" UNITNAME="FormSimp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole1\Libreria.cpp" FORMNAME="" UNITNAME="Libreria.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole1\Main.cpp" FORMNAME="Principal" UNITNAME="Main" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole1\NandNor.cpp" FORMNAME="NANDyNOR" UNITNAME="NandNor" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole1\NuevoSC.cpp" FORMNAME="SistemaCombinacionalNuevo" UNITNAME="NuevoSC" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole1\SCCompac.cpp" FORMNAME="SCFormasCompactas" UNITNAME="SCCompac" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole1\TVComple.cpp" FORMNAME="TablaVerdadCompleta" UNITNAME="TVComple" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole1\TVManual.cpp" FORMNAME="TablaVerdadManual" UNITNAME="TVManual" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole1\DinArray.cpp" FORMNAME="" UNITNAME="DinArray.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole2\FCalculando.cpp" FORMNAME="FormCalculando" UNITNAME="FCalculando" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole2\ayuda.cpp" FORMNAME="fAyuda" UNITNAME="ayuda" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole2\uLog.cpp" FORMNAME="fLog" UNITNAME="uLog" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole2\SistemaSecuencial.cpp" FORMNAME="" UNITNAME="SistemaSecuencial.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole2\Unit15.cpp" FORMNAME="Form15" UNITNAME="Unit15" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole2\Unit11.cpp" FORMNAME="Form11" UNITNAME="Unit11" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole2\Unit12.cpp" FORMNAME="Form12" UNITNAME="Unit12" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole2\Unit13.cpp" FORMNAME="Form13" UNITNAME="Unit13" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole2\Unit14.cpp" FORMNAME="Form14" UNITNAME="Unit14" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole2\Unit10.cpp" FORMNAME="Form10" UNITNAME="Unit10" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole2\V_Boole2.cpp" FORMNAME="Form1Boole2" UNITNAME="V_Boole2" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole2\Unit2.cpp" FORMNAME="Form2" UNITNAME="Unit2" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole2\Unit3.cpp" FORMNAME="Form3" UNITNAME="Unit3" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole2\Unit4.cpp" FORMNAME="NewDiagramForm" UNITNAME="Unit4" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole2\Unit5.cpp" FORMNAME="Form5" UNITNAME="Unit5" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole2\Unit6.cpp" FORMNAME="Form6" UNITNAME="Unit6" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole2\Unit8.cpp" FORMNAME="Form8" UNITNAME="Unit8" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole2\Unit9.cpp" FORMNAME="Form9" UNITNAME="Unit9" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole2\uSimulacion.cpp" FORMNAME="fSimulacion" UNITNAME="uSimulacion" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole2\Unit16.cpp" FORMNAME="Form16" UNITNAME="Unit16" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Circuito\V_Imprimir.cpp" FORMNAME="FormI" UNITNAME="V_Imprimir" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Circuito\CircuitoCombinacional.cpp" FORMNAME="" UNITNAME="CircuitoCombinacional.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Circuito\CircuitoSecuencial.cpp" FORMNAME="" UNITNAME="CircuitoSecuencial.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Circuito\Entrada.cpp" FORMNAME="" UNITNAME="Entrada.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Circuito\FlipFlop.cpp" FORMNAME="" UNITNAME="FlipFlop.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Circuito\FlipFlopD.cpp" FORMNAME="" UNITNAME="FlipFlopD.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Circuito\FlipFlopJK.cpp" FORMNAME="" UNITNAME="FlipFlopJK.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Circuito\funciones.cpp" FORMNAME="" UNITNAME="funciones.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Circuito\limpiador.cpp" FORMNAME="" UNITNAME="limpiador.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Circuito\Puerta.cpp" FORMNAME="" UNITNAME="Puerta.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Circuito\PuertaAnd.cpp" FORMNAME="" UNITNAME="PuertaAnd.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Circuito\PuertaNand.cpp" FORMNAME="" UNITNAME="PuertaNand.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Circuito\PuertaNor.cpp" FORMNAME="" UNITNAME="PuertaNor.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Circuito\PuertaOr.cpp" FORMNAME="" UNITNAME="PuertaOr.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Circuito\V_Circuito.cpp" FORMNAME="FormR" UNITNAME="V_Circuito" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Circuito\Circuito.cpp" FORMNAME="" UNITNAME="Circuito.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Comun\uTextoAsoc.cpp" FORMNAME="fTextoAsoc" UNITNAME="uTextoAsoc" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\EvaluadorBool\TablaSimbolos.cpp" FORMNAME="" UNITNAME="TablaSimbolos.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\EvaluadorBool\EvaluadorBool.cpp" FORMNAME="" UNITNAME="EvaluadorBool.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\EvaluadorBool\LexerBooleano.cpp" FORMNAME="" UNITNAME="LexerBooleano.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\EvaluadorBool\ParserBooleano.cpp" FORMNAME="" UNITNAME="ParserBooleano.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\EvaluadorBool\ParserBooleanoExt.cpp" FORMNAME="" UNITNAME="ParserBooleanoExt.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\EvaluadorBool\ParserEvaluador.cpp" FORMNAME="" UNITNAME="ParserEvaluador.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\EvaluadorBool\evaluador_bool.cpp" FORMNAME="" UNITNAME="evaluador_bool.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\jedec\claseJedec.cpp" FORMNAME="" UNITNAME="claseJedec.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\jedec\ClaseDevice.cpp" FORMNAME="" UNITNAME="ClaseDevice.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\reductio\rdsimplificador.cpp" FORMNAME="" UNITNAME="rdsimplificador.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\reductio\ecubomalformado.cpp" FORMNAME="" UNITNAME="ecubomalformado.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\reductio\rdCoberturaMinima.cpp" FORMNAME="" UNITNAME="rdCoberturaMinima.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\reductio\rdObtenerIPs.cpp" FORMNAME="" UNITNAME="rdObtenerIPs.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\reductio\rdObtenerIPsQM.cpp" FORMNAME="" UNITNAME="rdObtenerIPsQM.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\reductio\rdSeleccionarIPs.cpp" FORMNAME="" UNITNAME="rdSeleccionarIPs.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\reductio\rdSeleccionarIPs_FuerzaBruta.cpp" FORMNAME="" UNITNAME="rdSeleccionarIPs_FuerzaBruta.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\reductio\rdSeleccionarIPs_QM_Haleat.cpp" FORMNAME="" UNITNAME="rdSeleccionarIPs_QM_Haleat.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\reductio\rdSeleccionarIPs_QM_Hbestcover.cpp" FORMNAME="" UNITNAME="rdSeleccionarIPs_QM_Hbestcover.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\reductio\rdSeleccionarIPs_QM_NHnosesg.cpp" FORMNAME="" UNITNAME="rdSeleccionarIPs_QM_NHnosesg.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\reductio\rdSeleccionarIPs_QM_NHsesg1.cpp" FORMNAME="" UNITNAME="rdSeleccionarIPs_QM_NHsesg1.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\reductio\rdSeleccionarIPs_QM_NHsesg2.cpp" FORMNAME="" UNITNAME="rdSeleccionarIPs_QM_NHsesg2.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\reductio\rdSeleccionarIPsQM.cpp" FORMNAME="" UNITNAME="rdSeleccionarIPsQM.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\reductio\cubobool.cpp" FORMNAME="" UNITNAME="cubobool.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\res\mensajes.rc" FORMNAME="" UNITNAME="mensajes.rc" CONTAINERID="RCCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="lib\antlr.lib" FORMNAME="" UNITNAME="antlr.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Comun\reinit.pas" FORMNAME="" UNITNAME="ReInit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\TKarnaugh\Karnaugh.cpp" FORMNAME="" UNITNAME="Karnaugh.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\TKarnaugh\VKLazo.cpp" FORMNAME="" UNITNAME="VKLazo.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+		<FILE FILENAME="src\Boole1\Weblab.cpp" FORMNAME="WeblabForm" UNITNAME="Weblab" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+	</FILELIST>
+	<BUILDTOOLS>
+	</BUILDTOOLS>
+	<IDEOPTIONS>[Version Info]
 IncludeVerInfo=0
 AutoIncBuild=0
 MajorVer=1
@@ -268,11 +213,16 @@ AddServerUnit=1
 AddClientUnit=1
 PrecompiledHeaders=1
 
+[Language]
+ActiveLang=
+ProjectLang=0x00000C0A
+RootDir=
+
 [Resource DLL Projects]
-Item0=Basque*0x0000042D*EUS*EUS
-Item1=Catalan*0x00000403*CAT*CAT
-Item2=English (United States)*0x00000409*ENU*ENU
-Item3=Portuguese (Portugal)*0x00000816*PTG*PTG
+Item0=Basque*0x0000042D*EUS*EUS\
+Item1=Catalan*0x00000403*CAT*CAT\
+Item2=English (United States)*0x00000409*ENU*ENU\
+Item3=Portuguese (Portugal)*0x00000816*PTG*PTG\
 
 [RDP Source Files]
 Item0=src\Boole1\NuevoSC.dfm
@@ -314,9 +264,5 @@ Item35=src\res\mensajes.rc
 Item36=src\Boole1\Weblab.dfm
 Item37=exe\boole.drc
 
-[Language]
-ActiveLang=
-ProjectLang=0x00000C0A
-RootDir=
-  </IDEOPTIONS>
+</IDEOPTIONS>
 </PROJECT>
