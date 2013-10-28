@@ -95,6 +95,11 @@ Sin embargo, el tercer parámetro sobra y no se utiliza.
 Debe ser definido como: #define USEFORMRES(FileName, FormName) extern PACKAGE _Dummy
 Es decir, debe quitarse directamente este tercer parámetro.
 
+Nota: Aparentemente, este error ocurre o no ocurre, de forma aparentemente aleatoria. 
+
+- Otro error que ocurre es un "missing TKarnaugh" etc. Cuando aparezca, *parece* que basta con ignorarlo (y siempre
+decir que NO modificar el código y NO quitarlo, o el código dejará de funcionar).
+
 - Existe un mensajes.rc, que contiene una tabla de cadenas presente en un mensajes.inc. En cada lenguaje existe
 una copia diferente de estos dos archivos. Aunque el mensajes.rc parece que puede actualizarse para cada lenguaje a través
 del Translation Manager, se necesitará añadir a mano cada entrada al mensajes.inc. Puesto que el mensajes.inc generalmente

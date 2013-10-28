@@ -5,7 +5,7 @@
     <PROJECT value="..\..\booledeusto\boole.CAT"/>
     <MAINSOURCE value="boole.cpp"/>
     <OBJFILES value="boole.obj"/>
-    <RESFILES value="NuevoSC.dfm "/>
+    <RESFILES value="app.dfm "/>
    <IDLFILES value=""/>
     <IDLGENFILES value=""/>
     <DEFFILE value=""/>
