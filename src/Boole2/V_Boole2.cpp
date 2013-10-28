@@ -50,6 +50,10 @@
 #include "FCalculando.h"
 #include "ayuda.h"
 
+
+#include "Weblab.h"
+
+
 // modificado Ainara
 #include "SistemaSecuencial.h"
 #include "uSimulacion.h"
@@ -5875,6 +5879,9 @@ void TForm1Boole2::CrearCodigoVHDL()
                 clockLine += mWeblabClockDirective;
                 Form14->PDL->Lines->Add(clockLine.c_str());
         }
+
+        // ~LRG:MOD: Add code generation header.
+        Form14->PDL->Lines->Add(BuildCodeHeader().c_str());
 
         // Cabecera
         Form14->PDL->Lines->Add("library IEEE;");
