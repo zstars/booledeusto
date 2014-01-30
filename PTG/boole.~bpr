@@ -1,63 +1,45 @@
 <?xml version='1.0' encoding='utf-8' ?>
-<!-- C++Builder XML Project -->
-<PROJECT>
+<!-- C++Builder XML Project --><PROJECT>
   <MACROS>
     <VERSION value="BCB.06.00"/>
-    <PROJECT value="..\exe\boole.PTG"/>
+    <PROJECT value="..\..\booledeusto\boole.PTG"/>
+    <MAINSOURCE value="boole.cpp"/>
     <OBJFILES value="boole.obj"/>
-    <RESFILES value="src\res\mensajes.res"/>
-    <IDLFILES value=""/>
+    <RESFILES value="app.dfm "/>
+   <IDLFILES value=""/>
     <IDLGENFILES value=""/>
     <DEFFILE value=""/>
     <RESDEPEN value="$(RESFILES)"/>
     <LIBFILES value=""/>
-    <LIBRARIES value="rtl.lib"/>
-    <SPARELIBS value="rtl.lib"/>
-    <PACKAGES value="vcl.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi bdertl.bpi 
-      vcldbx.bpi ibxpress.bpi dsnap.bpi cds.bpi bdecds.bpi qrpt.bpi teeui.bpi 
-      teedb.bpi tee.bpi dss.bpi teeqr.bpi visualclx.bpi visualdbclx.bpi 
-      dsnapcrba.bpi dsnapcon.bpi bcbsmp.bpi vclie.bpi xmlrtl.bpi inet.bpi 
-      inetdbbde.bpi inetdbxpress.bpi inetdb.bpi nmfast.bpi webdsnap.bpi 
-      bcbie.bpi websnap.bpi soaprtl.bpi dclocx.bpi dbexpress.bpi dbxcds.bpi 
-      indy.bpi bcb2kaxserver.bpi"/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value=""/>
+    <PACKAGES value=""/>
     <PATHCPP value=".;"/>
     <PATHPAS value=".;"/>
-    <PATHRC value=".;src\res;src\res"/>
+    <PATHRC value=".;"/>
     <PATHASM value=".;"/>
     <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
     <RELEASELIBPATH value="$(BCB)\lib\release"/>
-    <LINKER value="ilink32"/>
+    <LINKER value="tlink32"/>
     <USERDEFINES value=""/>
     <SYSDEFINES value="NO_STRICT"/>
-    <MAINSOURCE value="boole.cpp"/>
-    <INCLUDEPATH value="src\res;$(BCB)\include"/>
-    <LIBPATH value="src\res;$(BCB)\lib"/>
+    <INCLUDEPATH value="$(BCB)\include"/>
+    <LIBPATH value="$(BCB)\lib"/>
     <WARNINGS value=""/>
-    <OTHERFILES value=""/>
   </MACROS>
   <OPTIONS>
-    <IDLCFLAGS value="-Isrc\res -I$(BCB)\include -src_suffix cpp -boa"/>
-    <CFLAG1 value="-WD -O2 -H=$(BCB)\lib\vcl60.csm -Hc -w -Vx -Ve -x- -RT- -X -a8 -b- -k- -vi 
+    <CFLAG1 value="-WD -O2 -H=$(BCB)\lib\vcl60.csm -Hc -w -Vx -Ve -x- -RT- -X -a8 -b- -k- -vi
       -c -w-par -w-8026 -w-8027 -tW -tWM"/>
-    <PFLAGS value="-$Y- -$L- -$I- -$D- -$C- -$A8 -v -JPHNE -M"/>
+    <PFLAGS value="-$Y- -$L- -$I- -$D- -$C- -v -JPHNE -M"/>
     <RFLAGS value=""/>
     <AFLAGS value="/mx /w2 /zn"/>
-    <LFLAGS value="-D&quot;&quot; -aa -Tpd -x -Gn"/>
-    <OTHERFILES value=""/>
+    <LFLAGS value="-aa -Tpd -x -Gn"/>
   </OPTIONS>
   <LINKER>
     <ALLOBJ value="$(OBJFILES)"/>
     <ALLRES value="$(RESFILES)"/>
     <ALLLIB value="$(LIBFILES)"/>
-    <OTHERFILES value=""/>
   </LINKER>
-  <FILELIST>
-      <FILE FILENAME="boole.cpp" FORMNAME="" UNITNAME="boole" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\res\mensajes.rc" FORMNAME="" UNITNAME="mensajes" CONTAINERID="RCCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-  </FILELIST>
-  <BUILDTOOLS>
-  </BUILDTOOLS>
-
   <IDEOPTIONS>
 [Version Info]
 IncludeVerInfo=0
@@ -86,52 +68,23 @@ ProductName=
 ProductVersion=1.0.0.0
 Comments=
 
-[HistoryLists\hlIncludePath]
-Count=1
-Item0=src\res;$(BCB)\include
-
-[HistoryLists\hlLibraryPath]
-Count=1
-Item0=src\res;$(BCB)\lib
-
-[HistoryLists\hlFinalOutputDir]
-Count=2
-Item0=..\exe
-Item1=..\..\boole\
-
 [Debugging]
 DebugSourceDirs=
 
 [Parameters]
 RunParams=
-Launcher=
-UseLauncher=0
-DebugCWD=
 HostApplication=
 RemoteHost=
 RemotePath=
-RemoteLauncher=
-RemoteCWD=
 RemoteDebug=0
 
 [Compiler]
 ShowInfoMsgs=0
 LinkDebugVcl=1
-LinkCGLIB=0
-
-[CORBA]
-AddServerUnit=1
-AddClientUnit=1
-PrecompiledHeaders=1
 
 [Language]
 ActiveLang=
 ProjectLang=
 RootDir=
-
-[Linker]
-LibPrefix=
-LibSuffix=
-LibVersion=
   </IDEOPTIONS>
 </PROJECT>

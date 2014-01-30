@@ -1665,6 +1665,9 @@ void __fastcall TSistemaCombinacionalNuevo::OnClickVHDLCode(TObject *Sender)
                     GuardaPLD->Filter=MENSAJE(msgFiltroVHDL);
 	            if (GuardaPLD->Execute())
 	            {
+                        // ~LRG:MOD: Add code generation header
+                        Lista->Add(BuildCodeHeader().c_str());
+
 		        // Cabecera
 	       	        Lista->Add("library IEEE;");
 		        Lista->Add("use IEEE.STD_LOGIC_1164.ALL;");

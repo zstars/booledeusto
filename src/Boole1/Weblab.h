@@ -10,6 +10,8 @@
 #include <vcl/Controls.hpp>
 #include <vcl/StdCtrls.hpp>
 #include <vcl/Forms.hpp>
+
+#include <string>
 //---------------------------------------------------------------------------
 class TWeblabForm : public TForm
 {
@@ -21,4 +23,7 @@ public:		// User declarations
 //---------------------------------------------------------------------------
 extern PACKAGE TWeblabForm *WeblabForm;
 //---------------------------------------------------------------------------
+
+std::string BuildCodeHeader();
+
 #endif

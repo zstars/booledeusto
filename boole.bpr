@@ -269,10 +269,10 @@ AddClientUnit=1
 PrecompiledHeaders=1
 
 [Resource DLL Projects]
-Item0=Basque*0x0000042D*EUS*EUS
-Item1=Catalan*0x00000403*CAT*CAT
-Item2=English (United States)*0x00000409*ENU*ENU
-Item3=Portuguese (Portugal)*0x00000816*PTG*PTG
+Item0=Basque*0x0000042D*EUS*EUS\
+Item1=Catalan*0x00000403*CAT*CAT\
+Item2=English (United States)*0x00000409*ENU*ENU\
+Item3=Portuguese (Portugal)*0x00000816*PTG*PTG\
 
 [RDP Source Files]
 Item0=src\Boole1\NuevoSC.dfm

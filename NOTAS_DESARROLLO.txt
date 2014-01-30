@@ -89,6 +89,17 @@ paths que se encuentran en este archivo son incorrectos. El error es sencillamen
 en vez de dos ("\\"). Para arreglarlo, basta con acceder a cada archivo boole.cpp autogenerado, y hacer un
 search-replace de "\" con "\\". Tras ésto, el proyecto debería compilar con éxito.
 
+- Otro error en el boole.cpp autogenerado está en la propia definición del macro USEFORMRES.
+El macro se genera a veces como: #define USEFORMRES(FileName, FormName, AncestorName) extern PACKAGE _Dummy
+Sin embargo, el tercer parámetro sobra y no se utiliza.
+Debe ser definido como: #define USEFORMRES(FileName, FormName) extern PACKAGE _Dummy
+Es decir, debe quitarse directamente este tercer parámetro.
+
+Nota: Aparentemente, este error ocurre o no ocurre, de forma aparentemente aleatoria. 
+
+- Otro error que ocurre es un "missing TKarnaugh" etc. Cuando aparezca, *parece* que basta con ignorarlo (y siempre
+decir que NO modificar el código y NO quitarlo, o el código dejará de funcionar).
+
 - Existe un mensajes.rc, que contiene una tabla de cadenas presente en un mensajes.inc. En cada lenguaje existe
 una copia diferente de estos dos archivos. Aunque el mensajes.rc parece que puede actualizarse para cada lenguaje a través
 del Translation Manager, se necesitará añadir a mano cada entrada al mensajes.inc. Puesto que el mensajes.inc generalmente
@@ -99,6 +110,8 @@ también sería suficiente (si bien no se ha probado).
 Por ejemplo, para Euskera Borland genera un archivo boole.EUS. Por algún motivo no determinado, sin embargo,
 Borland al cargar el LANG_BASQUE intenta encontrar el boole.EUQ. La "solución" que de momento se ha aplicado es,
 sencillamente, renombrar manualmente el boole.EUS generado por boole.EUQ.
+En el momento de escribir ésto, las terminaciones reales pueden encontrarse en:
+http://docwiki.embarcadero.com/RADStudio/XE4/en/Language_Culture_Names,_Codes,_and_ISO_Values
 
 - El boole.cpp del proyecto principal (boole.exe) es el que decide qué lenguaje se carga. Si bien parece haber código
 mezclado de diferentes métodos, en la actualidad el que se encuentra activo lo que hace es leer un archivo "boole.lang",

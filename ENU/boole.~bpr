@@ -5,7 +5,7 @@
     <VERSION value="BCB.06.00"/>
     <PROJECT value="..\exe\boole.ENU"/>
     <OBJFILES value="boole.obj"/>
-    <RESFILES value="src\res\mensajes.res"/>
+    <RESFILES value=""/>
     <IDLFILES value=""/>
     <IDLGENFILES value=""/>
     <DEFFILE value=""/>
@@ -22,7 +22,7 @@
       indy.bpi bcb2kaxserver.bpi"/>
     <PATHCPP value=".;"/>
     <PATHPAS value=".;"/>
-    <PATHRC value=".;src\res;src\res"/>
+    <PATHRC value=".;"/>
     <PATHASM value=".;"/>
     <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
     <RELEASELIBPATH value="$(BCB)\lib\release"/>
@@ -30,13 +30,13 @@
     <USERDEFINES value=""/>
     <SYSDEFINES value="NO_STRICT"/>
     <MAINSOURCE value="boole.cpp"/>
-    <INCLUDEPATH value="src\res;$(BCB)\include"/>
-    <LIBPATH value="src\res;$(BCB)\lib"/>
+    <INCLUDEPATH value="$(BCB)\include"/>
+    <LIBPATH value="$(BCB)\lib"/>
     <WARNINGS value=""/>
     <OTHERFILES value=""/>
   </MACROS>
   <OPTIONS>
-    <IDLCFLAGS value="-src_suffix cpp -Isrc\res -I$(BCB)\include -boa"/>
+    <IDLCFLAGS value="-src_suffix cpp -I$(BCB)\include -boa"/>
     <CFLAG1 value="-WD -O2 -H=$(BCB)\lib\vcl60.csm -Hc -w -Vx -Ve -x- -RT- -X -a8 -b- -k- -vi 
       -c -w-par -w-8026 -w-8027 -tW -tWM"/>
     <PFLAGS value="-$Y- -$L- -$I- -$D- -$C- -$A8 -v -JPHNE -M"/>
@@ -53,7 +53,7 @@
   </LINKER>
   <FILELIST>
       <FILE FILENAME="boole.cpp" FORMNAME="" UNITNAME="boole" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="src\res\mensajes.rc" FORMNAME="" UNITNAME="mensajes" CONTAINERID="RCCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="src\Boole1\NuevoSC.dfm" FORMNAME="NuevoSC" UNITNAME="TForm" CONTAINERID="" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>
@@ -88,16 +88,16 @@ Comments=
 
 [HistoryLists\hlIncludePath]
 Count=1
-Item0=src\res;$(BCB)\include
+Item0=$(BCB)\include
 
 [HistoryLists\hlLibraryPath]
 Count=1
-Item0=src\res;$(BCB)\lib
+Item0=$(BCB)\lib
 
 [HistoryLists\hlFinalOutputDir]
 Count=2
 Item0=..\exe
-Item1=..\..\boole\
+Item1=..\..\booledeusto\
 
 [Debugging]
 DebugSourceDirs=

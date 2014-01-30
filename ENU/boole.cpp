@@ -46,13 +46,9 @@ int _turboFloat;
 /*ITE*/ /*RCFileType*/ /*src\\res\\mensajes.rc*/
 /*ITE*/ /*RCFileType*/ /*exe\\boole_DRC.rc*/
 //---------------------------------------------------------------------------
-USEFORMRES("src\\Boole1\\app.dfm", ap, Form); /* TForm: DesignClass */
 #pragma resource "src\\Boole1\\app.dfm"
-USEFORMRES("src\\Boole1\\calc.dfm", Calculando, Form); /* TForm: DesignClass */
 #pragma resource "src\\Boole1\\calc.dfm"
-USEFORMRES("src\\Boole1\\ExpBool.dfm", ExprBooleana, Form); /* TForm: DesignClass */
 #pragma resource "src\\Boole1\\ExpBool.dfm"
-USEFORMRES("src\\Boole1\\FormasN.dfm", FormasNormales, Form); /* TForm: DesignClass */
 #pragma resource "src\\Boole1\\FormasN.dfm"
 USEFORMRES("src\\Boole1\\FormSimp.dfm", ExpresionSimp, Form); /* TForm: DesignClass */
 #pragma resource "src\\Boole1\\FormSimp.dfm"

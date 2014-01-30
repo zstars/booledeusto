@@ -52,9 +52,10 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	{
 		Application->Initialize();
 		Application->Title = "BOOLE-DEUSTO";
+                string lang;
                 try{
                 	ifstream in("boole.lang");
-                        string lang;
+
                         in >> lang;
                         if (lang == "en")
                         	resInstance=(void*)LoadNewResourceModule( ( (SUBLANG_ENGLISH_US << 10) | LANG_ENGLISH) );
@@ -68,7 +69,7 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		} catch(ios_base::failure& var)
                 { }
 
-                if(resInstance == 0)
+                if(lang != "es" && resInstance == 0)
                         Application->MessageBox("Couldn't load the specified language. Loading default.", "Error");
 
                 // ~lrg
