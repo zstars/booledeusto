@@ -6424,7 +6424,18 @@ void __fastcall TForm1Boole2::ExporttoWeblabVHDL1Click(TObject *Sender)
 void __fastcall TForm1Boole2::StartWeblabFPGAIClick(
       TObject *Sender)
 {
-        ShellExecute(NULL, "open", "https://www.weblab.deusto.es/weblab/client/#page=experiment&exp.category=FPGA%20experiments&exp.name=ud-fpga", NULL, NULL, SW_SHOW);
+        // ~LRG: Read the URL to open from a file. This will make it easier to reconfigure in the future.
+        std::ifstream fin("weblaburl.dat");
+        if(!fin) {
+                Application->MessageBox("ERROR: WeblabURL.dat file not found. You have probably not extracted Boole-Deusto properly.", NULL);
+                return;
+        }
+        std::string weblaburl;
+        std::getline(fin, weblaburl);
+        fin.close();
+
+
+        ShellExecute(NULL, "open", weblaburl.c_str(), NULL, NULL, SW_SHOW);
 }
 //---------------------------------------------------------------------------
 

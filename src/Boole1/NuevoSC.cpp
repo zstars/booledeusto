@@ -2136,12 +2136,28 @@ void __fastcall TSistemaCombinacionalNuevo::btWeblabClick(TObject *Sender)
                 return;
         else if(result == IDYES)
         {
+                // ~LRG: Enable the WebLab mode. If we clicked here we probably
+                // want to generate WebLab compatible code.
+                weblabCheckBox->Checked = true;
+
                 // Invoke code generation
                 this->OnClickVHDLCode(Sender);
         }
     }
 
-    ShellExecute(NULL, "open", "https://www.weblab.deusto.es/weblab/client/#page=experiment&exp.category=FPGA%20experiments&exp.name=ud-fpga", NULL, NULL, SW_SHOW);
+
+    // ~LRG: Read the URL to open from a file. This will make it easier to reconfigure in the future.
+    std::ifstream fin("weblaburl.dat");
+    if(!fin) {
+        Application->MessageBox("ERROR: WeblabURL.dat file not found. You have probably not extracted Boole-Deusto properly.", NULL);
+        return;
+    }
+    std::string weblaburl;
+    std::getline(fin, weblaburl);
+    fin.close();
+
+
+    ShellExecute(NULL, "open", weblaburl.c_str(), NULL, NULL, SW_SHOW);
     int n = 5;
 }
 //---------------------------------------------------------------------------

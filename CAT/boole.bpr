@@ -5,7 +5,7 @@
     <VERSION value="BCB.06.00"/>
     <PROJECT value="..\exe\boole.CAT"/>
     <OBJFILES value="boole.obj"/>
-    <RESFILES value="..\PTG\src\res\mensajes.res"/>
+    <RESFILES value="src\res\mensajes.res"/>
     <IDLFILES value=""/>
     <IDLGENFILES value=""/>
     <DEFFILE value=""/>
@@ -22,7 +22,7 @@
       indy.bpi bcb2kaxserver.bpi"/>
     <PATHCPP value=".;"/>
     <PATHPAS value=".;"/>
-    <PATHRC value=".;..\PTG\src\res;..\PTG\src\res"/>
+    <PATHRC value=".;src\res;src\res"/>
     <PATHASM value=".;"/>
     <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
     <RELEASELIBPATH value="$(BCB)\lib\release"/>
@@ -30,13 +30,13 @@
     <USERDEFINES value=""/>
     <SYSDEFINES value="NO_STRICT"/>
     <MAINSOURCE value="boole.cpp"/>
-    <INCLUDEPATH value="..\PTG\src\res;$(BCB)\include"/>
-    <LIBPATH value="..\PTG\src\res;$(BCB)\lib"/>
+    <INCLUDEPATH value="src\res;..\PTG\src\res;$(BCB)\include"/>
+    <LIBPATH value="src\res;..\PTG\src\res;$(BCB)\lib"/>
     <WARNINGS value=""/>
     <OTHERFILES value=""/>
   </MACROS>
   <OPTIONS>
-    <IDLCFLAGS value="-src_suffix cpp -I..\PTG\src\res -I$(BCB)\include -boa"/>
+    <IDLCFLAGS value="-src_suffix cpp -Isrc\res -I..\PTG\src\res -I$(BCB)\include -boa"/>
     <CFLAG1 value="-WD -O2 -H=$(BCB)\lib\vcl60.csm -Hc -w -Vx -Ve -x- -RT- -X -a8 -b- -k- -vi 
       -c -w-par -w-8026 -w-8027 -tW -tWM"/>
     <PFLAGS value="-$Y- -$L- -$I- -$D- -$C- -$A8 -v -JPHNE -M"/>
@@ -54,7 +54,7 @@
   <FILELIST>
       <FILE FILENAME="boole.cpp" FORMNAME="" UNITNAME="boole" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="src\Boole1\app.dfm" FORMNAME="ap" UNITNAME="Form" CONTAINERID="" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\PTG\src\res\mensajes.rc" FORMNAME="" UNITNAME="mensajes.rc" CONTAINERID="RCCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="src\res\mensajes.rc" FORMNAME="" UNITNAME="mensajes.rc" CONTAINERID="RCCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>
