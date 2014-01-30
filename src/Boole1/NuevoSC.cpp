@@ -121,6 +121,9 @@ __fastcall TSistemaCombinacionalNuevo::TSistemaCombinacionalNuevo(TComponent* Ow
     TablaSalida->ColWidths[1] = TablaSalida->Width - TablaSalida->ColWidths[0];
 
     mSistemaModificado = true;
+
+    // Enable the WebLab mode by default.
+    weblabCheckBox->Checked = true;
 }
 
 //---------------------------------------------------------------------------
