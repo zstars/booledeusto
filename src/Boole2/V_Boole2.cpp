@@ -6432,7 +6432,13 @@ void __fastcall TForm1Boole2::StartWeblabFPGAIClick(
       TObject *Sender)
 {
         // ~LRG: Read the URL to open from a file. This will make it easier to reconfigure in the future.
-        std::ifstream fin("weblaburl.dat");
+
+        // Something's changing our working directory. We need to find the file in the directory alongside our file.
+        AnsiString exeFile = Application->ExeName;
+        AnsiString exePath = ExtractFilePath(exeFile);
+        std::string weblaburlPath = std::string(exePath.c_str()) + "\\" + "weblaburl.dat";
+
+        std::ifstream fin(weblaburlPath.c_str());
         if(!fin) {
                 Application->MessageBox("ERROR: WeblabURL.dat file not found. You have probably not extracted Boole-Deusto properly.", NULL);
                 return;
